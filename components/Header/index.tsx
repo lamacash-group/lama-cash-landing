@@ -1,20 +1,37 @@
 import * as React from 'react';
 import Image from 'next/image';
 import Link from "next/link";
+import {SwitchLanguage} from "@/components/SwitchLanguage";
+import {Menu} from "lucide-react";
+import {BinanceLine} from "@/components/BinanceLine";
 
 
 export const Header = () => {
     return (
-        <header className="w-full h-full">
-            <div className="flex flex-row justify-between w-full items-center gap-4 px-9 pt-16 pb-11">
+        <header className="w-full h-full flex flex-col gap-4">
+            <div className="flex flex-row justify-between w-full items-center gap-4 max-sm:px-4 pt-16 pb-8 max-sm:pb-6 px-4">
                 <Link href="/" className="cursor-pointer">
                     <Image src="/lama-logo.svg" alt="lama cash logo" width={104} height={14} />
                 </Link>
-                <div>
-                    <Image src="/earth.svg" alt="lama cash logo" className="cursor-pointer" width={14} height={14} />
+                <div className="flex flex-row gap-10">
 
+                    <div className="flex flex-row items-center gap-2">
+                        <Image src="/earth.svg" alt="earth icon" className="cursor-pointer" width={16} height={16} />
+                        <SwitchLanguage/>
+                    </div>
+
+                    <button
+                        type="button"
+                        className="text-white hover:opacity-80 transition-opacity cursor-pointer"
+                        aria-label="Open menu"
+                    >
+                        {/* Иконка из lucide-react. Можно менять размер (w-7 h-7) и толщину линий (strokeWidth) */}
+                        <Menu className="w-7 h-7" strokeWidth={2} />
+                    </button>
                 </div>
             </div>
+
+            <BinanceLine/>
         </header>
     );
 };
