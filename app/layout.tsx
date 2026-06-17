@@ -31,7 +31,7 @@ export default function RootLayout({
       lang="ua"
       className={`${rubikMono.variable} ${getVoip.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-rubik">
+      <body className="min-h-full flex flex-col font-rubik bg-[rgba(230,230,230,1)]">
       <Provider>
         {children}
       </Provider>

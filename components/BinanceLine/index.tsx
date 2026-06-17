@@ -18,9 +18,8 @@ export const BinanceLine = () => {
                 const response = await fetch('https://api.binance.com/api/v3/ticker/price?symbols=["BTCUSDT","ETHUSDT","SOLUSDT","ETCUSDT","LTCUSDT"]');
                 const result = await response.json();
 
-                const formattedData = result.map((item: any) => ({
+                const formattedData = result.map((item: CryptoData) => ({
                     symbol: item.symbol.replace(/USDT|USD/, ''),
-
                     price: parseFloat(item.price).toFixed(2)
                 }));
 

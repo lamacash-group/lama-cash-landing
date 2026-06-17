@@ -9,16 +9,13 @@ import {BinanceLine} from "@/components/BinanceLine";
 export const Header = () => {
     return (
         <header className="w-full h-full flex flex-col gap-4">
-            <div className="flex flex-row justify-between w-full items-center gap-4 max-sm:px-4 pt-16 pb-8 max-sm:pb-6 px-4">
+            <div className="flex flex-row justify-between w-full items-center gap-4 pt-16 pb-8 max-sm:pb-6 px-9">
                 <Link href="/" className="cursor-pointer">
                     <Image src="/lama-logo.svg" alt="lama cash logo" width={104} height={14} />
                 </Link>
                 <div className="flex flex-row gap-10">
 
-                    <div className="flex flex-row items-center gap-2">
-                        <Image src="/earth.svg" alt="earth icon" className="cursor-pointer" width={16} height={16} />
-                        <SwitchLanguage/>
-                    </div>
+                    <SwitchLanguage/>
 
                     <button
                         type="button"

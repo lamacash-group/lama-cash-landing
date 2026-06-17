@@ -1,11 +1,8 @@
-// import {useTranslations} from "next-intl";
 import {Footer} from "@/components/Footer";
 import {Header} from "@/components/Header";
 import {Home} from "@/components/Home";
 
 export default function Main() {
-
-    // const t = useTranslations('HomePage');
 
     return (
         <div className="flex flex-col flex-1 items-center justify-center font-sans max-w-120 w-full mx-auto min-h-screen overflow-hidden">
