@@ -33,7 +33,8 @@ export const BinanceLine = () => {
 
     if (currency.length === 0) return <></>;
 
-    const repeatedData = [...currency, ...currency, ...currency, ...currency];
+    const repeatedData = [...currency, ...currency, ...currency, ...currency, ...currency,
+        ...currency, ...currency, ...currency, ...currency, ...currency, ...currency, ...currency];
 
     return (
         <div className="w-full overflow-hidden bg-[rgba(255,255,255,0.1)] border-y border-[rgba(255,255,255,0.1)] flex select-none">

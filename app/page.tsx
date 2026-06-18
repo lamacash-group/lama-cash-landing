@@ -1,20 +1,23 @@
 import {Footer} from "@/components/Footer";
 import {Header} from "@/components/Header";
 import {Home} from "@/components/Home";
+import {StackingCards} from "@/components/StackingCards";
+import {StackedCardsFeature} from "@/components/StackingCards/stack";
 
 export default function Main() {
 
     return (
-        <div className="flex flex-col flex-1 items-center justify-center font-sans max-w-120 w-full mx-auto min-h-screen overflow-hidden">
-            <div className="bg-[linear-gradient(10.25deg,#3C157F_-9.46%,#7134C2_40.87%,#171717_93.06%)]
-            flex flex-1 w-full flex-col items-center justify-between py-4 sm:items-start">
-                <Header/>
-                <div className="px-4">
-                    <Home/>
-                </div>
+        <div className="flex flex-col flex-1 items-center justify-center font-sans w-full mx-auto min-h-screen">
+            <div
+                className="flex flex-col w-full bg-[linear-gradient(10.25deg,#3C157F_-9.46%,#7134C2_40.87%,#171717_93.06%)] overflow-hidden">
+                <header className="w-full h-full flex flex-col gap-4">
+                    <Header/>
+                </header>
+                <Home/>
             </div>
-            <main>
-
+            <main className="w-full h-full">
+                {/*<StackingCards/>*/}
+                <StackedCardsFeature/>
             </main>
             <Footer/>
         </div>
