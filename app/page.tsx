@@ -1,8 +1,7 @@
 import {Footer} from "@/components/Footer";
 import {Header} from "@/components/Header";
 import {Home} from "@/components/Home";
-import {StackingCards} from "@/components/StackingCards";
-import {StackedCardsFeature} from "@/components/StackingCards/stack";
+import {ScrollStack} from "@/components/StackingCards";
 
 export default function Main() {
 
@@ -16,8 +15,7 @@ export default function Main() {
                 <Home/>
             </div>
             <main className="w-full h-full">
-                {/*<StackingCards/>*/}
-                <StackedCardsFeature/>
+                <ScrollStack/>
             </main>
             <Footer/>
         </div>
