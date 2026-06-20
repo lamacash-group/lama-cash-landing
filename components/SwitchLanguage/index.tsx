@@ -24,11 +24,9 @@ export const SwitchLanguage = () => {
     return (
         <div>
             <Select defaultValue={locale} onValueChange={(value) => setLocale(value)} disabled={isPending}>
-                <SelectTrigger className="text-white px-0 py-0 border-none select-none gap-2 text-base cursor-pointer" classNameTrigger="text-white">
-                    <div className="flex flex-row items-center gap-2">
-                        <Image src="/earth.svg" alt="earth icon" className="cursor-pointer w-[24px] h-[24px] max-sm:w-[16px] max-sm:h-[16px]" width={16} height={16} />
-                        <SelectValue />
-                    </div>
+                <SelectTrigger className="text-white px-2 py-2 border-none select-none flex flex-row items-center gap-2 text-base cursor-pointer" classNameTrigger="text-white">
+                    <Image src="/earth.svg" alt="earth icon" className="cursor-pointer w-[24px] h-[24px] max-sm:w-[16px] max-sm:h-[16px]" width={16} height={16} />
+                    <SelectValue />
                 </SelectTrigger>
                 <SelectContent position="popper" className="min-w-full">
                     <SelectItem value="uk" className="max-w-16 w-full cursor-pointer">UA</SelectItem>

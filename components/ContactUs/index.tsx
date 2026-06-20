@@ -17,8 +17,8 @@ export const ContactUs = ({text = 'contact us', buttonClass, imageClass, inverte
             {text}
             <div className={cn("bg-[rgba(65,180,242,1)] rounded-full w-6 h-6 flex items-center justify-center", imageClass)}>
                 <Image
-                    className={`${inverted ? "invert" : ""}`}
-                    src="telegram.svg"
+                    className={cn("w-auto h-auto", inverted && "invert")}
+                    src="/telegram.svg"
                     width={13}
                     height={11}
                     alt="telegram icon"

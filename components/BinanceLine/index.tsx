@@ -14,8 +14,11 @@ export const BinanceLine = () => {
     useEffect(() => {
         const fetchCrypto = async () => {
             try {
+                const symbolsObj = ["BTCUSDT","ETHUSDT","SOLUSDT","ETCUSDT","LTCUSDT"];
+                const symbolsStr = JSON.stringify(symbolsObj);
+                const safeUrl = `https://api.binance.com/api/v3/ticker/price?symbols=${encodeURIComponent(symbolsStr)}`;
 
-                const response = await fetch('https://api.binance.com/api/v3/ticker/price?symbols=["BTCUSDT","ETHUSDT","SOLUSDT","ETCUSDT","LTCUSDT"]');
+                const response = await fetch(safeUrl);
                 const result = await response.json();
 
                 const formattedData = result.map((item: CryptoData) => ({
