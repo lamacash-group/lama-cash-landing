@@ -1,12 +1,13 @@
 "use client";
 import React, {useRef, useState} from "react";
-import { motion } from "framer-motion";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
+import {motion} from "framer-motion";
+import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
+import {cn} from "@/lib/utils";
 import Image from "next/image";
 import {ChevronRight, Info, X} from "lucide-react";
 import {ContactUs} from "@/components/ContactUs";
 import {Tooltip, TooltipContent, TooltipTrigger} from "@/components/ui/tooltip";
+import Link from "next/link";
 
 interface StackItem {
     id: number;
@@ -62,7 +63,11 @@ const FirstCard = () => {
                 </div>
             </div>
             <span className="font-rubik font-light text-base pt-4 pb-3 max-sm:text-[12px] text-[#171717] text-center">Також видаємо в країнах ЄС. Пиши менеджеру.</span>
-            <ContactUs text={"вивести крипту"} imageClass="bg-white" buttonClass="hover:bg-white/95 text-base text-[rgba(240,240,240,1)] tracking-[3%] bg-[rgba(23,23,23,1)]" inverted/>
+            <Link href="https://t.me/lama_cash" className="w-full items-center justify-center flex">
+                <ContactUs text={"вивести крипту"} imageClass="bg-white"
+                           buttonClass="hover:bg-black/95 text-base text-[rgba(240,240,240,1)] tracking-[3%] bg-[rgba(23,23,23,1)]"
+                           inverted/>
+            </Link>
         </div>
     )
 }
@@ -71,12 +76,16 @@ const FishCardTitleContent = () => {
 
     return (
         <>
-            <div className="flex justify-center items-center max-sm:w-5 max-sm:h-5 w-10 h-10 bg-transparent max-sm:border border-2 border-black rounded-full">
-                <Image src={'/trc.svg'} alt="trc logo" width={9} height={9} className="max-sm:w-2.5 max-sm:h-2.5 h-4 w-4" />
+            <div
+                className="flex justify-center items-center max-sm:w-5 max-sm:h-5 w-10 h-10 bg-transparent max-sm:border border-2 border-black rounded-full">
+                <Image src={'/trc.svg'} alt="trc logo" width={9} height={9}
+                       className="max-sm:w-2.5 max-sm:h-2.5 h-4 w-4"/>
             </div>
             <ChevronRight className="text-black max-sm:w-3"/>
-            <div className="flex justify-center items-center max-sm:w-5 max-sm:h-5 w-10 h-10 bg-transparent max-sm:border border-2 border-black rounded-full">
-                <Image src={'/dollar.svg'} alt="trc logo" width={9} height={9} className="max-sm:w-2 max-sm:h-2.75 h-4 w-4" />
+            <div
+                className="flex justify-center items-center max-sm:w-5 max-sm:h-5 w-10 h-10 bg-transparent max-sm:border border-2 border-black rounded-full">
+                <Image src={'/dollar.svg'} alt="trc logo" width={9} height={9}
+                       className="max-sm:w-2 max-sm:h-2.75 h-4 w-4"/>
             </div>
         </>
     )
@@ -99,7 +108,11 @@ const SecondCard = () => {
 
                 </div>
             </div>
-            <ContactUs text={"купити крипту"} imageClass="bg-white" buttonClass="hover:bg-black/95 text-base text-[rgba(240,240,240,1)] tracking-[3%] bg-[rgba(23,23,23,1)]" inverted/>
+            <Link href="https://t.me/lama_cash" className="w-full items-center justify-center flex">
+                <ContactUs text={"купити крипту"} imageClass="bg-white"
+                           buttonClass="hover:bg-black/95 text-base text-[rgba(240,240,240,1)] tracking-[3%] bg-[rgba(23,23,23,1)]"
+                           inverted/>
+            </Link>
         </div>
     )
 }
@@ -110,16 +123,22 @@ const SecondCardTitleContent = () => {
         <>
             <div className="flex flex-row -space-x-1.5 items-center">
 
-                <div className="flex justify-center items-center max-sm:w-5 max-sm:h-5 w-10 h-10 max-sm:border border-2 border-black rounded-full relative z-10 bg-[rgba(179,142,243,1)]">
-                    <Image src={'/trc.svg'} alt="trc logo" width={9} height={9} className="max-sm:w-2.5 max-sm:h-2.5 h-4 w-4" />
+                <div
+                    className="flex justify-center items-center max-sm:w-5 max-sm:h-5 w-10 h-10 max-sm:border border-2 border-black rounded-full relative z-10 bg-[rgba(179,142,243,1)]">
+                    <Image src={'/trc.svg'} alt="trc logo" width={9} height={9}
+                           className="max-sm:w-2.5 max-sm:h-2.5 h-4 w-4"/>
                 </div>
 
-                <div className="flex justify-center items-center max-sm:w-5 max-sm:h-5 w-10 h-10 max-sm:border border-2 border-black rounded-full relative z-20 bg-[rgba(179,142,243,1)]">
-                    <Image src={'/ethereum.svg'} alt="ethereum logo" width={7} height={12} className="max-sm:w-2.5 max-sm:h-3 h-6 w-6" />
+                <div
+                    className="flex justify-center items-center max-sm:w-5 max-sm:h-5 w-10 h-10 max-sm:border border-2 border-black rounded-full relative z-20 bg-[rgba(179,142,243,1)]">
+                    <Image src={'/ethereum.svg'} alt="ethereum logo" width={7} height={12}
+                           className="max-sm:w-2.5 max-sm:h-3 h-6 w-6"/>
                 </div>
 
-                <div className="flex justify-center items-center max-sm:w-5 max-sm:h-5 w-10 h-10 max-sm:border border-2 border-black rounded-full relative z-30 bg-[rgba(179,142,243,1)]">
-                    <Image src={'/btc.svg'} alt="btc logo" width={9} height={9} className="max-sm:w-2 max-sm:h-3 h-6 w-6" />
+                <div
+                    className="flex justify-center items-center max-sm:w-5 max-sm:h-5 w-10 h-10 max-sm:border border-2 border-black rounded-full relative z-30 bg-[rgba(179,142,243,1)]">
+                    <Image src={'/btc.svg'} alt="btc logo" width={9} height={9}
+                           className="max-sm:w-2 max-sm:h-3 h-6 w-6"/>
                 </div>
 
             </div>
@@ -145,7 +164,8 @@ const ThirdCard = () => {
 
                 </div>
             </div>
-            <div className="flex flex-row items-center gap-1 font-rubik font-light text-base pt-4 pb-3 max-sm:text-[12px] text-[#171717] text-center">
+            <div
+                className="flex flex-row items-center gap-1 font-rubik font-light text-base pt-4 pb-3 max-sm:text-[12px] text-[#171717] text-center">
                 <span>
                     Також видаємо в країнах ЄС. Пиши менеджеру
                 </span>
@@ -189,7 +209,11 @@ const ThirdCard = () => {
                     </TooltipContent>
                 </Tooltip>
             </div>
-            <ContactUs text={"Поповнити карту"} imageClass="bg-white" buttonClass="hover:bg-black/95 text-base text-[rgba(240,240,240,1)] tracking-[3%] bg-[rgba(23,23,23,1)]" inverted/>
+            <Link href="https://t.me/lama_cash" className="w-full items-center justify-center flex">
+                <ContactUs text={"Поповнити карту"} imageClass="bg-white"
+                           buttonClass="hover:bg-black/95 text-base text-[rgba(240,240,240,1)] tracking-[3%] bg-[rgba(23,23,23,1)]"
+                           inverted/>
+            </Link>
         </div>
     )
 }
@@ -198,12 +222,16 @@ const ThirdCardTitleContent = () => {
 
     return (
         <>
-            <div className="flex justify-center items-center max-sm:w-5 max-sm:h-5 w-10 h-10 bg-transparent max-sm:border border-2 border-black rounded-full">
-                <Image src={'/dollar.svg'} alt="trc logo" width={9} height={9} className="max-sm:w-2.5 max-sm:h-2.5 h-4 w-4" />
+            <div
+                className="flex justify-center items-center max-sm:w-5 max-sm:h-5 w-10 h-10 bg-transparent max-sm:border border-2 border-black rounded-full">
+                <Image src={'/dollar.svg'} alt="trc logo" width={9} height={9}
+                       className="max-sm:w-2.5 max-sm:h-2.5 h-4 w-4"/>
             </div>
             <ChevronRight className="text-black max-sm:w-3"/>
-            <div className="flex justify-center items-center max-sm:w-5 max-sm:h-5 w-10 h-10 bg-transparent max-sm:border border-2 border-black rounded-full">
-                <Image src={'/wallet.svg'} alt="trc logo" width={9} height={9} className="max-sm:w-3 max-sm:h-2.5 h-5 w-5" />
+            <div
+                className="flex justify-center items-center max-sm:w-5 max-sm:h-5 w-10 h-10 bg-transparent max-sm:border border-2 border-black rounded-full">
+                <Image src={'/wallet.svg'} alt="trc logo" width={9} height={9}
+                       className="max-sm:w-3 max-sm:h-2.5 h-5 w-5"/>
             </div>
         </>
     )
@@ -214,34 +242,34 @@ const STACK_ITEMS: StackItem[] = [
         id: 1,
         title: "Топ вибір",
         titleClass: "bg-[rgba(95,246,186,1)] max-sm:h-5 rounded-[15px] text-xl text-black text-center content-center max-sm:font-normal max-sm:text-[12px] px-2 py-2 max-sm:py-0 max-w-45 max-sm:max-w-20 w-full",
-        titleContent:<FishCardTitleContent/>,
+        titleContent: <FishCardTitleContent/>,
         description: "Виводьте USDT у готівку",
         additDescription: "Отримуйте нові сині долари в будь-якому з 23 міст України.",
         content: <FirstCard/>,
         bgColor: "bg-gradient-to-b from-[#C7A7FF] to-[#E3E3E3] text-slate-50",
-        offset: { mobile: 0, desktop: 0 },
+        offset: {mobile: 0, desktop: 0},
     },
     {
         id: 2,
         title: "Гарантія AML",
         titleClass: "bg-[rgba(235,223,255,1)] max-sm:h-5 rounded-[15px] text-xl text-black text-center content-center max-sm:font-normal max-sm:text-[12px] px-2 py-2 max-sm:py-0 max-w-45 max-sm:max-w-25 w-full",
-        titleContent:<SecondCardTitleContent/>,
+        titleContent: <SecondCardTitleContent/>,
         description: "Купуйте USDT, BTC, ETH та іншу криптовалюту",
         additDescription: "Купуйте криптовалюту. \n Чистоту гарантовано.",
         content: <SecondCard/>,
         bgColor: "bg-gradient-to-b from-[#B088F4] to-[#E3E3E3] text-zinc-50",
-        offset: { mobile: 60, desktop: 80 },
+        offset: {mobile: 60, desktop: 80},
     },
     {
         id: 3,
         title: "Часто обмінюють",
         titleClass: "bg-[rgba(235,223,255,1)] max-sm:h-5 rounded-[15px] text-xl text-black text-center content-center max-sm:font-normal max-sm:text-[12px] px-2 py-2 max-sm:py-0 max-w-50 max-sm:max-w-30 w-full",
-        titleContent:<ThirdCardTitleContent/>,
+        titleContent: <ThirdCardTitleContent/>,
         description: "Поповнюйте картку без ризиків з P2P",
         additDescription: "MONO, ПриватБанк, будь-який банк UA.",
         content: <ThirdCard/>,
         bgColor: "bg-gradient-to-b from-[#958DFF] to-[#E3E3E3] text-neutral-50",
-        offset: { mobile: 230, desktop: 230 },
+        offset: {mobile: 230, desktop: 230},
     },
 ];
 
@@ -275,7 +303,7 @@ interface StackCardProps {
     lastItemOffset: { mobile: number; desktop: number };
 }
 
-function StackCard({ item, index, lastItemOffset}: StackCardProps) {
+function StackCard({item, index, lastItemOffset}: StackCardProps) {
 
 
     return (
@@ -298,7 +326,8 @@ function StackCard({ item, index, lastItemOffset}: StackCardProps) {
             <motion.div
                 className="w-full h-(--card-height) origin-top"
             >
-                <Card className={cn("w-full h-full border-none font-rubik shadow-2xl flex flex-col justify-between p-5", item.bgColor)}>
+                <Card
+                    className={cn("w-full h-full border-none font-rubik shadow-2xl flex flex-col justify-between p-5", item.bgColor)}>
                     <CardHeader className="max-sm:px-1">
                         <div className="flex flex-row gap-4 justify-between">
                             <CardTitle className={cn("font-rubik", item.titleClass)}>{item.title}</CardTitle>
@@ -306,9 +335,11 @@ function StackCard({ item, index, lastItemOffset}: StackCardProps) {
                                 {item.titleContent}
                             </div>
                         </div>
-                        <CardDescription className="font-rubik font-medium text-black text-4xl max-sm:text-2xl uppercase pt-8 max-sm:pt-6 max-sm:pb-0">
+                        <CardDescription
+                            className="font-rubik font-medium text-black text-4xl max-sm:text-2xl uppercase pt-8 max-sm:pt-6 max-sm:pb-0">
                             {item.description}
-                            <div className="font-rubik text-base max-sm:text-[13px] text-[#171717] px-1.5 py-4.5 max-sm:pb-0 normal-case">
+                            <div
+                                className="font-rubik text-base max-sm:text-[13px] text-[#171717] px-1.5 py-4.5 max-sm:pb-0 normal-case">
                                 {item.additDescription}
                             </div>
                         </CardDescription>
