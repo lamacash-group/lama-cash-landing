@@ -9,7 +9,7 @@ export const Provider = ({children}: Props) => {
     return (
         <>
             <NextIntlClientProvider>
-                <TooltipProvider>
+                <TooltipProvider delayDuration={0}>
                     {children}
                 </TooltipProvider>
             </NextIntlClientProvider>

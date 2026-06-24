@@ -2,6 +2,7 @@ import {Footer} from "@/components/Footer";
 import {Header} from "@/components/Header";
 import {Home} from "@/components/Home";
 import {ScrollStack} from "@/components/StackingCards";
+import MoreServices from "@/components/MoreServices";
 
 export default function Main() {
 
@@ -16,6 +17,7 @@ export default function Main() {
             </div>
             <main className="w-full h-full">
                 <ScrollStack/>
+                <MoreServices/>
             </main>
             <Footer/>
         </div>

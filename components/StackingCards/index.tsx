@@ -1,13 +1,13 @@
 "use client";
-import React, {useRef, useState} from "react";
+import React, {useRef} from "react";
 import {motion} from "framer-motion";
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
 import {cn} from "@/lib/utils";
 import Image from "next/image";
-import {ChevronRight, Info, X} from "lucide-react";
+import {ChevronRight, Info} from "lucide-react";
 import {ContactUs} from "@/components/ContactUs";
-import {Tooltip, TooltipContent, TooltipTrigger} from "@/components/ui/tooltip";
 import Link from "next/link";
+import {UniqTooltip} from "@/components/Tooltip";
 
 interface StackItem {
     id: number;
@@ -148,8 +148,6 @@ const SecondCardTitleContent = () => {
 
 const ThirdCard = () => {
 
-    const [tooltipOpen, setTooltipOpen] = useState(false)
-
     return (
         <div className="flex flex-col h-full items-center justify-center w-full">
             <div className="w-full h-full flex justify-center items-center">
@@ -164,50 +162,47 @@ const ThirdCard = () => {
 
                 </div>
             </div>
-            <div
-                className="flex flex-row items-center gap-1 font-rubik font-light text-base pt-4 pb-3 max-sm:text-[12px] text-[#171717] text-center">
+            <div className="flex flex-row items-center gap-1 font-rubik font-light text-base pt-4 pb-3 max-sm:text-[12px] text-[#171717] text-center">
                 <span>
-                    Також видаємо в країнах ЄС. Пиши менеджеру
+                    Також видаємо в країнах ЄС.
                 </span>
-                <Tooltip open={tooltipOpen} onOpenChange={setTooltipOpen}>
-                    <TooltipTrigger asChild>
-                        <Info className="w-4 h-4 max-sm:w-2.5 max-sm:h-2.5"/>
-                    </TooltipTrigger>
-                    <TooltipContent className="bg-[rgba(23,23,23,1)] rounded-[20px]">
-                        <div className="flex flex-col gap-4 px-4 pb-4 pt-2 font-rubik text-white ">
-                            <div className="flex flex-row justify-between items-center">
+
+                <UniqTooltip trigger={<div className="flex flex-row items-center gap-1 font-rubik font-light text-base max-sm:text-[12px] text-[#171717] text-center">
+                    <span>Пиши менеджеру</span>
+                    <Info className="w-4 h-4 max-sm:w-2.5 max-sm:h-2.5"/>
+                </div>}>
+                    <div className="flex flex-col gap-4 px-2 pb-2 pt-2 font-rubik text-white ">
+                        <div className="flex flex-row justify-between items-center">
                                 <span className="text-base max-sm:text-[12px] font-bold">
                                     Чому ми?
                                 </span>
-                                <X className="text-white cursor-pointer" onClick={() => setTooltipOpen(false)}/>
-                            </div>
-                            <div className="flex flex-col">
+                        </div>
+                        <div className="flex flex-col">
                                 <span className="text-base max-sm:text-[10px] font-bold">
                                     Найкращий курс:
                                 </span>
-                                <span className="text-base max-sm:text-[10px]">
+                            <span className="text-base max-sm:text-[10px]">
                                     Жодних прихованих переплат і зайвих витрат на конвертацію.
                                 </span>
-                            </div>
-                            <div className="flex flex-col">
+                        </div>
+                        <div className="flex flex-col">
                                 <span className="text-base max-sm:text-[10px] font-bold">
                                    Моментально:
                                 </span>
-                                <span className="text-base max-sm:text-[10px]">
+                            <span className="text-base max-sm:text-[10px]">
                                    зарахування сьогодні — забудьте про очікування від 2 днів.
                                 </span>
-                            </div>
-                            <div className="flex flex-col">
+                        </div>
+                        <div className="flex flex-col">
                                 <span className="text-base max-sm:text-[10px] font-bold">
                                    Безпечно:
                                 </span>
-                                <span className="text-base max-sm:text-[10px]">
+                            <span className="text-base max-sm:text-[10px]">
                                    перекази без ризику блокувань.
                                 </span>
-                            </div>
                         </div>
-                    </TooltipContent>
-                </Tooltip>
+                    </div>
+                </UniqTooltip>
             </div>
             <Link href="https://t.me/lama_cash" className="w-full items-center justify-center flex">
                 <ContactUs text={"Поповнити карту"} imageClass="bg-white"
@@ -279,7 +274,7 @@ export function ScrollStack() {
 
     return (
         <div ref={containerRef} className="relative py-12 pb-[10vh]">
-            <div className="w-full px-10 mx-auto rounded-[27px] flex flex-col">
+            <div className="w-full px-8.5 max-[380px]:px-4 mx-auto rounded-[27px] flex flex-col">
                 {STACK_ITEMS.map((item, index) => {
                     return (
                         <StackCard
