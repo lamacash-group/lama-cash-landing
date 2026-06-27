@@ -3,6 +3,9 @@ import {Header} from "@/components/Header";
 import {Home} from "@/components/Home";
 import {ScrollStack} from "@/components/StackingCards";
 import MoreServices from "@/components/MoreServices";
+import {LamaCashMedia} from "@/components/LamaCashMedia";
+import {Blog} from "@/components/Blog";
+import {Questions} from "@/components/Questions";
 
 export default function Main() {
 
@@ -18,6 +21,9 @@ export default function Main() {
             <main className="w-full h-full">
                 <ScrollStack/>
                 <MoreServices/>
+                <Questions/>
+                <LamaCashMedia/>
+                <Blog/>
             </main>
             <Footer/>
         </div>

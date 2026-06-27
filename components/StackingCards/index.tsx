@@ -36,7 +36,6 @@ const FirstCard = () => {
                         src={'/ukraine-map.svg'}
                         alt={"Ukraine map logo"}
                         fill
-                        unoptimized
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                         className="object-contain"
                     />
@@ -273,7 +272,7 @@ export function ScrollStack() {
     const lastItemOffset = STACK_ITEMS[STACK_ITEMS.length - 1].offset;
 
     return (
-        <div ref={containerRef} className="relative py-12 pb-[10vh]">
+        <div ref={containerRef} className="relative py-12 pb-[7vh]">
             <div className="w-full px-8.5 max-[380px]:px-4 mx-auto rounded-[27px] flex flex-col">
                 {STACK_ITEMS.map((item, index) => {
                     return (

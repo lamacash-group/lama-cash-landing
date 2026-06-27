@@ -27,7 +27,7 @@ import * as React from "react";
 const MoreServices = () => {
 
     return (
-        <div className="grid grid-cols-2 max-lg:grid-cols-1 w-full h-full gap-3 px-8.5 max-[380px]:px-4">
+        <div className="grid grid-cols-2 max-lg:grid-cols-1 w-full h-full gap-3 px-8.5 max-[380px]:px-4 pb-20 max-sm:pb-8">
             <div
                 className="flex flex-row gap-4 relative overflow-hidden items-center justify-center w-full h-75 max-sm:h-auto min-h-37.5 px-5 py-4 bg-linear-to-b rounded-[24px] from-[#888DF4] to-[#E3E3E3] font-rubik">
                 <div className="flex flex-col gap-4 w-full h-full text-[rgba(23,23,23,1)]">
@@ -60,7 +60,7 @@ const MoreServices = () => {
                 </div>
                 <div className="flex flex-col justify-end items-center w-full max-sm:max-w-35 h-full relative">
                     <div
-                        className="absolute -rotate-12 z-0 w-full h-full max-sm:w-[90%] max-[400px]:w-full max-w-75 max-h-75 pointer-events-none">
+                        className="absolute -rotate-12 z-0 w-full h-full max-sm:w-[90%] max-[400px]:w-full max-w-70 max-h-75 pointer-events-none">
                         <Image
                             src={'/paypal.png'}
                             alt={"crypto tokens"}
@@ -92,7 +92,7 @@ const MoreServices = () => {
                 </div>
                 <div className="flex flex-col justify-end items-center w-full max-sm:max-w-35 h-full relative">
                     <div
-                        className="absolute rotate-[-9deg] z-0 w-full h-full max-sm:w-[90%] max-[400px]:w-full max-w-75 max-h-75 pointer-events-none">
+                        className="absolute rotate-[-9deg] z-0 w-full h-full max-sm:w-[90%] max-[400px]:w-full max-w-70 max-h-75 pointer-events-none">
                         <Image
                             src={'/paypalwallet.png'}
                             alt={"crypto tokens"}
@@ -140,7 +140,7 @@ const MoreServices = () => {
                 </div>
                 <div className="flex flex-col justify-end items-center w-full max-sm:max-w-35 h-full relative">
                     <div
-                        className="absolute rotate-[-9deg] z-0 w-full h-full max-sm:w-[90%] max-[400px]:w-full max-w-75 max-h-75 pointer-events-none">
+                        className="absolute rotate-[-9deg] z-0 w-full h-full max-sm:w-[90%] max-[400px]:w-full max-w-70 max-h-75 pointer-events-none">
                         <Image
                             src={'/wise.png'}
                             alt={"crypto tokens"}
@@ -186,7 +186,7 @@ const MoreServices = () => {
                 </div>
                 <div className="flex flex-col justify-end items-center w-full max-sm:max-w-35 h-full relative">
                     <div
-                        className="absolute rotate-[-9deg] z-0 w-full h-full max-sm:w-[90%] max-[400px]:w-full max-w-75 max-h-75 pointer-events-none">
+                        className="absolute rotate-[-9deg] z-0 w-full h-full max-sm:w-[90%] max-[400px]:w-full max-w-70 max-h-75 pointer-events-none">
                         <Image
                             src={'/puzzle.png'}
                             alt={"crypto tokens"}
