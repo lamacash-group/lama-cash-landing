@@ -2,8 +2,8 @@ import * as React from 'react';
 import Image from 'next/image';
 import Link from "next/link";
 import {SwitchLanguage} from "@/components/SwitchLanguage";
-import {Menu} from "lucide-react";
 import {BinanceLine} from "@/components/BinanceLine";
+import {DrawerMenu} from "@/components/DrawerMenu";
 
 
 export const Header = () => {
@@ -20,13 +20,7 @@ export const Header = () => {
 
                     <SwitchLanguage/>
 
-                    <button
-                        type="button"
-                        className="text-white hover:opacity-80 transition-opacity cursor-pointer"
-                        aria-label="Open menu"
-                    >
-                        <Menu className="w-8 h-8 max-sm:w-7 max-sm:h-7" strokeWidth={2} />
-                    </button>
+                    <DrawerMenu/>
                 </div>
             </div>
 

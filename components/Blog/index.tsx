@@ -1,4 +1,13 @@
 import * as React from 'react';
+import { Button } from "@/components/ui/button";
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger
+} from "@/components/ui/dialog";
 
 type BlogProps = {
     title: string;
@@ -7,12 +16,12 @@ type BlogProps = {
 
 const BlogData: BlogProps[] = [
     {
-        title: 'Назва блогу',
-        text: 'Світ фінансів переживає революційні зміни, і криптовалюта є однією з найгарячіших тем для обговорення,         text: \'Світ фінансів переживає революційні зміни, і криптовалюта є однією з найгарячіших тем для обговорення\''
+        title: 'Назва блогу 1',
+        text: 'Світ фінансів переживає революційні зміни, і криптовалюта є однією з найгарячіших тем для обговорення.'
     },
     {
-        title: 'Назва блогу',
-        text: 'Світ фінансів переживає революційні зміни, і криптовалюта є однією з найгарячіших тем для обговорення'
+        title: 'Назва блогу 2',
+        text: 'Світ фінансів переживає революційні зміни, і криптовалюта є однією з найгарячіших тем для обговорення. Тут може бути набагато більше тексту, який не поміщається в картку, але буде відмінно виглядати в модальному вікні.'
     },
 ]
 
@@ -36,9 +45,34 @@ export const Blog = () => {
                         </p>
 
                         <div className="flex justify-end w-full mt-auto">
-                            <button className="text-[rgba(100,100,101,1)] text-sm max-sm:text-[6px] underline cursor-pointer">
-                                читати повністю
-                            </button>
+                            <Dialog>
+                                <DialogTrigger asChild>
+                                    <div>
+                                        <Button className="text-[rgba(100,100,101,1)] text-sm max-sm:text-[6px] h-auto font-normal bg-transparent px-0 py-0 underline cursor-pointer">
+                                            читати повністю
+                                        </Button>
+                                        <DialogDescription className="sr-only">
+                                            read the blog in full
+                                        </DialogDescription>
+                                    </div>
+                                </DialogTrigger>
+
+                                <DialogContent className="sm:max-w-150 bg-[linear-gradient(180deg,#D4B4FE_0%,#E6E6E6_100%)] rounded-xl"
+                                               closeButtonClass="hover:bg-transparent cursor-pointer"
+                                >
+                                    <DialogHeader>
+                                        <DialogTitle className="text-2xl font-getvoip font-bold text-[rgba(23,23,23,1)]">
+                                            {blog.title}
+                                        </DialogTitle>
+                                    </DialogHeader>
+
+                                    <div className="mt-4">
+                                        <p className="text-gray-800 text-base font-rubik leading-relaxed">
+                                            {blog.text}
+                                        </p>
+                                    </div>
+                                </DialogContent>
+                            </Dialog>
                         </div>
                     </div>
                 ))}

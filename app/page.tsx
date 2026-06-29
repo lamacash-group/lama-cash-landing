@@ -19,11 +19,21 @@ export default function Main() {
                 <Home/>
             </div>
             <main className="w-full h-full">
-                <ScrollStack/>
-                <MoreServices/>
-                <Questions/>
-                <LamaCashMedia/>
-                <Blog/>
+                <section>
+                    <ScrollStack/>
+                </section>
+                <section id="services">
+                    <MoreServices/>
+                </section>
+                <section>
+                    <Questions/>
+                </section>
+                <section id="media">
+                    <LamaCashMedia/>
+                </section>
+                <section id="blog">
+                    <Blog/>
+                </section>
             </main>
             <Footer/>
         </div>

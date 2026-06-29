@@ -3,9 +3,13 @@ import {Button} from "@/components/ui/button";
 import Image from "next/image";
 import {Reviews} from "@/components/Reviews";
 import Link from "next/link";
+import {useTranslations} from "next-intl";
 
 
 export const Questions = () => {
+
+    const t = useTranslations('Questions');
+
     return (
         <div className="w-full h-full min-h-50 bg-[rgba(23,23,23,1)] py-10 relative bg-[linear-gradient(180deg,#472672_0%,#171717_55%)] pb-[3vh]">
             <div className="flex flex-col gap-10">
@@ -15,14 +19,14 @@ export const Questions = () => {
                             <Reviews/>
                             <span className="font-rubik font-light text-base max-sm:text-[9px] text-white">
                             <span className="font-bold">
-                                400 000+
+                                {t('trustCount')}
                             </span>
                                 {"\u00A0"}
-                                людей нам довіряють
+                                {t('trustText')}
                             </span>
                         </div>
                         <span className="font-light max-sm:font-normal text-base max-sm:text-[10px] max-sm:max-w-37">
-                            Залишились питання? пиши в телеграм
+                            {t('remainingQuestions')}
                         </span>
                         <Link href="https://t.me/lama_cash" className="w-full items-center justify-center flex">
                             <Button
@@ -30,7 +34,7 @@ export const Questions = () => {
                             >
                                 <div
                                     className="font-bold max-sm:font-normal uppercase text-base max-sm:text-[9px] text-whitetext-center">
-                                    НАПИСАТИ
+                                    {t('btn')}
                                 </div>
                                 <span>
                                 <svg width="20" height="17" viewBox="0 0 20 17" className="sm:w-7.5! sm:h-7.5!"

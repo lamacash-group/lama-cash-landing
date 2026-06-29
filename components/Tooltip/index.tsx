@@ -21,7 +21,7 @@ export const UniqTooltip = ({trigger, children, triggerClass}: Props) => {
             <TooltipTrigger asChild>
                 <button
                     type="button"
-                    className={cn('cursor-pointer', triggerClass)}
+                    className={cn('cursor-pointer w-fit', triggerClass)}
                     onClick={() => setOpen(true)}
                     onMouseEnter={() => setOpen(true)}
                     onMouseLeave={() => setOpen(false)}

@@ -9,15 +9,12 @@ import Link from "next/link";
 
 export const Home = () => {
 
-    const t = useTranslations('HomePage');
-
+    const t = useTranslations('Header');
 
     return (
         <div className="w-full flex flex-col gap-10 max-sm:gap-10 justify-center items-center min-h-200 max-sm:h-dvh h-full overflow-hidden relative">
             <h1 className="text-4xl max-sm:text-[26px] leading-tight text-white font-getvoip max-[500px]:max-w-87.5 font-bold uppercase pt-10 max-sm:pt-9 text-center px-4">
-                Обмін,
-                який
-                не змушує чекати
+                {t('title')}
             </h1>
             <div className="w-full h-full flex justify-center relative">
                 <div className="absolute left-1/2 -translate-x-1/2 w-[160vw] xl:w-full max-w-none z-10 px-4"
@@ -54,7 +51,7 @@ export const Home = () => {
                                 }}
                             >
                                 <Link href="https://t.me/lama_cash">
-                                    <ContactUs text={'звязатись з нами'} buttonClass="max-w-full rounded-[15px]"/>
+                                    <ContactUs text= {t('buttonContactUs')} buttonClass="max-w-full rounded-[15px]"/>
                                 </Link>
                             </div>
                         </div>
@@ -68,21 +65,21 @@ export const Home = () => {
                                 400 000+
                             </span>
                                 {"\u00A0"}
-                                людей нам довіряють
+                                {t('reviewsTitle')}
                         </span>
                         </div>
                         <div className="flex flex-row gap-5 text-[rgba(158,158,158,1)] font-getvoip z-70">
                             <div className="flex flex-col gap-1.5 text-center">
                                 <span className="font-bold uppercase max-sm:text-[22px] text-3xl">2025</span>
-                                <span className="font-light max-sm:text-[9px] font-rubik text-sm max-w-40 max-sm:max-w-25">Найкращий сервіс криптообміну</span>
+                                <span className="font-light max-sm:text-[9px] font-rubik text-sm max-w-40 max-sm:max-w-25">{t('yearsAchieve')}</span>
                             </div>
                             <div className="flex flex-col gap-1.5 text-center">
                                 <span className="font-bold uppercase max-sm:text-[22px] text-3xl">300K+</span>
-                                <span className="font-light max-sm:text-[9px] font-rubik text-sm max-w-40 max-sm:max-w-25">підписників у соціальних мераж</span>
+                                <span className="font-light max-sm:text-[9px] font-rubik text-sm max-w-40 max-sm:max-w-25">{t('socialCount')}</span>
                             </div>
                             <div className="flex flex-col gap-1.5 text-center">
                                 <span className="font-bold uppercase max-sm:text-[22px] text-3xl">500+</span>
-                                <span className="font-light max-sm:text-[9px] font-rubik text-sm max-w-40 max-sm:max-w-25">відгуків щасливих клієнтів</span>
+                                <span className="font-light max-sm:text-[9px] font-rubik text-sm max-w-40 max-sm:max-w-25">{t('reviewsClient')}</span>
                             </div>
                         </div>
                     </div>

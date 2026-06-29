@@ -8,6 +8,7 @@ import {ChevronRight, Info} from "lucide-react";
 import {ContactUs} from "@/components/ContactUs";
 import Link from "next/link";
 import {UniqTooltip} from "@/components/Tooltip";
+import {useTranslations} from "next-intl";
 
 interface StackItem {
     id: number;
@@ -25,6 +26,7 @@ interface StackItem {
 }
 
 const FirstCard = () => {
+    const t = useTranslations('ScrollStack.card1');
 
     return (
         <div className="flex flex-col items-center justify-center w-full">
@@ -61,9 +63,11 @@ const FirstCard = () => {
 
                 </div>
             </div>
-            <span className="font-rubik font-light text-base pt-4 pb-3 max-sm:text-[12px] text-[#171717] text-center">Також видаємо в країнах ЄС. Пиши менеджеру.</span>
+            <span className="font-rubik font-light text-base pt-4 pb-3 max-sm:text-[12px] text-[#171717] text-center">
+                {t('euNote')}
+            </span>
             <Link href="https://t.me/lama_cash" className="w-full items-center justify-center flex">
-                <ContactUs text={"вивести крипту"} imageClass="bg-white"
+                <ContactUs text={t('btn')} imageClass="bg-white"
                            buttonClass="hover:bg-black/95 text-base text-[rgba(240,240,240,1)] tracking-[3%] bg-[rgba(23,23,23,1)]"
                            inverted/>
             </Link>
@@ -91,6 +95,7 @@ const FishCardTitleContent = () => {
 }
 
 const SecondCard = () => {
+    const t = useTranslations('ScrollStack.card2');
 
     return (
         <div className="flex flex-col h-full items-center justify-center w-full">
@@ -108,7 +113,7 @@ const SecondCard = () => {
                 </div>
             </div>
             <Link href="https://t.me/lama_cash" className="w-full items-center justify-center flex">
-                <ContactUs text={"купити крипту"} imageClass="bg-white"
+                <ContactUs text={t('btn')} imageClass="bg-white"
                            buttonClass="hover:bg-black/95 text-base text-[rgba(240,240,240,1)] tracking-[3%] bg-[rgba(23,23,23,1)]"
                            inverted/>
             </Link>
@@ -146,6 +151,7 @@ const SecondCardTitleContent = () => {
 }
 
 const ThirdCard = () => {
+    const t = useTranslations('ScrollStack.card3');
 
     return (
         <div className="flex flex-col h-full items-center justify-center w-full">
@@ -161,50 +167,48 @@ const ThirdCard = () => {
 
                 </div>
             </div>
-            <div className="flex flex-row items-center gap-1 font-rubik font-light text-base pt-4 pb-3 max-sm:text-[12px] text-[#171717] text-center">
-                <span>
-                    Також видаємо в країнах ЄС.
-                </span>
+            <div className="flex flex-wrap justify-center items-center gap-1 font-rubik font-light text-base pt-4 pb-3 max-sm:text-[12px] text-[#171717] text-center">
 
-                <UniqTooltip trigger={<div className="flex flex-row items-center gap-1 font-rubik font-light text-base max-sm:text-[12px] text-[#171717] text-center">
-                    <span>Пиши менеджеру</span>
+                <UniqTooltip trigger={<div className="flex flex-wrap justify-center items-center gap-1 font-rubik font-light text-base max-sm:text-[12px] text-[#171717] text-center">
+                    <span>{t('euNotePrefix')}</span>
+                    <span>{t('euNoteLink')}</span>
                     <Info className="w-4 h-4 max-sm:w-2.5 max-sm:h-2.5"/>
                 </div>}>
                     <div className="flex flex-col gap-4 px-2 pb-2 pt-2 font-rubik text-white ">
                         <div className="flex flex-row justify-between items-center">
                                 <span className="text-base max-sm:text-[12px] font-bold">
-                                    Чому ми?
+                                    {t('whyUsTitle')}
                                 </span>
                         </div>
                         <div className="flex flex-col">
                                 <span className="text-base max-sm:text-[10px] font-bold">
-                                    Найкращий курс:
+                                   {t('bestRateTitle')}
                                 </span>
                             <span className="text-base max-sm:text-[10px]">
-                                    Жодних прихованих переплат і зайвих витрат на конвертацію.
+                                    {t('bestRateDesc')}
                                 </span>
                         </div>
                         <div className="flex flex-col">
                                 <span className="text-base max-sm:text-[10px] font-bold">
-                                   Моментально:
+                                  {t('instantTitle')}
                                 </span>
                             <span className="text-base max-sm:text-[10px]">
-                                   зарахування сьогодні — забудьте про очікування від 2 днів.
+                                   {t('instantDesc')}
                                 </span>
                         </div>
                         <div className="flex flex-col">
                                 <span className="text-base max-sm:text-[10px] font-bold">
-                                   Безпечно:
+                                   {t('safeTitle')}
                                 </span>
                             <span className="text-base max-sm:text-[10px]">
-                                   перекази без ризику блокувань.
-                                </span>
+                                  {t('safeDesc')}
+                            </span>
                         </div>
                     </div>
                 </UniqTooltip>
             </div>
             <Link href="https://t.me/lama_cash" className="w-full items-center justify-center flex">
-                <ContactUs text={"Поповнити карту"} imageClass="bg-white"
+                <ContactUs text={t('btn')} imageClass="bg-white"
                            buttonClass="hover:bg-black/95 text-base text-[rgba(240,240,240,1)] tracking-[3%] bg-[rgba(23,23,23,1)]"
                            inverted/>
             </Link>
@@ -231,48 +235,54 @@ const ThirdCardTitleContent = () => {
     )
 }
 
-const STACK_ITEMS: StackItem[] = [
-    {
-        id: 1,
-        title: "Топ вибір",
-        titleClass: "bg-[rgba(95,246,186,1)] max-sm:h-5 rounded-[15px] text-xl text-black text-center content-center max-sm:font-normal max-sm:text-[12px] px-2 py-2 max-sm:py-0 max-w-45 max-sm:max-w-20 w-full",
-        titleContent: <FishCardTitleContent/>,
-        description: "Виводьте USDT у готівку",
-        additDescription: "Отримуйте нові сині долари в будь-якому з 23 міст України.",
-        content: <FirstCard/>,
-        bgColor: "bg-gradient-to-b from-[#C7A7FF] to-[#E3E3E3] text-slate-50",
-        offset: {mobile: 0, desktop: 0},
-    },
-    {
-        id: 2,
-        title: "Гарантія AML",
-        titleClass: "bg-[rgba(235,223,255,1)] max-sm:h-5 rounded-[15px] text-xl text-black text-center content-center max-sm:font-normal max-sm:text-[12px] px-2 py-2 max-sm:py-0 max-w-45 max-sm:max-w-25 w-full",
-        titleContent: <SecondCardTitleContent/>,
-        description: "Купуйте USDT, BTC, ETH та іншу криптовалюту",
-        additDescription: "Купуйте криптовалюту. \n Чистоту гарантовано.",
-        content: <SecondCard/>,
-        bgColor: "bg-gradient-to-b from-[#B088F4] to-[#E3E3E3] text-zinc-50",
-        offset: {mobile: 60, desktop: 80},
-    },
-    {
-        id: 3,
-        title: "Часто обмінюють",
-        titleClass: "bg-[rgba(235,223,255,1)] max-sm:h-5 rounded-[15px] text-xl text-black text-center content-center max-sm:font-normal max-sm:text-[12px] px-2 py-2 max-sm:py-0 max-w-50 max-sm:max-w-30 w-full",
-        titleContent: <ThirdCardTitleContent/>,
-        description: "Поповнюйте картку без ризиків з P2P",
-        additDescription: "MONO, ПриватБанк, будь-який банк UA.",
-        content: <ThirdCard/>,
-        bgColor: "bg-gradient-to-b from-[#958DFF] to-[#E3E3E3] text-neutral-50",
-        offset: {mobile: 230, desktop: 230},
-    },
-];
-
 export function ScrollStack() {
+
+    const t1 = useTranslations('ScrollStack.card1');
+    const t2 = useTranslations('ScrollStack.card2');
+    const t3 = useTranslations('ScrollStack.card3');
+
+    const STACK_ITEMS: StackItem[] = [
+        {
+            id: 1,
+            title: t1('title'),
+            titleClass: "bg-[rgba(95,246,186,1)] max-sm:h-5 rounded-[15px] text-xl text-black text-center content-center max-sm:font-normal max-sm:text-[12px] px-2 py-2 max-sm:py-0 max-w-45 max-sm:max-w-20 w-full",
+            titleContent: <FishCardTitleContent/>,
+            description: t1('description'),
+            additDescription: t1('additDescription'),
+            content: <FirstCard/>,
+            bgColor: "bg-gradient-to-b from-[#C7A7FF] to-[#E3E3E3] text-slate-50",
+            offset: {mobile: 0, desktop: 0},
+        },
+        {
+            id: 2,
+            title: t2('title'),
+            titleClass: "bg-[rgba(235,223,255,1)] max-sm:h-5 rounded-[15px] text-xl text-black text-center content-center max-sm:font-normal max-sm:text-[12px] px-2 py-2 max-sm:py-0 max-w-45 max-sm:max-w-25 w-full",
+            titleContent: <SecondCardTitleContent/>,
+            description: t2('description'),
+            additDescription: t2('additDescription'),
+            content: <SecondCard/>,
+            bgColor: "bg-gradient-to-b from-[#B088F4] to-[#E3E3E3] text-zinc-50",
+            offset: {mobile: 60, desktop: 80},
+        },
+        {
+            id: 3,
+            title: t3('title'),
+            titleClass: "bg-[rgba(235,223,255,1)] max-sm:h-5 rounded-[15px] text-xl text-black text-center content-center max-sm:font-normal max-sm:text-[12px] px-2 py-2 max-sm:py-0 max-w-50 max-sm:max-w-30 w-full",
+            titleContent: <ThirdCardTitleContent/>,
+            description: t3('description'),
+            additDescription: t3('additDescription'),
+            content: <ThirdCard/>,
+            bgColor: "bg-gradient-to-b from-[#958DFF] to-[#E3E3E3] text-neutral-50",
+            offset: {mobile: 230, desktop: 230},
+        },
+    ];
+
     const containerRef = useRef<HTMLDivElement>(null);
     const lastItemOffset = STACK_ITEMS[STACK_ITEMS.length - 1].offset;
 
+
     return (
-        <div ref={containerRef} className="relative py-12 pb-[7vh]">
+        <div ref={containerRef} className="relative pt-12">
             <div className="w-full px-8.5 max-[380px]:px-4 mx-auto rounded-[27px] flex flex-col">
                 {STACK_ITEMS.map((item, index) => {
                     return (

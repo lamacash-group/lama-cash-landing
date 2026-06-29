@@ -3,9 +3,12 @@ import {Button} from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import {BackToTop} from "@/components/BackToTop";
+import {useTranslations} from "next-intl";
 
 
 export const Footer = () => {
+    const t = useTranslations('Footer');
+
     return (
         <footer className="w-full h-full min-h-50 bg-[rgba(23,23,23,1)] py-10 relative bg-[linear-gradient(90deg,rgba(113,52,194,1)_-40%,rgba(23,23,23,1)_40%)]">
             {/*<div className="absolute top-0 left-0 w-full md:w-[60%] h-full bg-[radial-gradient(50%_50%_at_50%_50%,#7134C2_0%,#171717_100%)] -z-10 pointer-events-none"></div>*/}
@@ -13,12 +16,12 @@ export const Footer = () => {
                 <div className="flex flex-row gap-20 max-sm:gap-10 justify-center items-center px-9">
                     <div className="flex flex-col w-full justify-center items-center text-center font-rubik text-[rgba(240,240,240,1)] gap-1 max-w-75">
                         <span className="font-bold max-sm:font-normal text-base max-sm:text-[9px]">
-                            Людська підтримка 24/7
+                           {t('supportTitle')}
                         </span>
                         <span className="font-light max-sm:font-normal text-base max-sm:text-[8px] max-sm:max-w-37">
-                            Ми на зв&#39;язку 24/7, однак вночі не завжди можемо відповідати швидко
+                            {t('supportDesc')}
                         </span>
-                        <Link href="https://t.me/lama_cash" className="w-full items-center justify-center flex">
+                        <Link href="https://t.me/lama_cash_manager" className="w-full items-center justify-center flex">
                         <Button
                             className="bg-[rgba(65,180,242,1)] mt-4 flex flex-row gap-2.5 max-w-100 w-full max-sm:max-w-35 min-h-7.5 h-full rounded-[6px] px-2 py-1"
                         >
@@ -33,10 +36,10 @@ export const Footer = () => {
                             </span>
                             <div className="flex flex-col text-center">
                                 <span className="font-bold max-sm:font-normal uppercase text-base max-sm:text-[9px] text-white">
-                                    Ми в Телеграм
+                                   {t('telegramBtnTitle')}
                                 </span>
                                 <span className="font-light max-sm:font-normal text-base max-sm:text-[8px] text-[rgba(178,227,253,1)]">
-                                    Відповімо протягом 1 хв
+                                    {t('telegramBtnDesc')}
                                 </span>
                             </div>
                         </Button>

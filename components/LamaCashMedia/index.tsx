@@ -2,9 +2,11 @@ import * as React from 'react';
 import Image from "next/image";
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
+import {useTranslations} from "next-intl";
 
 
 export const LamaCashMedia = () => {
+    const t = useTranslations('LamaMedia');
 
 
     return (
@@ -12,7 +14,7 @@ export const LamaCashMedia = () => {
             className="flex flex-col w-full h-full bg-[rgba(23,23,23,1)] gap-15 px-10 py-10 max-[380px]:px-6 max-[380px]:gap-10 pb-[7vh]">
             <div className="w-full text-center text-5xl font-getvoip font-bold uppercase max-sm:text-lg tracking-[3%]">
                 <span className="bg-[linear-gradient(90deg,#F0E5FF_0%,#C89EFF_29.81%,#AC71FA_62.98%,#E5D2FF_87.5%,#7134C2_100%)] bg-clip-text text-transparent">
-                    LAMA CASH В МЕДІА
+                    {t('title')}
                 </span>
             </div>
             <div className="grid grid-cols-2 gap-11 sm:gap-y-20 justify-items-center px-4">

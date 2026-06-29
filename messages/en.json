@@ -1,5 +1,90 @@
 {
-  "HomePage": {
-    "title": "Hello world! 2"
+  "Header": {
+    "navigation": "Navigation",
+    "services": "Services",
+    "media": "Media",
+    "blog": "Blog",
+    "title": "Exchange that doesn't keep you waiting",
+    "buttonContactUs": "contact us",
+    "reviewsTitle": "people trust us",
+    "yearsAchieve": "best crypto exchange service",
+    "socialCount": "social followers",
+    "reviewsClient": "reviews from happy customers"
+  },
+  "ScrollStack": {
+    "card1": {
+      "title": "Top choice",
+      "description": "Withdraw USDT to cash",
+      "additDescription": "Get new blue dollars in any of the 23 cities in Ukraine.",
+      "euNote": "Also issued in EU countries. Message the manager.",
+      "btn": "withdraw crypto"
+    },
+    "card2": {
+      "title": "AML Guarantee",
+      "description": "Buy USDT, BTC, ETH and other crypto",
+      "additDescription": "Buy cryptocurrency. \n Purity guaranteed.",
+      "btn": "buy crypto"
+    },
+    "card3": {
+      "title": "Often exchanged",
+      "description": "Top up your card without P2P risks",
+      "additDescription": "MONO, PrivatBank, any UA bank.",
+      "euNotePrefix": "Also issued in EU countries.",
+      "euNoteLink": "Message the manager",
+      "whyUsTitle": "Why us?",
+      "bestRateTitle": "Best rate:",
+      "bestRateDesc": "No hidden overpayments or extra conversion fees.",
+      "instantTitle": "Instant:",
+      "instantDesc": "credited today — forget waiting 2+ days.",
+      "safeTitle": "Safe:",
+      "safeDesc": "transfers without the risk of blocking.",
+      "btn": "Top up card"
+    }
+  },
+  "MoreServices": {
+    "card1": {
+      "badge": "Best rate",
+      "title": "Top up PayPal anywhere in the world",
+      "tooltipTrigger": "without risks and blocking",
+      "tooltipDesc": "We top up PayPal so that the money definitely stays with you - without the chance to cancel the payment.",
+      "tooltipBold": "Write to us – we will top up safely",
+      "btn": "top up"
+    },
+    "card2": {
+      "badge": "Best rate",
+      "title": "Withdraw from PayPal to USDT or cash",
+      "btn": "withdraw"
+    },
+    "card3": {
+      "badge": "Recommended",
+      "title": "Top up WISE anywhere in the world",
+      "tooltipTrigger": "for USDT/USD",
+      "tooltipDesc": "We top up Wise for USDT/USD quickly, at a favorable rate and without unnecessary questions. Everything is fast and high-quality.",
+      "tooltipBold": "Write to us, we will find a solution",
+      "btn": "top up"
+    },
+    "card4": {
+      "badge": "Recommended",
+      "title": "PERSONAL SOLUTION",
+      "tooltipTrigger": "without risks and blocking",
+      "tooltipDesc": "Do you have a non-standard financial task that no standard service solves? We will figure it out and offer a personal solution specifically for your situation.",
+      "tooltipBold": "Write to us, we will find a solution",
+      "btn": "contact us"
+    }
+  },
+  "Questions": {
+    "trustCount": "400 000+",
+    "trustText": "people trust us",
+    "remainingQuestions": "Still have questions? Write to Telegram",
+    "btn": "WRITE TO US"
+  },
+  "LamaMedia": {
+    "title": "LAMA CASH IN THE MEDIA"
+  },
+  "Footer": {
+    "supportTitle": "Human Support 24/7",
+    "supportDesc": "We are available 24/7, but we might not always respond quickly at night",
+    "telegramBtnTitle": "We are on Telegram",
+    "telegramBtnDesc": "We will reply within 1 min"
   }
 }
