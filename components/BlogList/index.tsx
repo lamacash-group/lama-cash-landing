@@ -8,6 +8,7 @@ import {
     DialogTitle,
     DialogTrigger
 } from "@/components/ui/dialog";
+import {useTranslations} from "next-intl";
 
 type BlogProps = {
     _id: string;
@@ -16,6 +17,8 @@ type BlogProps = {
 }
 
 export const BlogList = ({ blogs }: { blogs: BlogProps[] }) => {
+
+    const t = useTranslations("aria");
 
     if (!blogs || blogs.length === 0) return null;
 
@@ -29,9 +32,9 @@ export const BlogList = ({ blogs }: { blogs: BlogProps[] }) => {
                         className={`flex flex-col gap-2 bg-[linear-gradient(180deg,#D4B4FE_0%,#E6E6E6_100%)] rounded-[14px] px-6 py-4 max-sm:px-3 max-sm:py-2  shadow-sm 
                         ${index === 0 ? 'mt-16 max-sm:mt-6' : 'mb-16 max-sm:mb-6'}`}
                     >
-                        <h3 className="text-2xl max-sm:text-[9px] font-getvoip font-bold text-[rgba(23,23,23,1)]">
+                        <span className="text-2xl max-sm:text-[9px] font-getvoip font-bold text-[rgba(23,23,23,1)]">
                             {blog.title}
-                        </h3>
+                        </span>
 
                         <p className="text-gray-800 line-clamp-3 md:line-clamp-4 grow text-base max-sm:text-[7px] font-rubik">
                             {blog.text}
@@ -40,16 +43,13 @@ export const BlogList = ({ blogs }: { blogs: BlogProps[] }) => {
                         <div className="flex justify-end w-full mt-auto">
                             <Dialog>
                                 <DialogTrigger asChild>
-                                    <div>
                                         <Button className="text-[rgba(100,100,101,1)] text-sm max-sm:text-[6px] h-auto font-normal bg-transparent px-0 py-0 underline cursor-pointer">
-                                            читати повністю
+                                            {t('readAll')}
                                         </Button>
-                                        <DialogDescription className="sr-only">
-                                            read the blog in full
-                                        </DialogDescription>
-                                    </div>
                                 </DialogTrigger>
-
+                                <DialogDescription className="sr-only">
+                                    read the blog in full
+                                </DialogDescription>
                                 <DialogContent className="sm:max-w-150 bg-[linear-gradient(180deg,#D4B4FE_0%,#E6E6E6_100%)] rounded-xl"
                                                closeButtonClass="hover:bg-transparent cursor-pointer"
                                 >

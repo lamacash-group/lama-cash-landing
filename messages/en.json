@@ -86,5 +86,9 @@
     "supportDesc": "We are available 24/7, but we might not always respond quickly at night",
     "telegramBtnTitle": "We are on Telegram",
     "telegramBtnDesc": "We will reply within 1 min"
+  },
+  "aria": {
+    "languageBtn":"Select language",
+    "readAll": "read all"
   }
 }
