@@ -1,82 +1,14 @@
 import * as React from 'react';
-import { Button } from "@/components/ui/button";
-import {
-    Dialog,
-    DialogContent,
-    DialogDescription,
-    DialogHeader,
-    DialogTitle,
-    DialogTrigger
-} from "@/components/ui/dialog";
+import {getLocale} from "next-intl/server";
+import {getBlogs} from "@/sanity/lib/client";
+import {BlogList} from "@/components/BlogList";
 
-type BlogProps = {
-    title: string;
-    text: string;
-}
 
-const BlogData: BlogProps[] = [
-    {
-        title: 'Назва блогу 1',
-        text: 'Світ фінансів переживає революційні зміни, і криптовалюта є однією з найгарячіших тем для обговорення.'
-    },
-    {
-        title: 'Назва блогу 2',
-        text: 'Світ фінансів переживає революційні зміни, і криптовалюта є однією з найгарячіших тем для обговорення. Тут може бути набагато більше тексту, який не поміщається в картку, але буде відмінно виглядати в модальному вікні.'
-    },
-]
+export const Blog = async () => {
 
-export const Blog = () => {
-    return (
-        <div className="flex w-full bg-[rgba(240,240,240,1)] items-center justify-center px-7 pt-12 py-10 max-sm:py-7 max-sm:pt-4">
+    const locale = await getLocale();
 
-            <div className="grid grid-cols-2 gap-4 md:gap-12 max-w-5xl w-full">
-                {BlogData.map((blog, index) => (
-                    <div
-                        key={index}
-                        className={`flex flex-col gap-2 bg-[linear-gradient(180deg,#D4B4FE_0%,#E6E6E6_100%)] rounded-[14px] px-6 py-4 max-sm:px-3 max-sm:py-2  shadow-sm 
-                        ${index === 0 ? 'mt-16 max-sm:mt-6' : 'mb-16 max-sm:mb-6'}`}
-                    >
-                        <h3 className="text-2xl max-sm:text-[9px] font-getvoip font-bold text-[rgba(23,23,23,1)]">
-                            {blog.title}
-                        </h3>
+    const blogs = await getBlogs(locale);
 
-                        <p className="text-gray-800 line-clamp-3 md:line-clamp-4 grow text-base max-sm:text-[7px] font-rubik">
-                            {blog.text}
-                        </p>
-
-                        <div className="flex justify-end w-full mt-auto">
-                            <Dialog>
-                                <DialogTrigger asChild>
-                                    <div>
-                                        <Button className="text-[rgba(100,100,101,1)] text-sm max-sm:text-[6px] h-auto font-normal bg-transparent px-0 py-0 underline cursor-pointer">
-                                            читати повністю
-                                        </Button>
-                                        <DialogDescription className="sr-only">
-                                            read the blog in full
-                                        </DialogDescription>
-                                    </div>
-                                </DialogTrigger>
-
-                                <DialogContent className="sm:max-w-150 bg-[linear-gradient(180deg,#D4B4FE_0%,#E6E6E6_100%)] rounded-xl"
-                                               closeButtonClass="hover:bg-transparent cursor-pointer"
-                                >
-                                    <DialogHeader>
-                                        <DialogTitle className="text-2xl font-getvoip font-bold text-[rgba(23,23,23,1)]">
-                                            {blog.title}
-                                        </DialogTitle>
-                                    </DialogHeader>
-
-                                    <div className="mt-4">
-                                        <p className="text-gray-800 text-base font-rubik leading-relaxed">
-                                            {blog.text}
-                                        </p>
-                                    </div>
-                                </DialogContent>
-                            </Dialog>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </div>
-    );
+    return <BlogList blogs={blogs} />;
 };

@@ -38,10 +38,10 @@ export default function RootLayout({
         {children}
       </Provider>
       <MicrosoftClarity/>
-      </body>
       {process.env.NEXT_PUBLIC_GA_ID && (
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
       )}
+      </body>
     </html>
   );
 }
