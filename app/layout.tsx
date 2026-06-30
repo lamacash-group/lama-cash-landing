@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import {Provider} from "@/components/Provider";
 import {MicrosoftClarity} from "@/components/Clarity";
+import {GoogleAnalytics} from "@next/third-parties/google";
 
 const rubikMono = Rubik({
   variable: "--font-rubik",
@@ -38,6 +39,9 @@ export default function RootLayout({
       </Provider>
       <MicrosoftClarity/>
       </body>
+      {process.env.NEXT_PUBLIC_GA_ID && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+      )}
     </html>
   );
 }
