@@ -3,6 +3,7 @@ import { Rubik } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import {Provider} from "@/components/Provider";
+import {MicrosoftClarity} from "@/components/Clarity";
 
 const rubikMono = Rubik({
   variable: "--font-rubik",
@@ -35,6 +36,7 @@ export default function RootLayout({
       <Provider>
         {children}
       </Provider>
+      <MicrosoftClarity/>
       </body>
     </html>
   );
