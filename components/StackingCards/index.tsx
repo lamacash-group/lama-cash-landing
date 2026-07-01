@@ -273,7 +273,7 @@ export function ScrollStack() {
             additDescription: t3('additDescription'),
             content: <ThirdCard/>,
             bgColor: "bg-gradient-to-b from-[#958DFF] to-[#E3E3E3] text-neutral-50",
-            offset: {mobile: 230, desktop: 230},
+            offset: {mobile: 120, desktop: 160},
         },
     ];
 
