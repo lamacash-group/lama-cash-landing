@@ -2,12 +2,101 @@ import * as React from 'react';
 import Image from "next/image";
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
-import {useTranslations} from "next-intl";
+import {getTranslations} from "next-intl/server";
 
+const formatNumber = (num: number) => {
+    return new Intl.NumberFormat('ru-RU').format(num);
+};
 
-export const LamaCashMedia = () => {
-    const t = useTranslations('LamaMedia');
+const RAPIDAPI_KEY = process.env.NEXT_PUBLIC_RAPID_API || '';
 
+async function fetchSocialStats() {
+
+    const defaultStats = {
+        tiktokMain: 275000,
+        tiktokSecond: 98000,
+        instagram: 65000,
+        youtube: 23000
+    };
+
+    try {
+
+        const [tiktokRes, tiktokSecRes, instaRes, youtubeRes] = await Promise.allSettled([
+            fetch('https://tiktok-scraper7.p.rapidapi.com/user/followers?user_id=7158052421100012550&count=10&time=0', {
+                method: 'GET',
+                headers: {
+                    'x-rapidapi-key': RAPIDAPI_KEY,
+                    'x-rapidapi-host': 'tiktok-scraper7.p.rapidapi.com'
+                },
+                next: { revalidate: 57600 }
+            }),
+            fetch('https://tiktok-scraper7.p.rapidapi.com/user/followers?user_id=7549159287781622789&count=10&time=0', {
+                method: 'GET',
+                headers: {
+                    'x-rapidapi-key': RAPIDAPI_KEY,
+                    'x-rapidapi-host': 'tiktok-scraper7.p.rapidapi.com'
+                },
+                next: { revalidate: 57600 }
+            }),
+            fetch('https://instagram-best-experience.p.rapidapi.com/profile?username=norafawn', {
+                method: 'GET',
+                headers: {
+                    'x-rapidapi-key': RAPIDAPI_KEY,
+                    'x-rapidapi-host': 'instagram-best-experience.p.rapidapi.com'
+                },
+                next: { revalidate: 57600 }
+            }),
+            fetch('https://youtube138.p.rapidapi.com/channel/details/?id=@lama_cash', {
+                method: 'GET',
+                headers: {
+                    'x-rapidapi-key': RAPIDAPI_KEY,
+                    'x-rapidapi-host': 'youtube138.p.rapidapi.com'
+                },
+                next: { revalidate: 57600 }
+            })
+        ]);
+
+        let tiktokMainCount = defaultStats.tiktokMain;
+        if (tiktokRes.status === 'fulfilled' && tiktokRes.value.ok) {
+            const data = await tiktokRes.value.json();
+            tiktokMainCount = data?.data.total || defaultStats.tiktokMain;
+        }
+
+        let tiktokSecondCount = defaultStats.tiktokSecond;
+        if (tiktokSecRes.status === 'fulfilled' && tiktokSecRes.value.ok) {
+            const data = await tiktokSecRes.value.json();
+            tiktokSecondCount = data?.data.total || defaultStats.tiktokSecond;
+        }
+
+        let instagramCount = defaultStats.instagram;
+        if (instaRes.status === 'fulfilled' && instaRes.value.ok) {
+            const data = await instaRes.value.json();
+            console.log(data)
+            instagramCount = data?.follower_count || defaultStats.instagram;
+        }
+
+        let youtubeCount = defaultStats.youtube;
+        if (youtubeRes.status === 'fulfilled' && youtubeRes.value.ok) {
+            const data = await youtubeRes.value.json();
+            youtubeCount = data?.stats?.subscribers || defaultStats.youtube;
+        }
+
+        return {
+            tiktokMain: tiktokMainCount,
+            tiktokSecond: tiktokSecondCount,
+            instagram: instagramCount,
+            youtube: youtubeCount
+        };
+
+    } catch (error) {
+        console.error("RapidAPI Error:", error);
+        return defaultStats;
+    }
+}
+
+export const LamaCashMedia = async () => {
+    const t = await getTranslations('LamaMedia');
+    const stats = await fetchSocialStats();
 
     return (
         <div
@@ -44,7 +133,8 @@ export const LamaCashMedia = () => {
                                         fill="white"/>
                                 </svg>
                                 <span className="font-bold font-getvoip text-3xl max-sm:text-base">
-                                275 000+
+                                {/*275 000+*/}
+                                    {formatNumber(stats.tiktokMain)}+
                             </span>
                             </div>
                         </div>
@@ -105,7 +195,8 @@ export const LamaCashMedia = () => {
                                         fill="white"/>
                                 </svg>
                                 <span className="font-bold font-getvoip text-3xl max-sm:text-base">
-                                98 000 +
+                                {/*98 000 +*/}
+                                    {formatNumber(stats.tiktokSecond)}+
                             </span>
                             </div>
                         </div>
@@ -165,7 +256,8 @@ export const LamaCashMedia = () => {
                                         fill="white"/>
                                 </svg>
                                 <span className="font-bold font-getvoip text-3xl max-sm:text-base">
-                                65 000 +
+                                {/*65 000 +*/}
+                                    {formatNumber(stats.instagram)}+
                             </span>
                             </div>
                         </div>
@@ -233,7 +325,8 @@ export const LamaCashMedia = () => {
                                         fill="white"/>
                                 </svg>
                                 <span className="font-bold font-getvoip text-3xl max-sm:text-base">
-                                    23 000 +
+                                    {/*23 000 +*/}
+                                    {formatNumber(stats.youtube)}+
                                 </span>
                             </div>
                         </div>
