@@ -3,12 +3,15 @@ import Image from "next/image";
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
 import {getTranslations} from "next-intl/server";
+// import {useEffect, useState} from "react";
+// import {useTranslations} from "next-intl";
 
 const formatNumber = (num: number) => {
     return new Intl.NumberFormat('ru-RU').format(num);
 };
 
 const RAPIDAPI_KEY = process.env.NEXT_PUBLIC_RAPID_API || '';
+const TELEGRAM_BOT_TOKEN = process.env.NEXT_PUBLIC_TELEGRAM_BOT_TAKEN || '';
 
 async function fetchSocialStats() {
 
@@ -16,12 +19,14 @@ async function fetchSocialStats() {
         tiktokMain: 275000,
         tiktokSecond: 98000,
         instagram: 65000,
+        instagramNew: 100,
+        telegram: 7500,
         youtube: 23000
     };
 
     try {
 
-        const [tiktokRes, tiktokSecRes, instaRes, youtubeRes] = await Promise.allSettled([
+        const [tiktokRes, tiktokSecRes, instaRes, youtubeRes, telegramRes] = await Promise.allSettled([
             fetch('https://tiktok-scraper7.p.rapidapi.com/user/followers?user_id=7158052421100012550&count=10&time=0', {
                 method: 'GET',
                 headers: {
@@ -38,7 +43,7 @@ async function fetchSocialStats() {
                 },
                 next: { revalidate: 57600 }
             }),
-            fetch('https://instagram-best-experience.p.rapidapi.com/profile?username=norafawn', {
+            fetch('https://instagram-best-experience.p.rapidapi.com/profile?username=lama_cash_rezerv', {
                 method: 'GET',
                 headers: {
                     'x-rapidapi-key': RAPIDAPI_KEY,
@@ -52,6 +57,10 @@ async function fetchSocialStats() {
                     'x-rapidapi-key': RAPIDAPI_KEY,
                     'x-rapidapi-host': 'youtube138.p.rapidapi.com'
                 },
+                next: { revalidate: 57600 }
+            }),
+            fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getChatMemberCount?chat_id=@lama_cash`, {
+                method: 'GET',
                 next: { revalidate: 57600 }
             })
         ]);
@@ -68,11 +77,10 @@ async function fetchSocialStats() {
             tiktokSecondCount = data?.data.total || defaultStats.tiktokSecond;
         }
 
-        let instagramCount = defaultStats.instagram;
+        let instagramCount = defaultStats.instagramNew;
         if (instaRes.status === 'fulfilled' && instaRes.value.ok) {
             const data = await instaRes.value.json();
-            console.log(data)
-            instagramCount = data?.follower_count || defaultStats.instagram;
+            instagramCount = data?.follower_count || defaultStats.instagramNew;
         }
 
         let youtubeCount = defaultStats.youtube;
@@ -81,11 +89,21 @@ async function fetchSocialStats() {
             youtubeCount = data?.stats?.subscribers || defaultStats.youtube;
         }
 
+        let telegramCount = defaultStats.telegram;
+        if (telegramRes.status === 'fulfilled' && telegramRes.value.ok) {
+            const data = await telegramRes.value.json();
+            if (data.ok) {
+                telegramCount = data.result || defaultStats.telegram;
+            }
+        }
+
         return {
             tiktokMain: tiktokMainCount,
             tiktokSecond: tiktokSecondCount,
-            instagram: instagramCount,
-            youtube: youtubeCount
+            instagram: defaultStats.instagram,
+            instagramNew: instagramCount,
+            telegram: telegramCount,
+            youtube: youtubeCount,
         };
 
     } catch (error) {
@@ -97,6 +115,30 @@ async function fetchSocialStats() {
 export const LamaCashMedia = async () => {
     const t = await getTranslations('LamaMedia');
     const stats = await fetchSocialStats();
+
+    // const t =  useTranslations('LamaMedia');
+    // const [stats, setStats] = useState({
+    //     tiktokMain: 275000,
+    //     tiktokSecond: 98000,
+    //     instagram: 65000,
+    //     instagramNew: 65000,
+    //     telegram: 7500,
+    //     youtube: 23000
+    // })
+    //
+    //
+    // useEffect(() => {
+    //     const fetch = async () => {
+    //         const stats = await fetchSocialStats();
+    //         console.log(stats);
+    //         setStats(stats)
+    //     }
+    //     fetch()
+    // }, []);
+    //
+    // useEffect(() => {
+    //     console.log(stats)
+    // }, [stats]);
 
     return (
         <div
@@ -236,6 +278,17 @@ export const LamaCashMedia = async () => {
                             className="absolute inset-[-0.75rem_-0.75rem_0.75rem_-0.75rem] bg-[rgba(60,21,127,1)] rounded-[2.5rem] blur-xs z-10"></div>
                         <div
                             className="absolute -inset-4 bg-[linear-gradient(180deg,#17171700_50%,#171717_87.13%)] z-30"></div>
+                        <div
+                            className="absolute z-30 items-center justify-center w-15 h-15 sm:w-40 sm:h-40 ">
+                            <Image
+                                src={'/blocked-lama.png'}
+                                alt={"blocked instagram"}
+                                width={1000}
+                                height={1000}
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                                className="w-full h-auto object-cover relative z-20"
+                            />
+                        </div>
                         <Image
                             src={'/lama-media3.png'}
                             alt={"lama cash social media - instagram"}
@@ -296,6 +349,129 @@ export const LamaCashMedia = async () => {
                             </span>
                             </div>
                         </Button>
+                        </Link>
+                    </div>
+                </div>
+                <div className="flex flex-col gap-4 max-w-sm">
+                    <div className="relative w-full h-full mx-auto flex flex-col justify-center items-center">
+                        <div
+                            className="absolute inset-[-0.75rem_-0.75rem_0.75rem_-0.75rem] bg-[rgba(60,21,127,1)] rounded-[2.5rem] blur-xs z-10"></div>
+                        <div
+                            className="absolute -inset-4 bg-[linear-gradient(180deg,#17171700_50%,#171717_87.13%)] z-30"></div>
+                        <Image
+                            src={'/lama-media5.png'}
+                            alt={"lama cash social media - new instagram"}
+                            width={900}
+                            height={1200}
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                            className="w-full h-auto object-cover relative z-20"
+                        />
+                        <div
+                            className="flex flex-row gap-2 text-white absolute inset-0 z-40 items-end justify-center w-full h-full">
+                            <div className="flex items-center gap-2">
+                                <svg width="15" height="14" viewBox="0 0 15 14" fill="none"
+                                     className="w-7.5 h-7.5 max-sm:w-3.75 max-sm:h-3.75"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="7.24918" cy="3.53433" r="3.53433" fill="white"/>
+                                    <path
+                                        d="M7.24902 7.06836C10.8881 7.06836 13.908 9.71163 14.498 13.1826H0C0.590002 9.71167 3.61004 7.06848 7.24902 7.06836Z"
+                                        fill="white"/>
+                                </svg>
+                                <span className="font-bold font-getvoip text-3xl max-sm:text-base">
+                                {/*65 000 +*/}
+                                    {formatNumber(stats.instagramNew)}+
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        className="p-px rounded-[6px] bg-[linear-gradient(90deg,#188AFC_0%,#BF3CD5_39.9%,#D240B4_68.75%,#FCCC0A_100%)]">
+                        <Link href="https://www.instagram.com/lama_cash" className="w-full items-center justify-center flex">
+                            <Button
+                                className="w-full max-sm:h-7.5 h-15 flex items-center justify-center rounded-[6px] text-[rgba(23,23,23,1)] font-bold text-base font-getvoip tracking-[3%] max-sm:text-[9px] bg-white uppercase">
+                                <div className="flex items-center gap-1">
+                            <span>
+                                INSTAGRAM
+                            </span>
+                                    <span
+                                        className="w-8 h-8 max-sm:w-4 max-sm:h-4 bg-[rgba(23,23,23,1)] rounded-full flex items-center justify-center">
+                            <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                 className="w-4! h-4! max-sm:w-2! max-sm:h-2!">
+                                <path fillRule="evenodd" clipRule="evenodd"
+                                      d="M2.15127 0H5.82553C7.00588 0 7.9768 0.970924 7.9768 2.15127V5.80652C7.9768 6.98687 7.00588 7.95779 5.82553 7.95779H2.15127C0.970922 7.95779 0 6.98687 0 5.80652V2.15127C0 0.970924 0.970922 0 2.15127 0ZM6.13015 1.38978C6.37764 1.38978 6.58707 1.59921 6.58707 1.8467C6.58707 2.09419 6.37764 2.30363 6.13015 2.30363C5.86364 2.30363 5.67322 2.09419 5.67322 1.8467C5.67322 1.59916 5.8636 1.38978 6.13015 1.38978ZM3.97887 1.80859H3.99793C5.17828 1.80859 6.16821 2.79857 6.16821 3.97888C6.16821 5.17824 5.17823 6.14916 3.99793 6.14916H3.97887C2.79852 6.14916 1.8276 5.17824 1.8276 3.97888C1.8276 2.79857 2.79852 1.80859 3.97887 1.80859ZM3.97887 2.55107H3.99793C4.77848 2.55107 5.42577 3.19837 5.42577 3.97892C5.42577 4.77852 4.77848 5.42577 3.99793 5.42577H3.97887C3.19833 5.42577 2.55103 4.77848 2.55103 3.97892C2.55107 3.19837 3.19833 2.55107 3.97887 2.55107ZM2.17028 0.685361H5.80648C6.62509 0.685361 7.29144 1.35167 7.29144 2.17033V5.78751C7.29144 6.60612 6.62513 7.27243 5.80648 7.27243H2.17028C1.35167 7.27243 0.685361 6.60612 0.685361 5.78751V2.17033C0.685361 1.35167 1.35167 0.685361 2.17028 0.685361Z"
+                                      fill="url(#paint0_linear_2091_529)"/>
+                                <defs>
+                                    <linearGradient id="paint0_linear_2091_529" x1="0.291684" y1="0.666569" x2="7.65799"
+                                                    y2="7.3268" gradientUnits="userSpaceOnUse">
+                                        <stop stopColor="#0496FB"/>
+                                        <stop offset="0.1383" stopColor="#3F72FF"/>
+                                        <stop offset="0.2795" stopColor="#784AFF"/>
+                                        <stop offset="0.4211" stopColor="#B038EE"/>
+                                        <stop offset="0.5656" stopColor="#CD40BE"/>
+                                        <stop offset="0.7198" stopColor="#FF415A"/>
+                                        <stop offset="0.8647" stopColor="#F7941E"/>
+                                        <stop offset="0.9807" stopColor="#FFE800"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+
+                            </span>
+                                </div>
+                            </Button>
+                        </Link>
+                    </div>
+                </div>
+                <div className="flex flex-col gap-4 max-w-sm">
+                    <div className="relative w-full h-full mx-auto flex flex-col justify-center items-center">
+                        <div
+                            className="absolute inset-[-0.75rem_-0.75rem_0.75rem_-0.75rem] bg-[rgba(60,21,127,1)] rounded-[2.5rem] blur-xs z-10"></div>
+                        <div
+                            className="absolute -inset-4 bg-[linear-gradient(180deg,#17171700_50%,#171717_87.13%)] z-30"></div>
+                        <Image
+                            src={'/lama-media6.png'}
+                            alt={"lama cash social media - telegram"}
+                            width={900}
+                            height={1200}
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                            className="w-full h-auto object-cover relative z-20"
+                        />
+                        <div
+                            className="flex flex-row gap-2 text-white absolute inset-0 z-40 items-end justify-center w-full h-full">
+                            <div className="flex items-center gap-2">
+                                <svg width="15" height="14" viewBox="0 0 15 14" fill="none"
+                                     className="w-7.5 h-7.5 max-sm:w-3.75 max-sm:h-3.75"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="7.24918" cy="3.53433" r="3.53433" fill="white"/>
+                                    <path
+                                        d="M7.24902 7.06836C10.8881 7.06836 13.908 9.71163 14.498 13.1826H0C0.590002 9.71167 3.61004 7.06848 7.24902 7.06836Z"
+                                        fill="white"/>
+                                </svg>
+                                <span className="font-bold font-getvoip text-3xl max-sm:text-base">
+                                {/*65 000 +*/}
+                                    {formatNumber(stats.telegram)}+
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        className="p-px rounded-[6px] bg-[linear-gradient(90deg,#188AFC_0%,#BF3CD5_39.9%,#D240B4_68.75%,#FCCC0A_100%)]">
+                        <Link href="https://www.instagram.com/lama_cash" className="w-full items-center justify-center flex">
+                            <Button
+                                className="w-full max-sm:h-7.5 h-15 flex items-center justify-center rounded-[6px] text-[rgba(23,23,23,1)] font-bold text-base font-getvoip tracking-[3%] max-sm:text-[9px] bg-white uppercase">
+                                <div className="flex items-center gap-1">
+                            <span>
+                                telegram
+                            </span>
+                                    <span
+                                        className="w-8 h-8 max-sm:w-4 max-sm:h-4 bg-[rgba(23,23,23,1)] rounded-full flex items-center justify-center">
+                                        <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                             className="w-4! h-4! max-sm:w-2! max-sm:h-2!"
+                                        >
+                                            <path d="M8.19436 0.0653313C7.01312 0.554634 1.94838 2.65249 0.548938 3.22425C-0.389584 3.59046 0.159804 3.93382 0.159804 3.93382C0.159804 3.93382 0.960994 4.20863 1.64771 4.4145C2.3345 4.62061 2.70063 4.39165 2.70063 4.39165L5.9281 2.21703C7.07273 1.43876 6.79807 2.07978 6.52326 2.35443C5.9281 2.9496 4.94372 3.88804 4.11984 4.64346C3.75356 4.96397 3.93674 5.23862 4.09699 5.37595C4.692 5.87964 6.31747 6.90963 6.40886 6.97841C6.89232 7.32074 7.84357 7.81353 7.98825 6.77231L8.56048 3.17856C8.74374 1.96538 8.92684 0.843835 8.94961 0.523326C9.0184 -0.255099 8.19436 0.0653313 8.19436 0.0653313Z" fill="#41B4F2"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </Button>
                         </Link>
                     </div>
                 </div>
