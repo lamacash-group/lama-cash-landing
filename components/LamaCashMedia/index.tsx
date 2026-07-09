@@ -386,7 +386,7 @@ export const LamaCashMedia = async () => {
                     </div>
                     <div
                         className="p-px rounded-[6px] bg-[linear-gradient(90deg,#188AFC_0%,#BF3CD5_39.9%,#D240B4_68.75%,#FCCC0A_100%)]">
-                        <Link href="https://www.instagram.com/lama_cash" className="w-full items-center justify-center flex">
+                        <Link href="https://www.instagram.com/lama_cash_rezerv/" className="w-full items-center justify-center flex">
                             <Button
                                 className="w-full max-sm:h-7.5 h-15 flex items-center justify-center rounded-[6px] text-[rgba(23,23,23,1)] font-bold text-base font-getvoip tracking-[3%] max-sm:text-[9px] bg-white uppercase">
                                 <div className="flex items-center gap-1">

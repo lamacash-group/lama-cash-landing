@@ -2818,6 +2818,18 @@
         <option name="homepage" value="https://pulld.pages.dev" />
         <option name="urlTemplate" value="https://pulld.pages.dev/r/{name}.json" />
       </RegistryConfigState>
+      <RegistryConfigState>
+        <option name="id" value="central-threecn" />
+        <option name="name" value="Threecn" />
+        <option name="namespace" value="@threecn" />
+        <option name="baseUrl" value="https://threecn.dev/r" />
+        <option name="stylePath" value="/{name}.json" />
+        <option name="type" value="community" />
+        <option name="enabled" value="false" />
+        <option name="description" value="3D scenes for shadcn/ui. Theme-aware React Three Fiber components, one command away." />
+        <option name="homepage" value="https://threecn.dev" />
+        <option name="urlTemplate" value="https://threecn.dev/r/{name}.json" />
+      </RegistryConfigState>
     </registryConfigs>
     <cachedRegistryComponents>
       <CachedRegistryComponents>
