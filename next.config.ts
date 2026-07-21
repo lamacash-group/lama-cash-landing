@@ -5,6 +5,14 @@ const nextConfig: NextConfig = {
     allowedDevOrigins: ['d6bd-195-191-73-117.ngrok-free.app'],
     images: {
         formats: ['image/webp'],
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'cdn.sanity.io',
+                port: '',
+                pathname: '/**',
+            },
+        ],
     },
 
     async headers() {

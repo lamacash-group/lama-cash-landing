@@ -14,9 +14,9 @@ export async function getBlogs(locale: string) {
   const query = groq`*[_type == "blog"] {
     _id,
     "title": title[$locale],
-    "text": text[$locale]
+    "description": description[$locale],
+    "content": content[$locale]
   }`
 
-  // Передаем locale как переменную в запрос
   return client.fetch(query, { locale });
 }
