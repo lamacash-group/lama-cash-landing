@@ -34,7 +34,13 @@ export const BinanceLine = () => {
         fetchCrypto();
     }, [])
 
-    if (currency.length === 0) return <></>;
+    if (currency.length === 0) {
+        return (
+            <div className="w-full overflow-hidden bg-[rgba(255,255,255,0.1)] border-y border-[rgba(255,255,255,0.1)] flex select-none">
+                <div className="w-full animate-pulse bg-white/5 py-1.5 h-7" />
+            </div>
+        );
+    }
 
     const repeatedData = [...currency, ...currency, ...currency, ...currency, ...currency,
         ...currency, ...currency, ...currency, ...currency, ...currency, ...currency, ...currency];

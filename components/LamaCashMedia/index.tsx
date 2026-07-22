@@ -3,8 +3,7 @@ import Image from "next/image";
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
 import {getTranslations} from "next-intl/server";
-// import {useEffect, useState} from "react";
-// import {useTranslations} from "next-intl";
+import {SkeletonImage} from "@/components/SkeletonImage";
 
 const formatNumber = (num: number) => {
     return new Intl.NumberFormat('ru-RU').format(num);
@@ -116,30 +115,6 @@ export const LamaCashMedia = async () => {
     const t = await getTranslations('LamaMedia');
     const stats = await fetchSocialStats();
 
-    // const t =  useTranslations('LamaMedia');
-    // const [stats, setStats] = useState({
-    //     tiktokMain: 275000,
-    //     tiktokSecond: 98000,
-    //     instagram: 65000,
-    //     instagramNew: 65000,
-    //     telegram: 7500,
-    //     youtube: 23000
-    // })
-    //
-    //
-    // useEffect(() => {
-    //     const fetch = async () => {
-    //         const stats = await fetchSocialStats();
-    //         console.log(stats);
-    //         setStats(stats)
-    //     }
-    //     fetch()
-    // }, []);
-    //
-    // useEffect(() => {
-    //     console.log(stats)
-    // }, [stats]);
-
     return (
         <div
             className="flex flex-col w-full h-full bg-[rgba(23,23,23,1)] gap-15 px-10 py-10 max-[380px]:px-6 max-[380px]:gap-10 pb-[7vh]">
@@ -155,13 +130,14 @@ export const LamaCashMedia = async () => {
                             className="absolute inset-[-0.75rem_-0.75rem_0.75rem_-0.75rem] bg-[rgba(60,21,127,1)] rounded-[2.5rem] blur-xs z-10"></div>
                         <div
                             className="absolute -inset-4 bg-[linear-gradient(180deg,#17171700_50%,#171717_87.13%)] z-30"></div>
-                        <Image
+                        <SkeletonImage
                             src={'/lama-media1.png'}
                             alt={"lama cash social media - tik tok"}
                             width={900}
                             height={1200}
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                            className="w-full h-auto object-cover relative z-20"
+                            className="w-full h-full object-cover relative z-20"
+                            skeletonClass="bg-gray-800/60 rounded-3xl"
                         />
                         <div
                             className="flex flex-row gap-2 text-white absolute inset-0 z-40 items-end justify-center w-full h-full">
@@ -217,13 +193,14 @@ export const LamaCashMedia = async () => {
                             className="absolute inset-[-0.75rem_-0.75rem_0.75rem_-0.75rem] bg-[rgba(60,21,127,1)] rounded-[2.5rem] blur-xs z-10"></div>
                         <div
                             className="absolute -inset-4 bg-[linear-gradient(180deg,#17171700_50%,#171717_87.13%)] z-30"></div>
-                        <Image
+                        <SkeletonImage
                             src={'/lama-media2.png'}
                             alt={"lama cash social media - tik tok number two"}
                             width={900}
                             height={1200}
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                            className="w-full h-auto object-cover relative z-20"
+                            className="w-full h-full object-cover relative z-20"
+                            skeletonClass="bg-gray-800/60 rounded-3xl"
                         />
                         <div
                             className="flex flex-row gap-2 text-white absolute inset-0 z-40 items-end justify-center w-full h-full">
@@ -289,13 +266,14 @@ export const LamaCashMedia = async () => {
                                 className="w-full h-auto object-cover relative z-20"
                             />
                         </div>
-                        <Image
+                        <SkeletonImage
                             src={'/lama-media3.png'}
                             alt={"lama cash social media - instagram"}
                             width={900}
                             height={1200}
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                            className="w-full h-auto object-cover relative z-20"
+                            className="w-full h-full object-cover relative z-20"
+                            skeletonClass="bg-gray-800/60 rounded-3xl"
                         />
                         <div
                             className="flex flex-row gap-2 text-white absolute inset-0 z-40 items-end justify-center w-full h-full">
@@ -358,13 +336,14 @@ export const LamaCashMedia = async () => {
                             className="absolute inset-[-0.75rem_-0.75rem_0.75rem_-0.75rem] bg-[rgba(60,21,127,1)] rounded-[2.5rem] blur-xs z-10"></div>
                         <div
                             className="absolute -inset-4 bg-[linear-gradient(180deg,#17171700_50%,#171717_87.13%)] z-30"></div>
-                        <Image
+                        <SkeletonImage
                             src={'/lama-media5.png'}
                             alt={"lama cash social media - new instagram"}
                             width={900}
                             height={1200}
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                            className="w-full h-auto object-cover relative z-20"
+                            className="w-full h-full object-cover relative z-20"
+                            skeletonClass="bg-gray-800/60 rounded-3xl"
                         />
                         <div
                             className="flex flex-row gap-2 text-white absolute inset-0 z-40 items-end justify-center w-full h-full">
@@ -427,13 +406,14 @@ export const LamaCashMedia = async () => {
                             className="absolute inset-[-0.75rem_-0.75rem_0.75rem_-0.75rem] bg-[rgba(60,21,127,1)] rounded-[2.5rem] blur-xs z-10"></div>
                         <div
                             className="absolute -inset-4 bg-[linear-gradient(180deg,#17171700_50%,#171717_87.13%)] z-30"></div>
-                        <Image
+                        <SkeletonImage
                             src={'/lama-media6.png'}
                             alt={"lama cash social media - telegram"}
                             width={900}
                             height={1200}
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                            className="w-full h-auto object-cover relative z-20"
+                            className="w-full h-full object-cover relative z-20"
+                            skeletonClass="bg-gray-800/60 rounded-3xl"
                         />
                         <div
                             className="flex flex-row gap-2 text-white absolute inset-0 z-40 items-end justify-center w-full h-full">
@@ -481,13 +461,14 @@ export const LamaCashMedia = async () => {
                             className="absolute inset-[-0.75rem_-0.75rem_0.75rem_-0.75rem] bg-[rgba(60,21,127,1)] rounded-[2.5rem] blur-xs z-10"></div>
                         <div
                             className="absolute -inset-4 bg-[linear-gradient(180deg,#17171700_50%,#171717_87.13%)] z-30"></div>
-                        <Image
+                        <SkeletonImage
                             src={'/lama-media4.png'}
                             alt={"lama cash social media - YouTube"}
                             width={900}
                             height={1200}
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                            className="w-full h-auto object-cover relative z-20"
+                            className="w-full h-full object-cover relative z-20"
+                            skeletonClass="bg-gray-800/60 rounded-3xl"
                         />
                         <div
                             className="flex flex-row gap-2 text-white absolute inset-0 z-40 items-end justify-center w-full h-full">

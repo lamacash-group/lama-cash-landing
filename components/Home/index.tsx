@@ -1,11 +1,9 @@
-'use client'
 import * as React from 'react';
-import Image from "next/image";
 import {useTranslations} from "next-intl";
 import {ContactUs} from "@/components/ContactUs";
 import {Reviews} from "@/components/Reviews";
 import Link from "next/link";
-
+import {SkeletonImage} from "@/components/SkeletonImage";
 
 export const Home = () => {
 
@@ -19,14 +17,17 @@ export const Home = () => {
             <div className="w-full h-full flex justify-center relative">
                 <div className="absolute left-1/2 -translate-x-1/2 w-[160vw] xl:w-full max-w-none z-10 px-4"
                      style={{top: '30%'}}>
-                    <Image
-                        className="overflow-hidden w-full h-auto"
-                        src="/earth-main.png"
-                        width={2000}
-                        height={2000}
-                        alt="earth on main page background"
-                        priority
-                    />
+                    <div className="relative w-full">
+                        <SkeletonImage
+                            src="/earth-main.png"
+                            width={2000}
+                            height={2000}
+                            alt="earth on main page background"
+                            priority
+                            className="overflow-hidden w-full h-auto relative z-10"
+                            skeletonClass="bg-gray-800/60 rounded-full"
+                        />
+                    </div>
                 </div>
                 <div className="absolute bg-[linear-gradient(180deg,rgba(23,23,23,0)_0%,rgba(25,25,25,0.9)_40.52%,#0D0D0D_70.85%)]
                 sm:bg-[linear-gradient(180deg,rgba(23,23,23,0)_0%,rgba(25,25,25,0.9)_50%,#0D0D0D_80%)] bottom-0
@@ -34,13 +35,14 @@ export const Home = () => {
                 <div className="relative flex flex-col gap-1 items-center justify-center max-sm:justify-start w-full px-4">
 
                     <div className="relative w-full max-w-95 max-sm:max-w-85 flex justify-center">
-                        <Image
-                            className="object-contain object-bottom h-full z-30 w-full max-w-87.5 max-[500px]:max-w-70! max-sm:max-w-75 max-h-full"
+                        <SkeletonImage
                             src="/lama-main.png"
                             width={1000}
                             height={1000}
                             alt="lama main page"
-                            priority
+                            priority={true}
+                            className="object-contain object-bottom h-full z-30 w-full max-w-87.5 max-[500px]:max-w-70! max-sm:max-w-75 max-h-full"
+                            skeletonClass="bg-gray-800/60 rounded-4xl mx-2.5"
                         />
 
                         <div className="absolute bottom-4 max-sm:bottom-8 left-1/2 z-70 -translate-x-1/2 flex flex-col w-full items-center gap-3">

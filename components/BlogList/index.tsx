@@ -124,7 +124,7 @@ const portableTextComponents = {
                 <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-6 my-8 w-full clear-both">
 
                     {value.imagePosition === 'left' && (
-                        <div className="w-full md:w-[45%] flex-shrink-0">
+                        <div className="w-full md:w-[45%] shrink-0">
                             <Image
                                 width={500}
                                 height={500}
@@ -142,7 +142,7 @@ const portableTextComponents = {
                     </div>
 
                     {value.imagePosition !== 'left' && (
-                        <div className="w-full md:w-[45%] flex-shrink-0">
+                        <div className="w-full md:w-[45%] shrink-0">
                             <Image
                                 width={500}
                                 height={500}
@@ -185,8 +185,6 @@ export const BlogList = ({blogs}: { blogs: BlogProps[] }) => {
         return chunks;
     }, [blogs]);
 
-    console.log(blogs)
-
     useEffect(() => {
         if (!api) return;
 
@@ -228,7 +226,7 @@ export const BlogList = ({blogs}: { blogs: BlogProps[] }) => {
                     {chunkedBlogs.map((chunk, chunkIndex) => (
 
                         <CarouselItem key={chunkIndex} className={`px-7 basic-full flex justify-center`}>
-                            <div className="grid grid-cols-2 gap-4 md:gap-12 max-w-5xl w-full">
+                            <div className="grid grid-cols-2 gap-4 max-sm:grid-cols-1 md:gap-12 max-w-5xl w-full">
                                 {chunk.map((blog, idx) => (
                                 <div
                                     key={blog._id || idx}
