@@ -44,6 +44,20 @@ export const Footer = () => {
                             </div>
                         </Button>
                         </Link>
+                        <div className="w-full flex flex-col justify-center items-center gap-2 text-base max-sm:text-[9px] text-white">
+                            <Link
+                                href="/privacy"
+                                className="hover:text-white transition-colors duration-300"
+                            >
+                                Політика конфіденційності
+                            </Link>
+                            <Link
+                                href="/legal"
+                                className="hover:text-white transition-colors duration-300"
+                            >
+                                Юридична інформація
+                            </Link>
+                        </div>
                     </div>
                     <div className="relative w-full max-w-87.5 h-full flex flex-col justify-center items-center -mt-25 max-md:-mt-18 z-20">
                         <Image
