@@ -13,6 +13,8 @@ export default function LegalPage() {
                 <div
                     className="max-w-3xl mx-auto bg-black/20 backdrop-blur-md border border-white/10 rounded-3xl p-6 md:p-10 shadow-2xl text-white/80">
 
+
+
                     {/*/!* Кнопка назад *!/*/}
                     {/*<Link href="/public"*/}
                     {/*      className="inline-flex items-center text-[#5ce1e6] hover:text-white font-bold text-sm mb-8 transition-colors">*/}
