@@ -11,12 +11,6 @@ export default function PrivacyPage() {
             <div className="min-h-screen w-full bg-[linear-gradient(10.25deg,#3C157F_-9.46%,#7134C2_40.87%,#171717_93.06%)] py-10 px-4 md:px-8 font-sans">
                 <div className="max-w-3xl mx-auto bg-black/20 backdrop-blur-md border border-white/10 rounded-3xl p-6 md:p-10 shadow-2xl text-white/80">
 
-                    {/*/!* Кнопка назад *!/*/}
-                    {/*<Link href="/public" className="inline-flex items-center text-[#5ce1e6] hover:text-white font-bold text-sm mb-8 transition-colors">*/}
-                    {/*    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>*/}
-                    {/*    На головну сторінку*/}
-                    {/*</Link>*/}
-
                     <h1 className="text-2xl md:text-4xl font-bold text-white mb-8">Політика Конфіденційності</h1>
 
                     <div className="space-y-8 text-base md:text-base leading-relaxed">

@@ -32,6 +32,7 @@ export const SwitchLanguage = () => {
                 <SelectContent position="popper" className="min-w-full">
                     <SelectItem value="uk" className="max-w-16 w-full cursor-pointer">UA</SelectItem>
                     <SelectItem value="en" className="max-w-16 w-full cursor-pointer">ENG</SelectItem>
+                    <SelectItem value="ru" className="max-w-16 w-full cursor-pointer">RU</SelectItem>
                 </SelectContent>
             </Select>
         </div>

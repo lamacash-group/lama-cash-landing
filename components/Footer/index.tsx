@@ -49,13 +49,13 @@ export const Footer = () => {
                                 href="/privacy"
                                 className="hover:text-white transition-colors duration-300"
                             >
-                                Політика конфіденційності
+                                {t('policy')}
                             </Link>
                             <Link
                                 href="/legal"
                                 className="hover:text-white transition-colors duration-300"
                             >
-                                Юридична інформація
+                                {t('legal')}
                             </Link>
                         </div>
                     </div>

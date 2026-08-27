@@ -115,7 +115,8 @@ export const blog = {
             type: 'object',
             fields: [
                 { name: 'uk', type: 'string', title: 'Українська' },
-                { name: 'en', type: 'string', title: 'English' }
+                { name: 'en', type: 'string', title: 'English' },
+                { name: 'ru', type: 'string', title: 'Русский' }
             ]
         },
         {
@@ -124,7 +125,8 @@ export const blog = {
             type: 'object',
             fields: [
                 { name: 'uk', type: 'text', title: 'Українська' },
-                { name: 'en', type: 'text', title: 'English' }
+                { name: 'en', type: 'text', title: 'English' },
+                { name: 'ru', type: 'text', title: 'Русский' }
             ]
         },
         {
@@ -174,6 +176,28 @@ export const blog = {
                                     //     component: (props:any) => (
                                     //         <span style={{ textTransform: 'uppercase' }}>{props.children}</span>)
                                     // },
+                                    { title: 'lowercase', value: 'lowercase' }
+                                ]
+                            }
+                        },
+                        { type: 'customImage' },
+                        { type: 'statsColumns' },
+                        { type: 'imageWithQuote' }
+                    ]
+                },
+                {
+                    name: 'ru',
+                    type: 'array',
+                    title: 'Русский',
+                    of: [
+                        {
+                            type: 'block',
+                            marks: {
+                                decorators: [
+                                    { title: 'Bold', value: 'strong' },
+                                    { title: 'Italic', value: 'em' },
+                                    { title: 'Underline', value: 'underline' },
+                                    { title: 'UPPERCASE', value: 'uppercase' },
                                     { title: 'lowercase', value: 'lowercase' }
                                 ]
                             }

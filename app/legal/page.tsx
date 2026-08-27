@@ -13,18 +13,6 @@ export default function LegalPage() {
                 <div
                     className="max-w-3xl mx-auto bg-black/20 backdrop-blur-md border border-white/10 rounded-3xl p-6 md:p-10 shadow-2xl text-white/80">
 
-
-
-                    {/*/!* Кнопка назад *!/*/}
-                    {/*<Link href="/public"*/}
-                    {/*      className="inline-flex items-center text-[#5ce1e6] hover:text-white font-bold text-sm mb-8 transition-colors">*/}
-                    {/*    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">*/}
-                    {/*        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"*/}
-                    {/*              d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>*/}
-                    {/*    </svg>*/}
-                    {/*    На головну сторінку*/}
-                    {/*</Link>*/}
-
                     <h1 className="text-2xl md:text-4xl font-bold text-white mb-8">Юридична інформація</h1>
 
                     <div className="space-y-4 text-sm md:text-base leading-relaxed">
