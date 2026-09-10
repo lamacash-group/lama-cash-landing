@@ -4,18 +4,32 @@ import {getTranslations} from "next-intl/server";
 import {urlFor} from "@/sanity/lib/image";
 import Image from "next/image";
 
+interface BlogPost {
+    _id: string;
+    title: string;
+    description: string;
+    slug: {
+        current: string;
+    };
+    mainImage?: {
+        asset?: {
+            _ref: string;
+        };
+        alt?: string;
+        [key: string]: unknown;
+    };
+}
+
 export default async function BlogPage({params}: {params: Promise<{locale: string}>}) {
     const {locale} = await params;
     const blogs = await getBlogs(locale);
     const t = await getTranslations("Blog");
 
-    console.log(blogs)
-
     return (
         <div className="min-h-screen bg-[rgba(230,230,230,1)] pt-20 px-7">
             <h1 className="text-4xl font-bold mb-10 text-center">{t('title')}</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {blogs.map((blog: any) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-14">
+                {blogs.map((blog: BlogPost) => (
                     <div key={blog._id} className="bg-white p-6 rounded-lg border border-border shadow-sm flex flex-col h-full hover:shadow-md transition-shadow">
 
                         <div className="min-h-24 mb-4">
