@@ -90,7 +90,35 @@
     "legal": "Юридическая информация"
   },
   "aria": {
-    "languageBtn":"Выбрать язык",
-    "readAll": "читать все"
+    "languageBtn": "Выбрать язык",
+    "readAll": "читать полностью"
+  },
+  "Blog": {
+    "title": "Блог",
+    "readMore": "Читать далее",
+    "backToBlog": "Назад в блог"
+  },
+  "Contacts": {
+    "title": "Связаться с нами",
+    "description": "У вас есть вопросы или предложения? Наша команда поддержки всегда готова помочь вам в кратчайшие сроки.",
+    "addressTitle": "Адрес офиса",
+    "officeScheduleTitle": "Офис и график работы",
+    "workdays": "Пн - Пт: 09:00 - 20:00",
+    "weekends": "Сб - Вс: 10:00 - 18:00",
+    "appointmentNote": "* Визит по предварительной записи",
+    "writeToUsTitle": "Написать нам",
+    "yourNameLabel": "Ваше имя",
+    "yourNamePlaceholder": "Александр Шевченко",
+    "messageLabel": "Сообщения",
+    "messagePlaceholder": "Чем мы можем вам помочь?",
+    "sendMessageButton": "Отправить сообщение",
+    "emailTitle": "Электронная почта",
+    "telegramTitle": "Telegram поддержка",
+    "phoneTitle": "Телефон",
+    "officeAddress": "г. Киев, ул. Прикладная, 15, офис 42",
+    "legalInfoTitle": "Юридическая информация",
+    "legalInfoText": "ФЛП [Фамилия Имя Отчество] / ООО «Лама Кэш» | РНОКПП / ЕГРПОУ: 1234567890",
+    "legalDocsButton": "Документы и правила",
+    "backToHome": "Вернуться на главную"
   }
 }

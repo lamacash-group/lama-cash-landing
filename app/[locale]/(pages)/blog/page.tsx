@@ -1,0 +1,51 @@
+import {getBlogs} from "@/sanity/lib/client";
+import {Link} from "@/app/i18n/navigation";
+import {getTranslations} from "next-intl/server";
+import {urlFor} from "@/sanity/lib/image";
+import Image from "next/image";
+
+export default async function BlogPage({params}: {params: Promise<{locale: string}>}) {
+    const {locale} = await params;
+    const blogs = await getBlogs(locale);
+    const t = await getTranslations("Blog");
+
+    console.log(blogs)
+
+    return (
+        <div className="min-h-screen bg-[rgba(230,230,230,1)] pt-20 px-7">
+            <h1 className="text-4xl font-bold mb-10 text-center">{t('title')}</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {blogs.map((blog: any) => (
+                    <div key={blog._id} className="bg-white p-6 rounded-lg border border-border shadow-sm flex flex-col h-full hover:shadow-md transition-shadow">
+
+                        <div className="min-h-24 mb-4">
+                            <h2 className="text-xl md:text-[23px] font-semibold uppercase text-foreground">
+                                {blog.title}
+                            </h2>
+                        </div>
+
+                        {blog.mainImage && (
+                            <Image
+                                width={600}
+                                height={400}
+                                src={urlFor(blog.mainImage).url()}
+                                alt={blog.mainImage.alt || blog.title || "Blog cover"}
+                                className="w-full h-70 object-cover rounded-md mb-4 shrink-0"
+                            />
+                        )}
+
+                        <p className="mb-4 text-muted-foreground line-clamp-3 text-sm md:text-base">
+                            {blog.description}
+                        </p>
+
+                        <div className="mt-auto pt-2">
+                            <Link href={`/blog/${blog.slug.current}`} className="text-primary font-bold hover:underline text-sm uppercase">
+                                {t('readMore')}
+                            </Link>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+}

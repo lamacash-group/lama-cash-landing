@@ -90,7 +90,35 @@
     "legal": "Legal Information"
   },
   "aria": {
-    "languageBtn":"Select language",
+    "languageBtn": "Select language",
     "readAll": "read all"
+  },
+  "Blog": {
+    "title": "Blog",
+    "readMore": "Read more",
+    "backToBlog": "Back to blog"
+  },
+  "Contacts": {
+    "title": "Contact us",
+    "description": "Have questions or suggestions? Our support team is always ready to help you as soon as possible.",
+    "addressTitle": "Office address",
+    "officeScheduleTitle": "Office and working hours",
+    "workdays": "Mon - Fri: 09:00 - 20:00",
+    "weekends": "Sat - Sun: 10:00 - 18:00",
+    "appointmentNote": "* Visit by appointment",
+    "writeToUsTitle": "Write to us",
+    "yourNameLabel": "Your name",
+    "yourNamePlaceholder": "John Smith",
+    "messageLabel": "Message",
+    "messagePlaceholder": "How can we help you?",
+    "sendMessageButton": "Send message",
+    "emailTitle": "Email",
+    "telegramTitle": "Telegram support",
+    "phoneTitle": "Phone",
+    "officeAddress": "Kyiv, 15 Prikladna St., Office 42",
+    "legalInfoTitle": "Legal Information",
+    "legalInfoText": "FOP [Last Name First Name Patronymic] / LLC \"Lama Cash\" | RNOKPP / EDRPOU: 1234567890",
+    "legalDocsButton": "Documents and rules",
+    "backToHome": "Back to home"
   }
 }
