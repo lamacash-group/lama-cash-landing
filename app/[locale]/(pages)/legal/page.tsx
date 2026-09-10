@@ -17,9 +17,20 @@ export async function generateMetadata(): Promise<Metadata> {
         en: 'Legal information and terms of use for the LAMA CASH service — transparency and security in every transaction.'
     };
 
+    const canonical = locale === 'uk' ? 'https://lama-cash.com/legal' : `https://lama-cash.com/${locale}/legal`;
+
     return {
         title: titles[locale] || titles['uk'],
         description: descriptions[locale] || descriptions['uk'],
+        alternates: {
+            canonical,
+            languages: {
+                'uk': 'https://lama-cash.com/legal',
+                'ru': 'https://lama-cash.com/ru/legal',
+                'en': 'https://lama-cash.com/en/legal',
+                'x-default': 'https://lama-cash.com/legal'
+            }
+        }
     };
 }
 

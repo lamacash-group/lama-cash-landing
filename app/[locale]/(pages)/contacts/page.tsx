@@ -19,9 +19,20 @@ export async function generateMetadata(): Promise<Metadata> {
         en: 'LAMA CASH contacts: 24/7 support, our social networks, and ways to get in touch for quick resolution of your questions.'
     };
 
+    const canonical = locale === 'uk' ? 'https://lama-cash.com/contacts' : `https://lama-cash.com/${locale}/contacts`;
+
     return {
         title: titles[locale] || titles['uk'],
         description: descriptions[locale] || descriptions['uk'],
+        alternates: {
+            canonical,
+            languages: {
+                'uk': 'https://lama-cash.com/contacts',
+                'ru': 'https://lama-cash.com/ru/contacts',
+                'en': 'https://lama-cash.com/en/contacts',
+                'x-default': 'https://lama-cash.com/contacts'
+            }
+        }
     };
 }
 

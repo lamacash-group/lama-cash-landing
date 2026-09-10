@@ -36,9 +36,20 @@ export async function generateMetadata(): Promise<Metadata> {
         en: 'All about cryptocurrencies: news, analytics, and guides for secure exchange on the official LAMA CASH blog.'
     };
 
+    const canonical = locale === 'uk' ? 'https://lama-cash.com/blog' : `https://lama-cash.com/${locale}/blog`;
+
     return {
         title: titles[locale] || titles['uk'],
         description: descriptions[locale] || descriptions['uk'],
+        alternates: {
+            canonical,
+            languages: {
+                'uk': 'https://lama-cash.com/blog',
+                'ru': 'https://lama-cash.com/ru/blog',
+                'en': 'https://lama-cash.com/en/blog',
+                'x-default': 'https://lama-cash.com/blog'
+            }
+        }
     };
 }
 

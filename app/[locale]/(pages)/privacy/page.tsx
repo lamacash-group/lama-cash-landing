@@ -17,9 +17,20 @@ export async function generateMetadata(): Promise<Metadata> {
         en: 'Read the LAMA CASH privacy policy and learn how we protect your personal data.'
     };
 
+    const canonical = locale === 'uk' ? 'https://lama-cash.com/privacy' : `https://lama-cash.com/${locale}/privacy`;
+
     return {
         title: titles[locale] || titles['uk'],
         description: descriptions[locale] || descriptions['uk'],
+        alternates: {
+            canonical,
+            languages: {
+                'uk': 'https://lama-cash.com/privacy',
+                'ru': 'https://lama-cash.com/ru/privacy',
+                'en': 'https://lama-cash.com/en/privacy',
+                'x-default': 'https://lama-cash.com/privacy'
+            }
+        }
     };
 }
 

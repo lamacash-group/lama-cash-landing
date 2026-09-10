@@ -18,9 +18,20 @@ export async function generateMetadata(): Promise<Metadata> {
         en: 'Learn more about LAMA CASH: our team, mission, and why thousands of clients choose our crypto exchange service.'
     };
 
+    const canonical = locale === 'uk' ? 'https://lama-cash.com/about' : `https://lama-cash.com/${locale}/about`;
+
     return {
         title: titles[locale] || titles['uk'],
         description: descriptions[locale] || descriptions['uk'],
+        alternates: {
+            canonical,
+            languages: {
+                'uk': 'https://lama-cash.com/about',
+                'ru': 'https://lama-cash.com/ru/about',
+                'en': 'https://lama-cash.com/en/about',
+                'x-default': 'https://lama-cash.com/about'
+            }
+        }
     };
 }
 

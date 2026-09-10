@@ -48,6 +48,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         return { title: 'Not Found' };
     }
 
+    const pathPrefix = locale === 'uk' ? '' : `/${locale}`;
+    const canonical = `https://lama-cash.com${pathPrefix}/blog/${slug}`;
+
     return {
         title: blog.title,
         description: blog.description || 'Блог LAMA CASH',
@@ -56,6 +59,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             description: blog.description,
             images: blog.mainImage ? [urlFor(blog.mainImage).url()] : [],
         },
+        alternates: {
+            canonical,
+            languages: {
+                'uk': `https://lama-cash.com/blog/${slug}`,
+                'ru': `https://lama-cash.com/ru/blog/${slug}`,
+                'en': `https://lama-cash.com/en/blog/${slug}`,
+                'x-default': `https://lama-cash.com/blog/${slug}`
+            }
+        }
     };
 }
 

@@ -23,11 +23,22 @@ export async function generateMetadata(): Promise<Metadata> {
         en: 'Fast crypto exchange: USDT withdrawal, BTC/ETH purchase, card top-ups, PayPal/Wise risk-free.'
     };
 
+    const canonical = locale === 'uk' ? 'https://lama-cash.com' : `https://lama-cash.com/${locale}`;
+
     return {
         title: {
             absolute: titles[locale] || titles['uk'], // absolute отключает шаблон из layout
         },
         description: descriptions[locale] || descriptions['uk'],
+        alternates: {
+            canonical,
+            languages: {
+                'uk': 'https://lama-cash.com',
+                'ru': 'https://lama-cash.com/ru',
+                'en': 'https://lama-cash.com/en',
+                'x-default': 'https://lama-cash.com'
+            }
+        }
     };
 }
 
