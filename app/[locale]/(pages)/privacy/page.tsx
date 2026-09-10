@@ -1,4 +1,27 @@
 import React from "react";
+import {Metadata} from "next";
+import {getLocale} from "next-intl/server";
+
+export async function generateMetadata(): Promise<Metadata> {
+    const locale = await getLocale();
+
+    const titles: Record<string, string> = {
+        uk: 'Політика конфіденційності',
+        ru: 'Политика конфиденциальности',
+        en: 'Privacy Policy'
+    };
+
+    const descriptions: Record<string, string> = {
+        uk: 'Ознайомтеся з політикою конфіденційності LAMA CASH та дізнайтеся, як ми захищаємо ваші дані.',
+        ru: 'Ознакомьтесь с политикой конфиденциальности LAMA CASH и узнайте, как мы защищаем ваши данные.',
+        en: 'Read the LAMA CASH privacy policy and learn how we protect your personal data.'
+    };
+
+    return {
+        title: titles[locale] || titles['uk'],
+        description: descriptions[locale] || descriptions['uk'],
+    };
+}
 
 export default function PrivacyPage() {
     return (

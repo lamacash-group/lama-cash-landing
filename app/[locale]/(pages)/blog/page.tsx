@@ -1,8 +1,9 @@
 import {getBlogs} from "@/sanity/lib/client";
 import {Link} from "@/app/i18n/navigation";
-import {getTranslations} from "next-intl/server";
+import {getLocale, getTranslations} from "next-intl/server";
 import {urlFor} from "@/sanity/lib/image";
 import Image from "next/image";
+import {Metadata} from "next";
 
 interface BlogPost {
     _id: string;
@@ -17,6 +18,27 @@ interface BlogPost {
         };
         alt?: string;
         [key: string]: unknown;
+    };
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+    const locale = await getLocale();
+
+    const titles: Record<string, string> = {
+        uk: 'Блог',
+        ru: 'Блог',
+        en: 'Blog'
+    };
+
+    const descriptions: Record<string, string> = {
+        uk: 'Все про криптовалюти: новини, аналітика та гайди з безпечного обміну в офіційному блозі LAMA CASH.',
+        ru: 'Все о криптовалютах: новости, аналитика и гайды по безопасному обмену в официальном блоге LAMA CASH.',
+        en: 'All about cryptocurrencies: news, analytics, and guides for secure exchange on the official LAMA CASH blog.'
+    };
+
+    return {
+        title: titles[locale] || titles['uk'],
+        description: descriptions[locale] || descriptions['uk'],
     };
 }
 

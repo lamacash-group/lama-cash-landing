@@ -27,9 +27,10 @@ export async function getBlogBySlug(slug: string, locale: string) {
   const query = groq`*[_type == "blog" && slug.current == $slug][0] {
     _id,
     "title": title[$locale],
+    "description": description[$locale], // <-- ДОБАВИТЬ
     "content": content[$locale],
+    mainImage, // <-- ДОБАВИТЬ (полезно для превью в Telegram/Facebook)
     slug
   }`
   return client.fetch(query, { slug, locale });
 }
-

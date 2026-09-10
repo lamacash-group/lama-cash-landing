@@ -1,11 +1,12 @@
 import {getBlogBySlug} from "@/sanity/lib/client";
 import {PortableText} from "@portabletext/react";
 import {Link} from "@/app/i18n/navigation";
-import {getTranslations} from "next-intl/server";
+import {getLocale, getTranslations} from "next-intl/server";
 import {notFound} from "next/navigation";
 import {ReactNode} from "react";
 import Image from "next/image";
 import { urlFor } from '@/sanity/lib/image';
+import {Metadata} from "next";
 
 // --- ТИПЫ ДЛЯ SANITY БЛОКОВ ---
 interface CustomImageValue {
@@ -33,7 +34,31 @@ interface PortableTextChildProps {
     children?: ReactNode;
 }
 
-// --- КОНФИГУРАЦИЯ ОТОБРАЖЕНИЯ БЛОКОВ ---
+type Props = {
+    params: Promise<{ locale: string, slug: string }>
+};
+
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { locale, slug } = await params;
+
+    const blog = await getBlogBySlug(slug, locale);
+
+    if (!blog) {
+        return { title: 'Not Found' };
+    }
+
+    return {
+        title: blog.title,
+        description: blog.description || 'Блог LAMA CASH',
+        openGraph: {
+            title: blog.title,
+            description: blog.description,
+            images: blog.mainImage ? [urlFor(blog.mainImage).url()] : [],
+        },
+    };
+}
+
 const portableTextComponents = {
     types: {
         customImage: ({ value }: { value: CustomImageValue }) => {
@@ -146,9 +171,7 @@ const portableTextComponents = {
     }
 };
 
-
-
-export default async function BlogPostPage({params}: {params: Promise<{locale: string, slug: string}>}) {
+export default async function BlogPostPage({params}:Props) {
     const {locale, slug} = await params;
     const blog = await getBlogBySlug(slug, locale);
     const t = await getTranslations("Blog");

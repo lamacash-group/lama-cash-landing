@@ -1,7 +1,29 @@
 import {Link} from "@/app/i18n/navigation";
 import {Button} from "@/components/ui/button";
 import {useTranslations} from "next-intl";
+import {Metadata} from "next";
+import {getLocale} from "next-intl/server";
 
+export async function generateMetadata(): Promise<Metadata> {
+    const locale = await getLocale();
+
+    const titles: Record<string, string> = {
+        uk: 'Контакти',
+        ru: 'Контакты',
+        en: 'Contacts'
+    };
+
+    const descriptions: Record<string, string> = {
+        uk: 'Контакти LAMA CASH: цілодобова підтримка, наші соціальні мережі та способи зв\'язку для швидкого вирішення ваших питань.',
+        ru: 'Контакты LAMA CASH: круглосуточная поддержка, наши социальные сети и способы связи для быстрого решения ваших вопросов.',
+        en: 'LAMA CASH contacts: 24/7 support, our social networks, and ways to get in touch for quick resolution of your questions.'
+    };
+
+    return {
+        title: titles[locale] || titles['uk'],
+        description: descriptions[locale] || descriptions['uk'],
+    };
+}
 
 export default function ContactsPage() {
     const t = useTranslations("Contacts");

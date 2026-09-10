@@ -5,6 +5,31 @@ import MoreServices from "@/components/MoreServices";
 import {LamaCashMedia} from "@/components/LamaCashMedia";
 import {Blog} from "@/components/Blog";
 import {Questions} from "@/components/Questions";
+import {Metadata} from "next";
+import {getLocale} from "next-intl/server";
+
+export async function generateMetadata(): Promise<Metadata> {
+    const locale = await getLocale();
+
+    const titles: Record<string, string> = {
+        uk: 'Криптообмінник LAMA CASH - обмін USDT на готівку',
+        ru: 'Криптообменник LAMA CASH - обмен USDT на наличные',
+        en: 'LAMA CASH - USDT to cash exchange'
+    };
+
+    const descriptions: Record<string, string> = {
+        uk: 'Швидкий обмін крипти: вивід USDT, купівля BTC/ETH, поповнення карток, PayPal/Wise без ризиків.',
+        ru: 'Быстрый обмен крипты: вывод USDT, покупка BTC/ETH, пополнение карт, PayPal/Wise без рисков.',
+        en: 'Fast crypto exchange: USDT withdrawal, BTC/ETH purchase, card top-ups, PayPal/Wise risk-free.'
+    };
+
+    return {
+        title: {
+            absolute: titles[locale] || titles['uk'], // absolute отключает шаблон из layout
+        },
+        description: descriptions[locale] || descriptions['uk'],
+    };
+}
 
 export default function Main() {
 

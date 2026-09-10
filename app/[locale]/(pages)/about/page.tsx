@@ -1,5 +1,29 @@
 import Link from 'next/link';
 import Image from "next/image";
+import {Metadata} from "next";
+import {getLocale} from "next-intl/server";
+
+export async function generateMetadata(): Promise<Metadata> {
+    const locale = await getLocale();
+
+    const titles: Record<string, string> = {
+        uk: 'Про компанію',
+        ru: 'О компании',
+        en: 'About Us'
+    };
+
+    const descriptions: Record<string, string> = {
+        uk: 'Дізнайтеся більше про LAMA CASH: наша команда, місія та чому тисячі клієнтів обирають наш сервіс для обміну крипти.',
+        ru: 'Узнайте больше о LAMA CASH: наша команда, миссия и почему тысячи клиентов выбирают наш сервис для обмена крипты.',
+        en: 'Learn more about LAMA CASH: our team, mission, and why thousands of clients choose our crypto exchange service.'
+    };
+
+    return {
+        title: titles[locale] || titles['uk'],
+        description: descriptions[locale] || descriptions['uk'],
+    };
+}
+
 
 export default function AboutPage() {
     return (
