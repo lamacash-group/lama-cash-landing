@@ -1,13 +1,8 @@
 import React from "react";
-import {Header} from "@/components/Header";
-import {Footer} from "@/components/Footer";
 
 export default function PrivacyPage() {
     return (
         <div className="flex flex-col w-full overflow-hidden">
-            <header className="w-full h-full flex flex-col gap-4 bg-[linear-gradient(10.25deg,#351d59_-9.46%,#341c55_40.87%,#000000_93.06%)]">
-                <Header/>
-            </header>
             <div className="min-h-screen w-full bg-[linear-gradient(10.25deg,#3C157F_-9.46%,#7134C2_40.87%,#171717_93.06%)] py-10 px-4 md:px-8 font-sans">
                 <div className="max-w-3xl mx-auto bg-black/20 backdrop-blur-md border border-white/10 rounded-3xl p-6 md:p-10 shadow-2xl text-white/80">
 
@@ -124,7 +119,6 @@ export default function PrivacyPage() {
                     </div>
                 </div>
             </div>
-            <Footer />
         </div>
 
     );

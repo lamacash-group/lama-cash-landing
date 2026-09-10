@@ -3,28 +3,37 @@ import * as React from 'react';
 import {Select, SelectTrigger, SelectValue, SelectContent, SelectItem} from "@/components/ui/select";
 import Image from "next/image";
 import {useLocale, useTranslations} from "next-intl";
-import {setUserLocale} from "@/actions/locale";
-import {useRouter} from "next/navigation";
-import {useTransition} from "react";
-
+import {usePathname, useRouter} from "@/app/i18n/navigation";
+import {useState, useTransition} from "react";
 
 export const SwitchLanguage = () => {
 
     const locale = useLocale();
     const router = useRouter();
-    const [isPending, startTransition] = useTransition()
+    const pathname = usePathname();
     const t = useTranslations('aria');
 
-    const setLocale = (locale:string) => {
-        startTransition(async () => {
-            await setUserLocale(locale);
-            router.refresh();
-        });
+    const [isOpen, setIsOpen] = useState(false);
+    const [isPending, startTransition] = useTransition();
+
+    const handleLanguageChange = (newLocale: string) => {
+        setIsOpen(false);
+        setTimeout(() => {
+            startTransition(() => {
+                router.replace(pathname, { locale: newLocale });
+            });
+        }, 150);
     }
 
     return (
         <div>
-            <Select defaultValue={locale} onValueChange={(value) => setLocale(value)} disabled={isPending}>
+            <Select
+                value={locale}
+                onValueChange={handleLanguageChange}
+                open={isOpen}
+                onOpenChange={setIsOpen}
+                disabled={isPending}
+            >
                 <SelectTrigger aria-label={t('languageBtn')} className="text-white px-2 py-2 border-none select-none flex flex-row items-center gap-2 text-base cursor-pointer" classNameTrigger="text-white">
                     <Image src="/earth.svg" alt="earth icon" className="cursor-pointer w-[24px] h-[24px] max-sm:w-[16px] max-sm:h-[16px]" width={16} height={16} />
                     <SelectValue />
@@ -38,3 +47,4 @@ export const SwitchLanguage = () => {
         </div>
     );
 };
+

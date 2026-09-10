@@ -11,12 +11,25 @@ export const client = createClient({
 
 
 export async function getBlogs(locale: string) {
-  const query = groq`*[_type == "blog"] {
+  const query = groq`*[_type == "blog" && defined(slug.current)] {
     _id,
     "title": title[$locale],
     "description": description[$locale],
-    "content": content[$locale]
+    "content": content[$locale],
+    slug,
+    mainImage,
   }`
 
   return client.fetch(query, { locale });
 }
+
+export async function getBlogBySlug(slug: string, locale: string) {
+  const query = groq`*[_type == "blog" && slug.current == $slug][0] {
+    _id,
+    "title": title[$locale],
+    "content": content[$locale],
+    slug
+  }`
+  return client.fetch(query, { slug, locale });
+}
+
