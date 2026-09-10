@@ -85,7 +85,7 @@ export default function AboutPage() {
                                 <div
                                     className="relative w-full h-48 rounded-xl border border-purple-500/20 overflow-hidden">
                                     <Image
-                                        src="/NcryptoAwards.jpg"
+                                        src="/NCryptoAwards.jpg"
                                         alt="NcryptoAwards 2025"
                                         fill
                                         className="object-cover object-center hover:scale-105 transition-transform duration-500"
