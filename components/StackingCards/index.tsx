@@ -335,7 +335,7 @@ function StackCard({item, index, lastItemOffset}: StackCardProps) {
                     <CardHeader className="max-sm:px-1">
                         <div className="flex flex-row gap-4 justify-between">
                             <CardTitle className={cn("font-rubik", item.titleClass)}>
-                                <h2 className="text-xl">{item.title}</h2>
+                                {item.title}
                             </CardTitle>
                             <div className="flex flex-row gap-1 items-center">
                                 {item.titleContent}
@@ -343,7 +343,9 @@ function StackCard({item, index, lastItemOffset}: StackCardProps) {
                         </div>
                         <CardDescription
                             className="font-rubik font-medium text-black text-4xl max-sm:text-2xl uppercase pt-8 max-sm:pt-6 max-sm:pb-0">
-                            {item.description}
+                            <h2 className="text-4xl max-sm:text-2xl">
+                                {item.description}
+                            </h2>
                             <div
                                 className="font-rubik text-base max-sm:text-[13px] text-[#171717] px-1.5 py-4.5 max-sm:pb-0 normal-case">
                                 {item.additDescription}
