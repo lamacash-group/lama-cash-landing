@@ -14,6 +14,9 @@ export const Home = () => {
             <h1 className="text-4xl max-sm:text-[26px] leading-tight text-white font-getvoip max-[500px]:max-w-87.5 font-bold uppercase pt-10 max-sm:pt-9 text-center px-4">
                 {t('title')}
             </h1>
+            {/*<p className="text-xl max-sm:text-[14px] leading-tight text-white/90 font-getvoip max-[500px]:max-w-87.5 font-light text-center px-4 -mt-6">*/}
+            {/*    {t('subtitle')}*/}
+            {/*</p>*/}
             <div className="w-full h-full flex justify-center relative">
                 <div className="absolute left-1/2 -translate-x-1/2 w-[160vw] xl:w-full max-w-none z-10 px-4"
                      style={{top: '30%'}}>
@@ -52,7 +55,7 @@ export const Home = () => {
                                     background: 'linear-gradient(270deg, #41B4F2 0%, #7134C2 35.58%, #FCFAFF 62.98%, #41B4F2 87.5%, #7134C2 100%)',
                                 }}
                             >
-                                <Link href="https://t.me/lama_cash">
+                                <Link href="https://t.me/lama_cash" target="_blank" rel="noopener">
                                     <ContactUs text= {t('buttonContactUs')} buttonClass="max-w-full rounded-[15px]"/>
                                 </Link>
                             </div>

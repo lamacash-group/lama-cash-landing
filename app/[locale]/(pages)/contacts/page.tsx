@@ -81,7 +81,7 @@ export default function ContactsPage() {
                     <div className="lg:col-span-2 space-y-4">
 
 
-                        <a href="mailto:support@lama-cash.com"
+                        <Link href="mailto:support@lama-cash.com"
                            className="group flex items-center gap-5 p-6 bg-black/20 backdrop-blur-md border border-purple-500/20 rounded-2xl hover:bg-purple-900/10 hover:border-purple-400/50 transition-all">
                             <div
                                 className="w-12 h-12 shrink-0 flex items-center justify-center bg-purple-900/30 text-purple-400 rounded-xl group-hover:bg-purple-500 group-hover:text-white transition-colors border border-purple-500/20">
@@ -94,9 +94,9 @@ export default function ContactsPage() {
                                 <h3 className="text-sm uppercase tracking-wider text-purple-400 mb-1 font-semibold">{t("emailTitle")}</h3>
                                 <p className="text-white font-medium break-all group-hover:text-purple-200 transition-colors">support@lama-cash.com</p>
                             </div>
-                        </a>
+                        </Link>
 
-                        <a href="tel:+380935996385"
+                        <Link href="tel:+380935996385"
                            className="group flex items-center gap-5 p-6 bg-black/20 backdrop-blur-md border border-purple-500/20 rounded-2xl hover:bg-purple-900/10 hover:border-purple-400/50 transition-all">
                             <div
                                 className="w-12 h-12 shrink-0 flex items-center justify-center bg-purple-900/30 text-purple-400 rounded-xl group-hover:bg-purple-500 group-hover:text-white transition-colors border border-purple-500/20">
@@ -110,9 +110,9 @@ export default function ContactsPage() {
                                 <p className="text-white font-medium group-hover:text-purple-200 transition-colors">+38
                                     (093) 599 63 85</p>
                             </div>
-                        </a>
+                        </Link>
 
-                        <a href="https://t.me/lamacash_manager" target="_blank" rel="noreferrer"
+                        <Link href="https://t.me/lamacash_manager" target="_blank"  rel="noopener"
                            className="group flex items-center gap-5 p-6 bg-black/20 backdrop-blur-md border border-purple-500/20 rounded-2xl hover:bg-purple-900/10 hover:border-purple-400/50 transition-all">
                             <div
                                 className="w-12 h-12 shrink-0 flex items-center justify-center bg-purple-900/30 text-purple-400 rounded-xl group-hover:bg-purple-500 group-hover:text-white transition-colors border border-purple-500/20">
@@ -125,7 +125,7 @@ export default function ContactsPage() {
                                 <h3 className="text-sm uppercase tracking-wider text-purple-400 mb-1 font-semibold">{t("telegramTitle")}</h3>
                                 <p className="text-white font-medium group-hover:text-purple-200 transition-colors">@lamacash_manager</p>
                             </div>
-                        </a>
+                        </Link>
 
                         <div
                             className="flex items-start gap-5 p-6 bg-black/20 backdrop-blur-md border border-purple-500/20 rounded-2xl">

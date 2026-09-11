@@ -1,9 +1,9 @@
 import * as React from 'react';
 import Image from "next/image";
 import {Button} from "@/components/ui/button";
-import Link from "next/link";
 import {getTranslations} from "next-intl/server";
 import {SkeletonImage} from "@/components/SkeletonImage";
+import {Link} from "@/app/i18n/navigation";
 
 const formatNumber = (num: number) => {
     return new Intl.NumberFormat('ru-RU').format(num);
@@ -160,7 +160,7 @@ export const LamaCashMedia = async () => {
                     <div
                         className="p-px rounded-[6px] bg-[linear-gradient(270deg,#41B4F2_0%,#7134C2_35.58%,#FCFAFF_62.98%,#41B4F2_87.5%,#7134C2_100%)]">
 
-                        <Link href="https://www.tiktok.com/@lama.cash" className="w-full items-center justify-center flex">
+                        <Link href="https://www.tiktok.com/@lama.cash" target="_blank" rel="noopener" className="w-full items-center justify-center flex">
                             <Button
                                 className="w-full max-sm:h-7.5 h-15 flex items-center justify-center rounded-[6px] text-[rgba(23,23,23,1)] font-bold text-base font-getvoip tracking-[3%] max-sm:text-[9px] bg-white uppercase">
                                 <div className="flex items-center gap-1">
@@ -222,7 +222,7 @@ export const LamaCashMedia = async () => {
                     </div>
                     <div
                         className="p-px rounded-[6px] bg-[linear-gradient(270deg,#FF2E56_0%,#23F1E7_35.58%,#FCFAFF_62.98%,#23F1E7_87.5%,#FD3058_100%)]">
-                        <Link href="https://www.tiktok.com/@lama.change" className="w-full items-center justify-center flex">
+                        <Link href="https://www.tiktok.com/@lama.change" target="_blank" rel="noopener" className="w-full items-center justify-center flex">
                         <Button
                             className="w-full max-sm:h-7.5 h-15 flex items-center justify-center rounded-[6px] text-[rgba(23,23,23,1)] font-bold text-base font-getvoip tracking-[3%] max-sm:text-[9px] bg-white uppercase">
                             <div className="flex items-center gap-1">
@@ -295,7 +295,7 @@ export const LamaCashMedia = async () => {
                     </div>
                     <div
                         className="p-px rounded-[6px] bg-[linear-gradient(90deg,#188AFC_0%,#BF3CD5_39.9%,#D240B4_68.75%,#FCCC0A_100%)]">
-                        <Link href="https://www.instagram.com/lama_cash" className="w-full items-center justify-center flex">
+                        <Link href="https://www.instagram.com/lama_cash" target="_blank" rel="noopener" className="w-full items-center justify-center flex">
                         <Button
                             className="w-full max-sm:h-7.5 h-15 flex items-center justify-center rounded-[6px] text-[rgba(23,23,23,1)] font-bold text-base font-getvoip tracking-[3%] max-sm:text-[9px] bg-white uppercase">
                             <div className="flex items-center gap-1">
@@ -365,7 +365,7 @@ export const LamaCashMedia = async () => {
                     </div>
                     <div
                         className="p-px rounded-[6px] bg-[linear-gradient(90deg,#188AFC_0%,#BF3CD5_39.9%,#D240B4_68.75%,#FCCC0A_100%)]">
-                        <Link href="https://www.instagram.com/lama_cash_rezerv/" className="w-full items-center justify-center flex">
+                        <Link href="https://www.instagram.com/lama_cash_rezerv/" target="_blank" rel="noopener" className="w-full items-center justify-center flex">
                             <Button
                                 className="w-full max-sm:h-7.5 h-15 flex items-center justify-center rounded-[6px] text-[rgba(23,23,23,1)] font-bold text-base font-getvoip tracking-[3%] max-sm:text-[9px] bg-white uppercase">
                                 <div className="flex items-center gap-1">
@@ -435,7 +435,7 @@ export const LamaCashMedia = async () => {
                     </div>
                     <div
                         className="p-px rounded-[6px] bg-[linear-gradient(90deg,#188AFC_0%,#BF3CD5_39.9%,#D240B4_68.75%,#FCCC0A_100%)]">
-                        <Link href="https://www.instagram.com/lama_cash" className="w-full items-center justify-center flex">
+                        <Link href="https://t.me/lama_cash" target="_blank" rel="noopener" className="w-full items-center justify-center flex">
                             <Button
                                 className="w-full max-sm:h-7.5 h-15 flex items-center justify-center rounded-[6px] text-[rgba(23,23,23,1)] font-bold text-base font-getvoip tracking-[3%] max-sm:text-[9px] bg-white uppercase">
                                 <div className="flex items-center gap-1">

@@ -7,6 +7,8 @@ import {Blog} from "@/components/Blog";
 import {Questions} from "@/components/Questions";
 import {Metadata} from "next";
 import {getLocale} from "next-intl/server";
+import {BinanceLine} from "@/components/BinanceLine";
+import * as React from "react";
 
 export async function generateMetadata(): Promise<Metadata> {
     const locale = await getLocale();
@@ -47,9 +49,10 @@ export default function Main() {
     return (
         <div className="flex flex-col flex-1 items-center justify-center font-sans w-full mx-auto min-h-screen">
             <div className="flex flex-col w-full bg-[linear-gradient(10.25deg,#3C157F_-9.46%,#7134C2_40.87%,#171717_93.06%)] overflow-hidden">
-                <header className="w-full h-full flex flex-col gap-4">
+                <div className="w-full h-full flex flex-col gap-4">
                     <Header/>
-                </header>
+                    <BinanceLine/>
+                </div>
                 <Home/>
             </div>
             <main className="w-full h-full">
