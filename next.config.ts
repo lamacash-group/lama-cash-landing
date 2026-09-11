@@ -4,7 +4,7 @@ import createNextIntlPlugin from 'next-intl/plugin';
 const nextConfig: NextConfig = {
     allowedDevOrigins: ['d6bd-195-191-73-117.ngrok-free.app'],
     images: {
-        formats: ['image/webp'],
+        formats: ['image/avif', 'image/webp'],
         remotePatterns: [
             {
                 protocol: 'https',

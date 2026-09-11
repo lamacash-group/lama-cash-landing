@@ -1,6 +1,7 @@
 // @flow
 import * as React from 'react';
 import {Avatar, AvatarFallback, AvatarGroup, AvatarImage} from "@/components/ui/avatar";
+import Image from "next/image";
 
 type TypeReviews = {
     src: string,
@@ -39,8 +40,16 @@ export function Reviews() {
                 {
                     reviewsData.map((item, index) => (
                         <Avatar key={index} className="[&::after]:border-[rgba(100,100,101,1)] ring-[rgba(100,100,101,1)]! max-sm:w-5! max-sm:h-5!" size="lg">
-                            <AvatarImage src={item.src} alt={item.alt} width={150} height={150} className={item.objectPosition}/>
-                            <AvatarFallback>RV</AvatarFallback>
+                            <AvatarImage asChild src={item.src}>
+                                <Image
+                                    src={item.src}
+                                    alt={item.alt}
+                                    width={48}
+                                    height={48}
+                                    className={`w-full h-full object-cover ${item.objectPosition}`}
+                                />
+                            </AvatarImage>
+                            {/*<AvatarFallback>RV</AvatarFallback>*/}
                             {reviewsData.length-1 === index && (<span
                                 className="absolute inset-0 rounded-full z-10 pointer-events-none"
                                 style={{

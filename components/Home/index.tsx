@@ -23,10 +23,13 @@ export const Home = () => {
                     <div className="relative w-full">
                         <SkeletonImage
                             src="/earth-main.png"
-                            width={2000}
-                            height={2000}
+                            width={800}
+                            height={800}
+                            // 2. Added sizes to prevent Next.js from generating 3840w images
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 50vw"
                             alt="earth on main page background"
                             priority
+                            fetchPriority={"high"}
                             className="overflow-hidden w-full h-auto relative z-10"
                             skeletonClass="bg-gray-800/60 rounded-full"
                         />
@@ -40,9 +43,12 @@ export const Home = () => {
                     <div className="relative w-full max-w-95 max-sm:max-w-85 flex justify-center">
                         <SkeletonImage
                             src="/lama-main.png"
-                            width={1000}
-                            height={1000}
+                            width={500}
+                            height={500}
+                            // 2. Added sizes so it downloads ~600px width instead of 2048px width
+                            sizes="(max-width: 768px) 100vw, 500px"
                             alt="lama main page"
+                            fetchPriority={"high"}
                             priority={true}
                             className="object-contain object-bottom h-full z-30 w-full max-w-87.5 max-[500px]:max-w-70! max-sm:max-w-75 max-h-full"
                             skeletonClass="bg-gray-800/60 rounded-4xl mx-2.5"
