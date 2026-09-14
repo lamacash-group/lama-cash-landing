@@ -2,7 +2,6 @@ import * as React from 'react';
 import Image from 'next/image';
 import Link from "next/link";
 import {SwitchLanguage} from "@/components/SwitchLanguage";
-import {BinanceLine} from "@/components/BinanceLine";
 import {DrawerMenu} from "@/components/DrawerMenu";
 
 

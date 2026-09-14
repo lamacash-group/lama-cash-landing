@@ -4,6 +4,7 @@ import "./globals.css";
 import {MicrosoftClarity} from "@/components/Clarity";
 import {GoogleAnalytics} from "@next/third-parties/google";
 import {getLocale} from "next-intl/server";
+import Script from "next/script";
 
 const rubikMono = Rubik({
     variable: "--font-rubik",
@@ -29,6 +30,20 @@ export default async function RootLayout({
             lang={locale}
             className={`${rubikMono.variable} ${getVoip.variable} h-full antialiased`}
         >
+        <head>
+            <Script
+                src="https://www.googletagmanager.com/gtag/js?id=AW-18403181154"
+                strategy="afterInteractive"
+            />
+            <Script id="google-ads-tag" strategy="afterInteractive">
+                {`
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', 'AW-18403181154');
+                `}
+            </Script>
+        </head>
         <body className="min-h-full flex flex-col font-rubik bg-[rgba(230,230,230,1)]">
             {children}
         <MicrosoftClarity/>
