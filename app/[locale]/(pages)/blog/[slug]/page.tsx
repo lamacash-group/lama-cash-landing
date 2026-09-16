@@ -1,7 +1,7 @@
 import {getBlogBySlug} from "@/sanity/lib/client";
 import {PortableText} from "@portabletext/react";
 import {Link} from "@/app/i18n/navigation";
-import {getLocale, getTranslations} from "next-intl/server";
+import {getTranslations} from "next-intl/server";
 import {notFound} from "next/navigation";
 import {ReactNode} from "react";
 import Image from "next/image";
@@ -55,9 +55,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         title: blog.title,
         description: blog.description || 'Блог LAMA CASH',
         openGraph: {
+            type: 'article',
             title: blog.title,
             description: blog.description,
-            images: blog.mainImage ? [urlFor(blog.mainImage).url()] : [],
+            url: canonical,
+            images: blog.mainImage ? [{ url: urlFor(blog.mainImage).url(), width: 1200, height: 630 }] : [{ url: '/og-image.jpg', width: 1200, height: 630 }],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: blog.title,
+            description: blog.description,
         },
         alternates: {
             canonical,
@@ -192,8 +199,42 @@ export default async function BlogPostPage({params}:Props) {
         notFound();
     }
 
+    const pathPrefix = locale === 'uk' ? '' : `/${locale}`;
+    const canonical = `https://lama-cash.com${pathPrefix}/blog/${slug}`;
+
+    const blogPostingSchema = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": blog.title,
+        "description": blog.description,
+        "datePublished": blog._createdAt,
+        "dateModified": blog._updatedAt || blog._createdAt,
+        "author": {
+            "@type": "Organization",
+            "name": "LAMA CASH",
+            "url": "https://lama-cash.com"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "LAMA CASH",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://lama-cash.com/logo.png"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": canonical
+        },
+        "image": blog.mainImage ? urlFor(blog.mainImage).url() : "https://lama-cash.com/og-image.jpg"
+    };
+
     return (
         <article className="min-h-screen bg-muted/30 pt-20 px-7 pb-10">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
+            />
             <div className="max-w-3xl mx-auto">
                 <Link href={`/blog`} className="text-primary mb-8 inline-block hover:underline font-bold uppercase text-sm">
                     ← {t('backToBlog')}

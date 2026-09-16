@@ -19,6 +19,8 @@ interface BlogPost {
         alt?: string;
         [key: string]: unknown;
     };
+    _createdAt: string;
+    _updatedAt: string;
 }
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -49,7 +51,17 @@ export async function generateMetadata(): Promise<Metadata> {
                 'en': 'https://lama-cash.com/en/blog',
                 'x-default': 'https://lama-cash.com/blog'
             }
-        }
+        },
+        openGraph: {
+            title: titles[locale] || titles['uk'],
+            description: descriptions[locale] || descriptions['uk'],
+            url: canonical,
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: titles[locale] || titles['uk'],
+            description: descriptions[locale] || descriptions['uk'],
+        },
     };
 }
 

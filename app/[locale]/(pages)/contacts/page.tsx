@@ -32,7 +32,17 @@ export async function generateMetadata(): Promise<Metadata> {
                 'en': 'https://lama-cash.com/en/contacts',
                 'x-default': 'https://lama-cash.com/contacts'
             }
-        }
+        },
+        openGraph: {
+            title: titles[locale] || titles['uk'],
+            description: descriptions[locale] || descriptions['uk'],
+            url: canonical,
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: titles[locale] || titles['uk'],
+            description: descriptions[locale] || descriptions['uk'],
+        },
     };
 }
 

@@ -29,7 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
     return {
         title: {
-            absolute: titles[locale] || titles['uk'], // absolute отключает шаблон из layout
+            absolute: titles[locale] || titles['uk'],
         },
         description: descriptions[locale] || descriptions['uk'],
         alternates: {
@@ -40,7 +40,17 @@ export async function generateMetadata(): Promise<Metadata> {
                 'en': 'https://lama-cash.com/en',
                 'x-default': 'https://lama-cash.com'
             }
-        }
+        },
+        openGraph: {
+            title: titles[locale] || titles['uk'],
+            description: descriptions[locale] || descriptions['uk'],
+            url: canonical,
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: titles[locale] || titles['uk'],
+            description: descriptions[locale] || descriptions['uk'],
+        },
     };
 }
 
