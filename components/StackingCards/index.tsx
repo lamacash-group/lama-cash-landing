@@ -38,7 +38,7 @@ const FirstCard = () => {
                         src={'/ukraine-map.svg'}
                         alt={"Ukraine map logo"}
                         fill
-                        sizes="(max-width: 768px) 100vw, 600px"
+                        sizes="(max-width: 768px) 50vw, 400px"
                         className="object-contain"
                     />
 
@@ -47,7 +47,7 @@ const FirstCard = () => {
                             src={'/pack-dollars.png'}
                             alt={"pack dollars"}
                             fill
-                            sizes="(max-width: 768px) 100vw, 600px"
+                            sizes="(max-width: 768px) 50vw, 400px"
                             className="object-contain"
                         />
                     </div>
@@ -57,7 +57,7 @@ const FirstCard = () => {
                             src={'/coin-trc.png'}
                             alt={"coin trc"}
                             fill
-                            sizes="(max-width: 768px) 100vw, 600px"
+                            sizes="(max-width: 768px) 50vw, 400px"
                             className="object-contain"
                         />
                     </div>
@@ -107,7 +107,7 @@ const SecondCard = () => {
                         src={'/tokens.png'}
                         alt={"crypto tokens"}
                         fill
-                        sizes="(max-width: 768px) 100vw, 600px"
+                        sizes="(max-width: 768px) 50vw, 400px"
                         className="object-contain"
                     />
 
@@ -163,7 +163,7 @@ const ThirdCard = () => {
                         src={'/cards.png'}
                         alt={"all available cards privat, mono, lama cash pay"}
                         fill
-                        sizes="(max-width: 768px) 100vw, 600px"
+                        sizes="(max-width: 768px) 50vw, 400px"
                         className="object-contain"
                     />
 

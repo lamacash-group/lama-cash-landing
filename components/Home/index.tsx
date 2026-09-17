@@ -25,8 +25,7 @@ export const Home = () => {
                             src="/earth-main.png"
                             width={800}
                             height={800}
-                            // 2. Added sizes to prevent Next.js from generating 3840w images
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 50vw"
+                            sizes="(max-width: 768px) 90vw, 800px"
                             alt="earth on main page background"
                             priority
                             fetchPriority={"high"}
@@ -45,8 +44,7 @@ export const Home = () => {
                             src="/lama-main.png"
                             width={500}
                             height={500}
-                            // 2. Added sizes so it downloads ~600px width instead of 2048px width
-                            sizes="(max-width: 768px) 100vw, 500px"
+                            sizes="(max-width: 768px) 350px, 500px"
                             alt="lama main page"
                             fetchPriority={"high"}
                             priority={true}

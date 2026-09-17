@@ -4,6 +4,7 @@ import "./globals.css";
 import {MicrosoftClarity} from "@/components/Clarity";
 import {GoogleAnalytics} from "@next/third-parties/google";
 import {getLocale} from "next-intl/server";
+import {GoogleTagManager} from "@next/third-parties/google";
 import Script from "next/script";
 
 const rubikMono = Rubik({
@@ -45,10 +46,13 @@ export default async function RootLayout({
             </Script>
         </head>
         <body className="min-h-full flex flex-col font-rubik bg-[rgba(230,230,230,1)]">
-            {children}
+        {children}
         <MicrosoftClarity/>
         {process.env.NEXT_PUBLIC_GA_ID && (
             <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID}/>
+        )}
+        {process.env.NEXT_PUBLIC_GTM_ID && (
+            <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID}/>
         )}
         </body>
         </html>
