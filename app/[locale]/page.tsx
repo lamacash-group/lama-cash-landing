@@ -1,14 +1,16 @@
 import {Header} from "@/components/Header";
 import {Home} from "@/components/Home";
-import {ScrollStack} from "@/components/StackingCards";
-import MoreServices from "@/components/MoreServices";
-import {LamaCashMedia} from "@/components/LamaCashMedia";
-import {Blog} from "@/components/Blog";
-import {Questions} from "@/components/Questions";
+import dynamic from "next/dynamic";
 import {Metadata} from "next";
 import {getLocale} from "next-intl/server";
 import {BinanceLine} from "@/components/BinanceLine";
 import * as React from "react";
+
+const ScrollStack = dynamic(() => import("@/components/StackingCards").then(mod => ({ default: mod.ScrollStack })));
+const MoreServices = dynamic(() => import("@/components/MoreServices"));
+const LamaCashMedia = dynamic(() => import("@/components/LamaCashMedia").then(mod => ({ default: mod.LamaCashMedia })));
+const Blog = dynamic(() => import("@/components/Blog").then(mod => ({ default: mod.Blog })));
+const Questions = dynamic(() => import("@/components/Questions").then(mod => ({ default: mod.Questions })));
 
 export async function generateMetadata(): Promise<Metadata> {
     const locale = await getLocale();
@@ -67,19 +69,19 @@ export default function Main() {
             </div>
             <main className="w-full h-full">
                 <section>
-                    <ScrollStack/>
+                    <ScrollStack />
                 </section>
                 <section id="services">
-                    <MoreServices/>
+                    <MoreServices />
                 </section>
                 <section>
-                    <Questions/>
+                    <Questions />
                 </section>
                 <section id="media">
-                    <LamaCashMedia/>
+                    <LamaCashMedia />
                 </section>
                 <section id="blog">
-                    <Blog/>
+                    <Blog />
                 </section>
             </main>
         </div>

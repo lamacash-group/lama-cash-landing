@@ -62,18 +62,18 @@ const MoreServices = () => {
                 </div>
                 <div className="flex flex-col justify-end items-center w-full max-sm:max-w-35 h-full relative">
                     <div
-                        className="absolute -rotate-12 z-0 w-full h-full max-sm:w-[90%] max-[400px]:w-full max-w-70 max-h-75 pointer-events-none">
+                        className="absolute -rotate-12 z-0 w-full h-full max-sm:w-[90%] max-[400px]:w-full max-w-70 max-h-75 pointer-events-none aspect-square">
                         <Image
                             src={'/paypal.png'}
-                            alt={"crypto tokens"}
+                            alt={"PayPal icon"}
                             fill
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 300px"
                             className="object-contain"
                         />
                     </div>
                     <Link href="https://t.me/lama_cash" className="w-full items-center justify-center flex z-10">
                         <ContactUs text={t('card1.btn')} imageClass="bg-white max-sm:h-[14px] max-sm:w-[14px]"
-                                   iconClass="max-sm:w-[8px] max-sm:h-8px]"
+                                   iconClass="max-sm:w-[8px] max-sm:h-[8px]"
                                    buttonClass="hover:bg-black/95 text-base text-[rgba(240,240,240,1)] max-sm:max-w-[120px] max-sm:h-[30px] max-sm:text-[9px] max-sm:py-1.5 max-sm:px-3 max-sm:rounded-[6px] uppercase font-getvoip tracking-[3%] bg-[rgba(23,23,23,1)]"
                                    inverted/>
                     </Link>
@@ -92,18 +92,18 @@ const MoreServices = () => {
                 </div>
                 <div className="flex flex-col justify-end items-center w-full max-sm:max-w-35 h-full relative">
                     <div
-                        className="absolute rotate-[-9deg] z-0 w-full h-full max-sm:w-[90%] max-[400px]:w-full max-w-70 max-h-75 pointer-events-none">
+                        className="absolute rotate-[-9deg] z-0 w-full h-full max-sm:w-[90%] max-[400px]:w-full max-w-70 max-h-75 pointer-events-none aspect-square">
                         <Image
                             src={'/paypalwallet.png'}
-                            alt={"crypto tokens"}
+                            alt={"PayPal wallet"}
                             fill
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 300px"
                             className="object-contain"
                         />
                     </div>
                     <Link href="https://t.me/lama_cash" className="w-full items-center justify-center flex z-10">
                         <ContactUs text={t('card2.btn')} imageClass="bg-white max-sm:h-[14px] max-sm:w-[14px]"
-                                   iconClass="max-sm:w-[8px] max-sm:h-8px]"
+                                   iconClass="max-sm:w-[8px] max-sm:h-[8px]"
                                    buttonClass="hover:bg-black/95 text-base text-[rgba(240,240,240,1)] max-sm:max-w-[120px] max-sm:h-[30px] max-sm:text-[9px] max-sm:py-1.5 max-sm:px-3 max-sm:rounded-[6px] uppercase font-getvoip tracking-[3%] bg-[rgba(23,23,23,1)]"
                                    inverted/>
                     </Link>
@@ -138,18 +138,18 @@ const MoreServices = () => {
                 </div>
                 <div className="flex flex-col justify-end items-center w-full max-sm:max-w-35 h-full relative">
                     <div
-                        className="absolute rotate-[-9deg] z-0 w-full h-full max-sm:w-[90%] max-[400px]:w-full max-w-70 max-h-75 pointer-events-none">
+                        className="absolute rotate-[-9deg] z-0 w-full h-full max-sm:w-[90%] max-[400px]:w-full max-w-70 max-h-75 pointer-events-none aspect-square">
                         <Image
                             src={'/wise.png'}
-                            alt={"crypto tokens"}
+                            alt={"Wise logo"}
                             fill
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 300px"
                             className="object-contain"
                         />
                     </div>
                     <Link href="https://t.me/lama_cash" className="w-full items-center justify-center flex z-10">
                         <ContactUs text={t('card3.btn')} imageClass="bg-white max-sm:h-[14px] max-sm:w-[14px]"
-                                   iconClass="max-sm:w-[8px] max-sm:h-8px]"
+                                   iconClass="max-sm:w-[8px] max-sm:h-[8px]"
                                    buttonClass="hover:bg-black/95 text-base text-[rgba(240,240,240,1)] max-sm:max-w-[120px] max-sm:h-[30px] max-sm:text-[9px] max-sm:py-1.5 max-sm:px-3 max-sm:rounded-[6px] uppercase font-getvoip tracking-[3%] bg-[rgba(23,23,23,1)]"
                                    inverted/>
                     </Link>
@@ -184,18 +184,18 @@ const MoreServices = () => {
                 </div>
                 <div className="flex flex-col justify-end items-center w-full max-sm:max-w-35 h-full relative">
                     <div
-                        className="absolute rotate-[-9deg] z-0 w-full h-full max-sm:w-[90%] max-[400px]:w-full max-w-70 max-h-75 pointer-events-none">
+                        className="absolute rotate-[-9deg] z-0 w-full h-full max-sm:w-[90%] max-[400px]:w-full max-w-70 max-h-75 pointer-events-none aspect-square">
                         <Image
                             src={'/puzzle.png'}
-                            alt={"crypto tokens"}
+                            alt={"Puzzle icon"}
                             fill
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 300px"
                             className="object-contain"
                         />
                     </div>
                     <Link href="https://t.me/lama_cash" className="w-full items-center justify-center flex z-10">
                         <ContactUs text={t('card4.btn')} imageClass="bg-white max-sm:h-[14px] max-sm:w-[14px]"
-                                   iconClass="max-sm:w-[8px] max-sm:h-8px]"
+                                   iconClass="max-sm:w-[8px] max-sm:h-[8px]"
                                    buttonClass="hover:bg-black/95 text-base text-[rgba(240,240,240,1)] max-sm:max-w-[120px] max-sm:h-[30px] max-sm:text-[9px] max-sm:py-1.5 max-sm:px-3 max-sm:rounded-[6px] uppercase font-getvoip tracking-[3%] bg-[rgba(23,23,23,1)]"
                                    inverted/>
                     </Link>

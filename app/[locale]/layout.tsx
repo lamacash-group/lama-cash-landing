@@ -87,7 +87,7 @@ export default async function LocaleLayout({
             dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
         <Provider>
-            <div className="flex flex-col w-full overflow-hidden min-h-screen">
+            <div className="flex flex-col w-full overflow-x-clip min-h-screen">
                 {children}
                 <Footer/>
             </div>
