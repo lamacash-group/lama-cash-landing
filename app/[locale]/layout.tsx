@@ -8,6 +8,7 @@ import {hasLocale} from "next-intl";
 import {notFound} from "next/navigation";
 import {MicrosoftClarity} from "@/components/Clarity";
 import {GoogleTagManager} from "@next/third-parties/google";
+import "../globals.css";
 import {Rubik} from "next/font/google";
 import localFont from "next/font/local";
 
