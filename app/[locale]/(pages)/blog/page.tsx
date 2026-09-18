@@ -1,6 +1,6 @@
 import {getBlogs} from "@/sanity/lib/client";
 import {Link} from "@/app/i18n/navigation";
-import {getLocale, getTranslations} from "next-intl/server";
+import {getTranslations, setRequestLocale} from "next-intl/server";
 import {urlFor} from "@/sanity/lib/image";
 import Image from "next/image";
 import {Metadata} from "next";
@@ -23,8 +23,8 @@ interface BlogPost {
     _updatedAt: string;
 }
 
-export async function generateMetadata(): Promise<Metadata> {
-    const locale = await getLocale();
+export async function generateMetadata({params}: {params: Promise<{ locale: string }>}): Promise<Metadata> {
+    const {locale} = await params;
 
     const titles: Record<string, string> = {
         uk: 'Блог',
@@ -67,6 +67,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function BlogPage({params}: {params: Promise<{locale: string}>}) {
     const {locale} = await params;
+    setRequestLocale(locale);
     const blogs = await getBlogs(locale);
     const t = await getTranslations("Blog");
 

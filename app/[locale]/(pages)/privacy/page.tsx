@@ -1,9 +1,14 @@
 import React from "react";
 import {Metadata} from "next";
-import {getLocale} from "next-intl/server";
+import {setRequestLocale} from "next-intl/server";
+import {routing} from "@/app/i18n/routing";
 
-export async function generateMetadata(): Promise<Metadata> {
-    const locale = await getLocale();
+export function generateStaticParams() {
+    return routing.locales.map((locale) => ({locale}));
+}
+
+export async function generateMetadata({params}: {params: Promise<{ locale: string }>}): Promise<Metadata> {
+    const {locale} = await params;
 
     const titles: Record<string, string> = {
         uk: 'Політика конфіденційності',
@@ -44,7 +49,10 @@ export async function generateMetadata(): Promise<Metadata> {
     };
 }
 
-export default function PrivacyPage() {
+export default async function PrivacyPage({params}: {params: Promise<{ locale: string }>}) {
+    const {locale} = await params;
+    setRequestLocale(locale);
+
     return (
         <div className="flex flex-col w-full overflow-hidden">
             <div className="min-h-screen w-full bg-[linear-gradient(10.25deg,#3C157F_-9.46%,#7134C2_40.87%,#171717_93.06%)] py-10 px-4 md:px-8 font-sans">

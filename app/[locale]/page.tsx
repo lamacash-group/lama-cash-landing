@@ -2,9 +2,10 @@ import {Header} from "@/components/Header";
 import {Home} from "@/components/Home";
 import dynamic from "next/dynamic";
 import {Metadata} from "next";
-import {getLocale} from "next-intl/server";
+import {setRequestLocale} from "next-intl/server";
 import {BinanceLine} from "@/components/BinanceLine";
 import * as React from "react";
+import {routing} from "@/app/i18n/routing";
 
 const ScrollStack = dynamic(() => import("@/components/StackingCards").then(mod => ({ default: mod.ScrollStack })));
 const MoreServices = dynamic(() => import("@/components/MoreServices"));
@@ -12,8 +13,17 @@ const LamaCashMedia = dynamic(() => import("@/components/LamaCashMedia").then(mo
 const Blog = dynamic(() => import("@/components/Blog").then(mod => ({ default: mod.Blog })));
 const Questions = dynamic(() => import("@/components/Questions").then(mod => ({ default: mod.Questions })));
 
-export async function generateMetadata(): Promise<Metadata> {
-    const locale = await getLocale();
+type Props = {
+    params: Promise<{ locale: string }>;
+};
+
+export function generateStaticParams() {
+    return routing.locales.map((locale) => ({locale}));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const resolvedParams = await params;
+    const locale = resolvedParams.locale;
 
     const titles: Record<string, string> = {
         uk: 'Криптообмінник LAMA CASH - обмін USDT на готівку',
@@ -56,7 +66,9 @@ export async function generateMetadata(): Promise<Metadata> {
     };
 }
 
-export default function Main() {
+export default async function Main({params}: {params: Promise<{ locale: string }>}) {
+    const {locale} = await params;
+    setRequestLocale(locale);
 
     return (
         <div className="flex flex-col flex-1 items-center justify-center font-sans w-full mx-auto min-h-screen">

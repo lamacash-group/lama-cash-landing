@@ -1,11 +1,17 @@
 import {Link} from "@/app/i18n/navigation";
 import {Button} from "@/components/ui/button";
-import {useTranslations} from "next-intl";
 import {Metadata} from "next";
-import {getLocale} from "next-intl/server";
+import {getTranslations, setRequestLocale} from "next-intl/server";
+import {routing} from "@/app/i18n/routing";
 
-export async function generateMetadata(): Promise<Metadata> {
-    const locale = await getLocale();
+export function generateStaticParams() {
+    return routing.locales.map((locale) => ({locale}));
+}
+
+export async function generateMetadata({params}: {params: Promise<{ locale: string }>}): Promise<Metadata> {
+    const {locale} = await params;
+
+    setRequestLocale(locale);
 
     const titles: Record<string, string> = {
         uk: 'Контакти',
@@ -46,8 +52,11 @@ export async function generateMetadata(): Promise<Metadata> {
     };
 }
 
-export default function ContactsPage() {
-    const t = useTranslations("Contacts");
+export default async function ContactsPage({params}: {params: Promise<{ locale: string }>}) {
+    const {locale} = await params;
+    setRequestLocale(locale);
+    const t = await getTranslations("Contacts");
+
 
     return (
 
@@ -91,7 +100,7 @@ export default function ContactsPage() {
                     <div className="lg:col-span-2 space-y-4">
 
 
-                        <Link href="mailto:support@lama-cash.com"
+                        <a href="mailto:support@lama-cash.com"
                            className="group flex items-center gap-5 p-6 bg-black/20 backdrop-blur-md border border-purple-500/20 rounded-2xl hover:bg-purple-900/10 hover:border-purple-400/50 transition-all">
                             <div
                                 className="w-12 h-12 shrink-0 flex items-center justify-center bg-purple-900/30 text-purple-400 rounded-xl group-hover:bg-purple-500 group-hover:text-white transition-colors border border-purple-500/20">
@@ -104,9 +113,9 @@ export default function ContactsPage() {
                                 <h3 className="text-sm uppercase tracking-wider text-purple-400 mb-1 font-semibold">{t("emailTitle")}</h3>
                                 <p className="text-white font-medium break-all group-hover:text-purple-200 transition-colors">support@lama-cash.com</p>
                             </div>
-                        </Link>
+                        </a>
 
-                        <Link href="tel:+380935996385"
+                        <a href="tel:+380935996385"
                            className="group flex items-center gap-5 p-6 bg-black/20 backdrop-blur-md border border-purple-500/20 rounded-2xl hover:bg-purple-900/10 hover:border-purple-400/50 transition-all">
                             <div
                                 className="w-12 h-12 shrink-0 flex items-center justify-center bg-purple-900/30 text-purple-400 rounded-xl group-hover:bg-purple-500 group-hover:text-white transition-colors border border-purple-500/20">
@@ -120,9 +129,9 @@ export default function ContactsPage() {
                                 <p className="text-white font-medium group-hover:text-purple-200 transition-colors">+38
                                     (093) 599 63 85</p>
                             </div>
-                        </Link>
+                        </a>
 
-                        <Link href="https://t.me/lamacash_manager" target="_blank"  rel="noopener"
+                        <a href="https://t.me/lamacash_manager" target="_blank"  rel="noopener"
                            className="group flex items-center gap-5 p-6 bg-black/20 backdrop-blur-md border border-purple-500/20 rounded-2xl hover:bg-purple-900/10 hover:border-purple-400/50 transition-all">
                             <div
                                 className="w-12 h-12 shrink-0 flex items-center justify-center bg-purple-900/30 text-purple-400 rounded-xl group-hover:bg-purple-500 group-hover:text-white transition-colors border border-purple-500/20">
@@ -135,7 +144,7 @@ export default function ContactsPage() {
                                 <h3 className="text-sm uppercase tracking-wider text-purple-400 mb-1 font-semibold">{t("telegramTitle")}</h3>
                                 <p className="text-white font-medium group-hover:text-purple-200 transition-colors">@lamacash_manager</p>
                             </div>
-                        </Link>
+                        </a>
 
                         <div
                             className="flex items-start gap-5 p-6 bg-black/20 backdrop-blur-md border border-purple-500/20 rounded-2xl">
@@ -163,7 +172,8 @@ export default function ContactsPage() {
 
                     <div
                         className="lg:col-span-3 bg-black/20 backdrop-blur-md border border-purple-500/20 rounded-3xl p-8 shadow-2xl h-fit">
-                        <h2 className="text-2xl font-semibold text-white mb-6">{t("writeToUsTitle")}</h2>
+                        <h2 className="text-2xl font-semibold text-white mb-6">{t("writeToUsTitle")}
+                        </h2>
                         <form className="space-y-5">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                                 <div className="space-y-2">

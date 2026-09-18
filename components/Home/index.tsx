@@ -44,7 +44,7 @@ export const Home = () => {
                             src="/lama-main.png"
                             width={500}
                             height={500}
-                            sizes="(max-width: 768px) 350px, 500px"
+                            sizes="(max-width: 768px) 250px, 400px"
                             alt="lama main page"
                             fetchPriority={"high"}
                             priority={true}

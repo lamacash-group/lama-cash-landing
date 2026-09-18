@@ -1,12 +1,13 @@
-import {getBlogBySlug} from "@/sanity/lib/client";
+import {getBlogBySlug, getBlogs} from "@/sanity/lib/client";
 import {PortableText} from "@portabletext/react";
 import {Link} from "@/app/i18n/navigation";
-import {getTranslations} from "next-intl/server";
+import {getTranslations, setRequestLocale} from "next-intl/server";
 import {notFound} from "next/navigation";
 import {ReactNode} from "react";
 import Image from "next/image";
 import { urlFor } from '@/sanity/lib/image';
 import {Metadata} from "next";
+import {routing} from "@/app/i18n/routing";
 
 // --- ТИПЫ ДЛЯ SANITY БЛОКОВ ---
 interface CustomImageValue {
@@ -32,6 +33,17 @@ interface ImageWithQuoteValue {
 
 interface PortableTextChildProps {
     children?: ReactNode;
+}
+
+export async function generateStaticParams() {
+    const slugs = [];
+    for (const locale of routing.locales) {
+        const blogs = await getBlogs(locale);
+        for (const blog of blogs) {
+            slugs.push({ locale, slug: blog.slug.current });
+        }
+    }
+    return slugs;
 }
 
 type Props = {
@@ -192,6 +204,7 @@ const portableTextComponents = {
 
 export default async function BlogPostPage({params}:Props) {
     const {locale, slug} = await params;
+    setRequestLocale(locale);
     const blog = await getBlogBySlug(slug, locale);
     const t = await getTranslations("Blog");
 

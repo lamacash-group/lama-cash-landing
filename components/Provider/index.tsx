@@ -1,14 +1,17 @@
 import * as React from 'react';
-import {NextIntlClientProvider} from "next-intl";
+import {AbstractIntlMessages, NextIntlClientProvider} from "next-intl";
 import {TooltipProvider} from "@/components/ui/tooltip";
 
 type Props = {
     children: React.ReactNode;
+    messages: AbstractIntlMessages;
+    locale: string;
 };
-export const Provider = ({children}: Props) => {
+
+export const Provider = ({children, messages, locale}: Props) => {
     return (
         <>
-            <NextIntlClientProvider>
+            <NextIntlClientProvider locale={locale} messages={messages}>
                 <TooltipProvider delayDuration={0}>
                     {children}
                 </TooltipProvider>
