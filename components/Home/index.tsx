@@ -3,7 +3,7 @@ import {useTranslations} from "next-intl";
 import {ContactUs} from "@/components/ContactUs";
 import {Reviews} from "@/components/Reviews";
 import Link from "next/link";
-import {SkeletonImage} from "@/components/SkeletonImage";
+import Image from "next/image";
 
 export const Home = () => {
 
@@ -21,16 +21,14 @@ export const Home = () => {
                 <div className="absolute left-1/2 -translate-x-1/2 w-[160vw] xl:w-full max-w-none z-10 px-4"
                      style={{top: '30%'}}>
                     <div className="relative w-full">
-                        <SkeletonImage
+                        <Image
                             src="/earth-main.png"
                             width={800}
                             height={800}
                             sizes="(max-width: 768px) 90vw, 800px"
                             alt="earth on main page background"
                             priority
-                            fetchPriority={"high"}
                             className="overflow-hidden w-full h-auto relative z-10"
-                            skeletonClass="bg-gray-800/60 rounded-full"
                         />
                     </div>
                 </div>
@@ -40,16 +38,15 @@ export const Home = () => {
                 <div className="relative flex flex-col gap-1 items-center justify-center max-sm:justify-start w-full px-4">
 
                     <div className="relative w-full max-w-95 max-sm:max-w-85 flex justify-center">
-                        <SkeletonImage
+                        <Image
                             src="/lama-main.png"
                             width={500}
                             height={500}
                             sizes="(max-width: 768px) 250px, 400px"
                             alt="lama main page"
-                            fetchPriority={"high"}
-                            priority={true}
-                            className="object-contain object-bottom h-full z-30 w-full max-w-87.5 max-[500px]:max-w-70! max-sm:max-w-75 max-h-full"
-                            skeletonClass="bg-gray-800/60 rounded-4xl mx-2.5"
+                            fetchPriority="high"
+                            priority
+                            className="object-contain object-bottom h-full z-30 w-full max-w-87.5 max-[500px]:max-w-70! max-sm:max-w-75 max-h-full mx-2.5"
                         />
 
                         <div className="absolute bottom-4 max-sm:bottom-8 left-1/2 z-70 -translate-x-1/2 flex flex-col w-full items-center gap-3">
