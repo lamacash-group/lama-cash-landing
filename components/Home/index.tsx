@@ -25,7 +25,7 @@ export const Home = () => {
                             src="/earth-main.png"
                             width={800}
                             height={800}
-                            sizes="(max-width: 768px) 90vw, 800px"
+                            sizes="(max-width: 640px) 100vw, (max-width: 1280px) 90vw, 800px"
                             alt="earth on main page background"
                             priority
                             className="overflow-hidden w-full h-auto relative z-10"
@@ -40,9 +40,9 @@ export const Home = () => {
                     <div className="relative w-full max-w-95 max-sm:max-w-85 flex justify-center">
                         <Image
                             src="/lama-main.png"
-                            width={500}
-                            height={500}
-                            sizes="(max-width: 768px) 250px, 400px"
+                            width={350}
+                            height={400}
+                            sizes="(max-width: 640px) 280px, 350px"
                             alt="lama main page"
                             fetchPriority="high"
                             priority

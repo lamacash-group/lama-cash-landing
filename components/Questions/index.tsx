@@ -54,9 +54,9 @@ export const Questions = () => {
                         <Image
                             src={'/lama-service.png'}
                             alt={"lama cash footer telegram link"}
-                            width={1200}
-                            height={1250}
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                            width={350}
+                            height={365}
+                            sizes="(max-width: 640px) 160px, 350px"
                             className="w-full h-auto object-cover relative z-20"
                         />
                         <div

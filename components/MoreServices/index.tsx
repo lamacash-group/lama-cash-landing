@@ -67,7 +67,7 @@ const MoreServices = () => {
                             src={'/paypal.png'}
                             alt={"PayPal icon"}
                             fill
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 300px"
+                            sizes="(max-width: 640px) 140px, (max-width: 1024px) 240px, 280px"
                             className="object-contain"
                         />
                     </div>
@@ -97,7 +97,7 @@ const MoreServices = () => {
                             src={'/paypalwallet.png'}
                             alt={"PayPal wallet"}
                             fill
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 300px"
+                            sizes="(max-width: 640px) 140px, (max-width: 1024px) 240px, 280px"
                             className="object-contain"
                         />
                     </div>
@@ -143,7 +143,7 @@ const MoreServices = () => {
                             src={'/wise.png'}
                             alt={"Wise logo"}
                             fill
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 300px"
+                            sizes="(max-width: 640px) 140px, (max-width: 1024px) 240px, 280px"
                             className="object-contain"
                         />
                     </div>
@@ -189,7 +189,7 @@ const MoreServices = () => {
                             src={'/puzzle.png'}
                             alt={"Puzzle icon"}
                             fill
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 300px"
+                            sizes="(max-width: 640px) 140px, (max-width: 1024px) 240px, 280px"
                             className="object-contain"
                         />
                     </div>
