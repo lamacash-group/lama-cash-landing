@@ -7,10 +7,11 @@ import {routing} from "@/app/i18n/routing";
 import {hasLocale} from "next-intl";
 import {notFound} from "next/navigation";
 import {MicrosoftClarity} from "@/components/Clarity";
-import {GoogleTagManager} from "@next/third-parties/google";
+import {GoogleAnalytics} from "@next/third-parties/google";
 import "../globals.css";
 import {Rubik} from "next/font/google";
 import localFont from "next/font/local";
+import Script from "next/script";
 
 type Props = {
     params: Promise<{ locale: string }>;
@@ -136,9 +137,17 @@ export default async function LocaleLayout({
             </div>
         </Provider>
         <MicrosoftClarity/>
-        {process.env.NEXT_PUBLIC_GTM_ID && (
-            <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID}/>
+        {process.env.NEXT_PUBLIC_GA_ID && (
+            <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+            // <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID}/>
         )}
+        <Script id="google-ads-config" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('config', 'AW-18403181154');
+            `}
+        </Script>
         </body>
         </html>
     )
