@@ -36,8 +36,8 @@ export const locations: Location[] = [
   { id: "ua3", country: "Україна", city: "Харків", category: "Україна", iconPlaceholderColor: "bg-yellow-300", iconPath: "/rates/flag-ukraine.png" },
   { id: "ua4", country: "Україна", city: "Львів", category: "Україна", iconPlaceholderColor: "bg-yellow-300", iconPath: "/rates/flag-ukraine.png" },
   { id: "ua5", country: "Україна", city: "Дніпро", category: "Україна", iconPlaceholderColor: "bg-yellow-300", iconPath: "/rates/flag-ukraine.png" },
-  { id: "eu1", country: "Польща", city: "Варшава", category: "Країни ЄС", iconPlaceholderColor: "bg-red-400", iconPath: "/rates/flag-ukraine.png" },
+  { id: "eu1", country: "Польща", city: "Варшава", category: "Країни ЄС", iconPlaceholderColor: "bg-red-400", iconPath: "/rates/flag-poland.png" },
   { id: "eu2", country: "Німеччина", city: "Берлін", category: "Країни ЄС", iconPlaceholderColor: "bg-black", iconPath: "/rates/flag-germany.png" },
   { id: "us1", country: "США", city: "Нью-Йорк", category: "США", iconPlaceholderColor: "bg-red-600", iconPath: "/rates/flag-united-states.png" },
-  { id: "asia1", country: "ОАЕ", city: "Дубай", category: "Азія", iconPlaceholderColor: "bg-green-700", iconPath: "/rates/flag-ukraine.png" },
+  { id: "asia1", country: "ОАЕ", city: "Дубай", category: "Азія", iconPlaceholderColor: "bg-green-700", iconPath: "/rates/flag-united-arab.png" },
 ];
