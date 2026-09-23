@@ -79,6 +79,13 @@
     "remainingQuestions": "Still have questions? Write to Telegram",
     "btn": "WRITE TO US"
   },
+  "ReviewsCarousel": {
+    "reviewsTitle": "people trust us",
+    "reviewsCountLabel": "reviews",
+    "btn": "WRITE TO US",
+    "seeAllReviews": "SEE ALL",
+    "trustCount": "400 000+"
+  },
   "LamaMedia": {
     "title": "LAMA CASH IN THE MEDIA"
   },
@@ -121,5 +128,26 @@
     "legalInfoText": "FOP [Last Name First Name Patronymic] / LLC \"Lama Cash\" | RNOKPP / EDRPOU: 1234567890",
     "legalDocsButton": "Documents and rules",
     "backToHome": "Back to home"
+  },
+  "FaqSection": {
+    "title": "FAQs",
+    "items": {
+      "item1": {
+        "question": "What is Lama Cash?",
+        "answer": "Lama Cash is a modern service for fast and secure exchange of cryptocurrencies and cash with an individual approach to each client."
+      },
+      "item2": {
+        "question": "How does it work in practice?",
+        "answer": "It's simple — you write to the manager on Telegram, specify the amount and direction, receive instructions, and perform the operation. Cash can be received in person at the office or via a courier. The current exchange rate is published daily on Telegram, Instagram, and TikTok — you always know what to expect before starting the operation."
+      },
+      "item3": {
+        "question": "Is there an exchange fee?",
+        "answer": "The exchange fee depends on the chosen currency and the transaction amount. Detailed information can be obtained from the manager."
+      },
+      "item4": {
+        "question": "What currencies do you support?",
+        "answer": "We support a wide range of cryptocurrencies and cash currencies. Please contact the manager for details."
+      }
+    }
   }
 }
