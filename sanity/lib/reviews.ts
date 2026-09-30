@@ -15,7 +15,7 @@ export interface Review {
 }
 
 export async function getReviews(): Promise<Review[]> {
-  const query = groq`*[_type == "review"] | order(order asc)[0...12] {
+  const query = groq`*[_type == "review"] | order(order asc, _createdAt desc)[0...12] {
     _id,
     title,
     image,
