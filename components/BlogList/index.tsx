@@ -59,7 +59,7 @@ export const BlogList = ({blogs}: { blogs: BlogProps[] }) => {
     if (!blogs || blogs.length === 0) return null;
 
     return (
-        <div className="flex flex-col w-full bg-[rgba(240,240,240,1)] items-center justify-center pt-12 py-10 max-sm:py-7 max-sm:pt-4">
+        <div className="flex flex-col w-full bg-black items-center justify-center pt-12 py-10 max-sm:py-7 max-sm:pt-4">
 
             <Carousel
                 setApi={setApi}

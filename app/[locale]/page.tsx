@@ -6,6 +6,8 @@ import {setRequestLocale} from "next-intl/server";
 import {BinanceLine} from "@/components/BinanceLine";
 import * as React from "react";
 import {routing} from "@/app/i18n/routing";
+import FAQSection from "@/components/FaqSection";
+import ReviewsSection from "@/components/Reviews/ReviewsSection";
 
 const ScrollStack = dynamic(() => import("@/components/StackingCards").then(mod => ({ default: mod.ScrollStack })));
 const MoreServices = dynamic(() => import("@/components/MoreServices"));
@@ -92,8 +94,14 @@ export default async function Main({params}: {params: Promise<{ locale: string }
                 <section id="media">
                     <LamaCashMedia />
                 </section>
+                <section>
+                    <ReviewsSection/>
+                </section>
                 <section id="blog">
                     <Blog />
+                </section>
+                <section>
+                    <FAQSection/>
                 </section>
             </main>
         </div>

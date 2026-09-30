@@ -133,20 +133,36 @@
     "title": "FAQs",
     "items": {
       "item1": {
-        "question": "What is Lama Cash?",
-        "answer": "Lama Cash is a modern service for fast and secure exchange of cryptocurrencies and cash with an individual approach to each client."
+        "question": "What is LAMA CASH and what services do you provide?",
+        "answer": "LAMA CASH is a financial service where you can get help with cryptocurrency and fiat exchange, money transfers within Ukraine and abroad, payment systems, and other financial tasks. We don't just \"exchange currency\" — we help you find the right solution for your specific request."
       },
       "item2": {
-        "question": "How does it work in practice?",
-        "answer": "It's simple — you write to the manager on Telegram, specify the amount and direction, receive instructions, and perform the operation. Cash can be received in person at the office or via a courier. The current exchange rate is published daily on Telegram, Instagram, and TikTok — you always know what to expect before starting the operation."
+        "question": "How does the exchange work in practice?",
+        "answer": "It's simple: write to the manager, specify the amount, city, and exchange direction. You will receive the current rate and instructions, agree on the terms, and we complete the transaction. The manager guides you through every step."
       },
       "item3": {
-        "question": "Is there an exchange fee?",
-        "answer": "The exchange fee depends on the chosen currency and the transaction amount. Detailed information can be obtained from the manager."
+        "question": "How to exchange USDT to cash or buy USDT?",
+        "answer": "Write to the manager, specify the amount, the currency you need, and the city. We will share the current terms and explain the next steps. We work both with withdrawing crypto to cash and in the opposite direction."
       },
       "item4": {
-        "question": "What currencies do you support?",
-        "answer": "We support a wide range of cryptocurrencies and cash currencies. Please contact the manager for details."
+        "question": "Can I transfer money within Ukraine or abroad?",
+        "answer": "Yes. We assist with money transfers both within Ukraine and beyond its borders. Write to the manager specifying the country, the amount, and the preferred receiving method — we will find a solution tailored to your needs."
+      },
+      "item5": {
+        "question": "Do you work with large amounts?",
+        "answer": "Yes. Clients turn to LAMA CASH for paying large invoices and purchases, settling with partners, relocating capital, and other financial tasks. We negotiate terms individually."
+      },
+      "item6": {
+        "question": "Can I work with Wise, Revolut, or PayPal through you?",
+        "answer": "Yes, we handle requests for depositing and withdrawing funds via Wise, Revolut, PayPal, and other payment systems. Tell us exactly what needs to be done, and the manager will provide available options."
+      },
+      "item7": {
+        "question": "How safe is it to conduct transactions through LAMA CASH?",
+        "answer": "Security and confidentiality are among our core principles. We explain the terms of the transaction in advance, and instead of a bot, you work with a live manager who can help you with any question."
+      },
+      "item8": {
+        "question": "How to start a transaction and what should I write to the manager?",
+        "answer": "Just write to us on Telegram. To get a calculation faster, specify the amount, city, and exactly what needs to be done right away. The manager will reply, guide you through the terms, and lead you through the entire transaction."
       }
     }
   }

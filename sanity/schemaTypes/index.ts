@@ -3,6 +3,7 @@ import {blog} from "@/sanity/schemaTypes/blog";
 import {customImage} from "@/sanity/schemaTypes/customImage";
 import {statsColumns} from "@/sanity/schemaTypes/statsColumn";
 import {imageWithQuote} from "@/sanity/schemaTypes/imageWithQuote";
+import {review} from "@/sanity/schemaTypes/review";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -10,5 +11,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     customImage,
     statsColumns,
     imageWithQuote,
+    review,
   ],
 }
