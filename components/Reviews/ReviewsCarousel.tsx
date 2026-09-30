@@ -70,7 +70,7 @@ export default function ReviewsCarousel({ reviews }: Props) {
 
             {/* Основная лента отзывов */}
             <Carousel opts={{ align: "start", dragFree: true }} className="w-full">
-                <CarouselContent className="-ml-3">
+                <CarouselContent className="-ml-3 py-4">
                     {reviews.map((review, index) => (
                         <CarouselItem
                             key={review._id}
@@ -80,7 +80,7 @@ export default function ReviewsCarousel({ reviews }: Props) {
                                 type="button"
                                 onClick={() => review.image && handleOpen(index)}
                                 aria-label={`Посмотреть отзыв: ${review.title || index + 1}`}
-                                className="group relative aspect-9/16 w-full overflow-hidden rounded-2xl border border-white/10 bg-neutral-900 shadow-lg transition-all duration-300 hover:border-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 cursor-pointer text-left"
+                                className="group relative aspect-9/16 w-full overflow-hidden rounded-2xl border shadow-lg transition-all duration-300 hover:border-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 cursor-pointer text-left"
                             >
                                 {review.image && (
                                     <Image
