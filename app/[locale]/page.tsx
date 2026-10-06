@@ -8,6 +8,7 @@ import * as React from "react";
 import {routing} from "@/app/i18n/routing";
 import FAQSection from "@/components/FaqSection";
 import ReviewsSection from "@/components/Reviews/ReviewsSection";
+import ManagerCheckBanner from "@/components/ManagerCheckBanner";
 
 const ScrollStack = dynamic(() => import("@/components/StackingCards").then(mod => ({ default: mod.ScrollStack })));
 const MoreServices = dynamic(() => import("@/components/MoreServices"));
@@ -83,6 +84,9 @@ export default async function Main({params}: {params: Promise<{ locale: string }
             </div>
             <main className="w-full h-full">
                 <section>
+                    <ManagerCheckBanner />
+                </section>
+                <section>
                     <ScrollStack />
                 </section>
                 <section id="services">
@@ -100,7 +104,7 @@ export default async function Main({params}: {params: Promise<{ locale: string }
                 <section id="blog">
                     <Blog />
                 </section>
-                <section>
+                <section id="faqs">
                     <FAQSection/>
                 </section>
             </main>

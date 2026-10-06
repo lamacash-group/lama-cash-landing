@@ -1,9 +1,12 @@
 {
   "Header": {
     "navigation": "Навигация",
+    "verifyManager": "Проверка менеджера",
     "services": "Услуги",
     "media": "Медиа",
     "blog": "Блог",
+    "contacts": "Контакты",
+    "faqs": "FAQs",
     "title": "Криптообменник LAMA CASH — обмен не заставляющий ждать",
     "subtitle": "Обмен, который не заставляет ждать",
     "buttonContactUs": "свяжитесь с нами",
@@ -165,5 +168,38 @@
         "answer": "Просто напиши нам в Telegram. Чтобы быстрее получить расчет, сразу укажи сумму, город и что именно нужно сделать. Менеджер ответит, сориентирует по условиям и проведет тебя через всю операцию."
       }
     }
+  },
+  "ManagerCheckBanner": {
+    "title": "ПИШЕТЕ МЕНЕДЖЕРУ\nLAMA CASH?",
+    "subtitle": "проверьте, что он настоящий",
+    "buttonText": "Проверить менеджера"
+  },
+  "VerifyManager": {
+    "idleTitle": "УБЕДИТЕСЬ,\n ЧТО ПИШЕТЕ НАСТОЯЩЕМУ\n МЕНЕДЖЕРУ ЛАМЫ",
+    "step1": "откройте чат\n с менеджером\n <highlight>в Telegram</highlight>",
+    "step2": "скопируйте его ник,\n например\n <highlight>@lama_manager</highlight>",
+    "step3": "вставьте ник сюда\n и нажмите\n <highlight>«Проверить»</highlight>",
+    "placeholder": "@ник или ссылка t.me/...",
+    "checkButton": "ПРОВЕРИТЬ",
+    "idleBubble": "Можно с @ или без,\nбольшими или \nмаленькими буквами!",
+    "emptyErrorPlaceholder": "вставьте ник менеджера из Telegram",
+    "emptyErrorBubble": "Давай все по новой!",
+    "invalidFormatTitle": "ПОХОЖЕ, ЭТО НЕ НИК МЕНЕДЖЕРА LAMA CASH",
+    "invalidFormatPlaceholder": "@ник",
+    "invalidFormatBubble": "Скопируйте ник из профиля \n менеджера!",
+    "successTitle": "ДА, ЭТО - ОФИЦИАЛЬНЫЙ\n МЕНЕДЖЕР LAMA CASH",
+    "successSubtitle": "можете спокойно продолжать\n разговор",
+    "successButtonMessage": "НАПИСАТЬ МЕНЕДЖЕРУ",
+    "successButtonReset": "ПРОВЕРИТЬ ДРУГОЙ НИК",
+    "successBubble": "NO DRAMA. \n JUST Lama. JUST CASH.",
+    "scamTitle": "ОСТОРОЖНО МОШЕННИК!",
+    "scamSubtitle": "не отправляйте свои средства и данные,\n пока не проверите ник",
+    "scamButtonMessage": "НАПИСАТЬ НАСТОЯЩЕМУ МЕНЕДЖЕРУ",
+    "scamButtonReset": "ПРОВЕРИТЬ ЕЩЕ РАЗ",
+    "scamBubble": "@lama_cash_manager \n других аккаунтов от имени \n Lama Cash нет",
+    "mascotAlt": "Маскот Lama Cash",
+    "backToHome": "Вернуться на главную",
+    "metaTitle": "Проверка менеджера Telegram",
+    "metaDescription": "Проверьте подлинность менеджера LAMA CASH в Telegram. Защитите себя от мошенников и фейковых аккаунтов."
   }
 }

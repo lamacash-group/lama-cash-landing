@@ -1,9 +1,12 @@
 {
   "Header": {
     "navigation": "Navigation",
+    "verifyManager": "Verify Manager",
     "services": "Services",
     "media": "Media",
     "blog": "Blog",
+    "contacts": "Contacts",
+    "faqs": "FAQs",
     "title": "LAMA CASH Crypto Exchange - an exchange that doesn't make you wait",
     "subtitle": "Exchange that doesn't keep you waiting",
     "buttonContactUs": "contact us",
@@ -165,5 +168,38 @@
         "answer": "Just write to us on Telegram. To get a calculation faster, specify the amount, city, and exactly what needs to be done right away. The manager will reply, guide you through the terms, and lead you through the entire transaction."
       }
     }
+  },
+  "ManagerCheckBanner": {
+    "title": "WRITING TO A\nLAMA CASH MANAGER?",
+    "subtitle": "make sure they are real",
+    "buttonText": "Verify Manager"
+  },
+  "VerifyManager": {
+    "idleTitle": "MAKE SURE,\n YOU ARE WRITING TO THE REAL\n LAMA MANAGER",
+    "step1": "open the chat\n with the manager\n <highlight>in Telegram</highlight>",
+    "step2": "copy their username,\n e.g.\n <highlight>@lama_manager</highlight>",
+    "step3": "paste the username here\n and click\n <highlight>«Verify»</highlight>",
+    "placeholder": "@username or link t.me/...",
+    "checkButton": "VERIFY",
+    "idleBubble": "With or without @,\nuppercase or \nlowercase!",
+    "emptyErrorPlaceholder": "paste the Telegram manager's username",
+    "emptyErrorBubble": "Let's try that again from scratch!",
+    "invalidFormatTitle": "LOOKS LIKE THIS IS NOT A LAMA CASH MANAGER USERNAME",
+    "invalidFormatPlaceholder": "@username",
+    "invalidFormatBubble": "Copy the username from the manager's \n profile!",
+    "successTitle": "YES, THIS IS THE OFFICIAL\n LAMA CASH MANAGER",
+    "successSubtitle": "you can safely continue\n your conversation",
+    "successButtonMessage": "MESSAGE MANAGER",
+    "successButtonReset": "CHECK ANOTHER USERNAME",
+    "successBubble": "NO DRAMA. \n JUST Lama. JUST CASH.",
+    "scamTitle": "BEWARE OF SCAMMER!",
+    "scamSubtitle": "do not send your funds or data,\n until you verify the username",
+    "scamButtonMessage": "MESSAGE REAL MANAGER",
+    "scamButtonReset": "CHECK AGAIN",
+    "scamBubble": "@lama_cash_manager \n has no other accounts on behalf of \n Lama Cash",
+    "mascotAlt": "Lama Cash Mascot",
+    "backToHome": "Back to home",
+    "metaTitle": "Verify Telegram Manager",
+    "metaDescription": "Verify the authenticity of the LAMA CASH Telegram manager. Protect yourself from scammers and fake accounts."
   }
 }
