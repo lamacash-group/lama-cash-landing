@@ -198,7 +198,7 @@ export default function VerifyManager() {
                                     key="title-invalid"
                                     initial={{opacity: 0, y: -4}}
                                     animate={{opacity: 1, y: 0}}
-                                    className="text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] font-getvoip font-bold text-rose-600 uppercase tracking-tight leading-tight text-center"
+                                    className="text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] font-getvoip font-bold whitespace-pre-line text-rose-600 uppercase tracking-tight leading-tight text-center"
                                 >
                                     {t("invalidFormatTitle")}
                                 </motion.h1>
