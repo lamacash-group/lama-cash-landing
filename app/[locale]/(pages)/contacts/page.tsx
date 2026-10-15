@@ -115,23 +115,23 @@ export default async function ContactsPage({params}: {params: Promise<{ locale: 
                             </div>
                         </a>
 
-                        <a href="tel:+380935996385"
-                           className="group flex items-center gap-5 p-6 bg-black/20 backdrop-blur-md border border-purple-500/20 rounded-2xl hover:bg-purple-900/10 hover:border-purple-400/50 transition-all">
-                            <div
-                                className="w-12 h-12 shrink-0 flex items-center justify-center bg-purple-900/30 text-purple-400 rounded-xl group-hover:bg-purple-500 group-hover:text-white transition-colors border border-purple-500/20">
-                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                                          d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 className="text-sm uppercase tracking-wider text-purple-400 mb-1 font-semibold">{t("phoneTitle")}</h3>
-                                <p className="text-white font-medium group-hover:text-purple-200 transition-colors">+38
-                                    (093) 599 63 85</p>
-                            </div>
-                        </a>
+                        {/*<a href="tel:+380935996385"*/}
+                        {/*   className="group flex items-center gap-5 p-6 bg-black/20 backdrop-blur-md border border-purple-500/20 rounded-2xl hover:bg-purple-900/10 hover:border-purple-400/50 transition-all">*/}
+                        {/*    <div*/}
+                        {/*        className="w-12 h-12 shrink-0 flex items-center justify-center bg-purple-900/30 text-purple-400 rounded-xl group-hover:bg-purple-500 group-hover:text-white transition-colors border border-purple-500/20">*/}
+                        {/*        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">*/}
+                        {/*            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}*/}
+                        {/*                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>*/}
+                        {/*        </svg>*/}
+                        {/*    </div>*/}
+                        {/*    <div>*/}
+                        {/*        <h3 className="text-sm uppercase tracking-wider text-purple-400 mb-1 font-semibold">{t("phoneTitle")}</h3>*/}
+                        {/*        <p className="text-white font-medium group-hover:text-purple-200 transition-colors">+38*/}
+                        {/*            (093) 599 63 85</p>*/}
+                        {/*    </div>*/}
+                        {/*</a>*/}
 
-                        <a href="https://t.me/lamacash_manager" target="_blank"  rel="noopener"
+                        <a href="https://t.me/@lama_cash_manager" target="_blank"  rel="noopener"
                            className="group flex items-center gap-5 p-6 bg-black/20 backdrop-blur-md border border-purple-500/20 rounded-2xl hover:bg-purple-900/10 hover:border-purple-400/50 transition-all">
                             <div
                                 className="w-12 h-12 shrink-0 flex items-center justify-center bg-purple-900/30 text-purple-400 rounded-xl group-hover:bg-purple-500 group-hover:text-white transition-colors border border-purple-500/20">
@@ -142,7 +142,7 @@ export default async function ContactsPage({params}: {params: Promise<{ locale: 
                             </div>
                             <div>
                                 <h3 className="text-sm uppercase tracking-wider text-purple-400 mb-1 font-semibold">{t("telegramTitle")}</h3>
-                                <p className="text-white font-medium group-hover:text-purple-200 transition-colors">@lamacash_manager</p>
+                                <p className="text-white font-medium group-hover:text-purple-200 transition-colors">@lama_cash_manager</p>
                             </div>
                         </a>
 
