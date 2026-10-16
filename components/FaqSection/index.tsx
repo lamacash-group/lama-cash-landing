@@ -50,7 +50,7 @@ const FAQSection: React.FC = () => {
                 </div>
 
                 <div className="space-y-3.5 grid grid-cols-2 max-sm:grid-cols-1 gap-5 max-sm:gap-1">
-                    {faqData.map((item) => (
+                    {faqData.map((item, idx) => (
                         <div
                             key={item.id}
                             className={clsx(
@@ -60,6 +60,7 @@ const FAQSection: React.FC = () => {
                                     : "border-black bg-[#ebebef] hover:bg-neutral-100/90"
                             )}
                             onClick={() => toggleAccordion(item.id)}
+                            data-event={`click_faq_${idx+1}`}
                         >
                             <div className="py-3 px-5 md:py-4 md:px-6">
                                 <h3

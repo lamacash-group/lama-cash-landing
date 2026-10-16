@@ -83,13 +83,13 @@ export default async function Main({params}: {params: Promise<{ locale: string }
                 <Home/>
             </div>
             <main className="w-full h-full">
-                <section>
+                <section id="manager_verification">
                     <ManagerCheckBanner />
                 </section>
                 <section>
                     <ScrollStack />
                 </section>
-                <section id="services">
+                <section id="universal_unit">
                     <MoreServices />
                 </section>
                 <section>
@@ -98,13 +98,13 @@ export default async function Main({params}: {params: Promise<{ locale: string }
                 <section id="media">
                     <LamaCashMedia />
                 </section>
-                <section>
+                <section id="reviews">
                     <ReviewsSection/>
                 </section>
                 <section id="blog">
                     <Blog />
                 </section>
-                <section id="faqs">
+                <section id="faq">
                     <FAQSection/>
                 </section>
             </main>

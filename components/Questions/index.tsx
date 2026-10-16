@@ -28,7 +28,9 @@ export const Questions = () => {
                         <span className="font-light max-sm:font-normal text-base max-sm:text-[10px] max-sm:max-w-37">
                             {t('remainingQuestions')}
                         </span>
-                        <Link href="https://t.me/lama_cash" className="w-full items-center justify-center flex mt-4 min-h-6 min-w-6">
+                        <Link href="https://t.me/lama_cash"
+                              data-event="click_tg_media_1"
+                              className="w-full items-center justify-center flex mt-4 min-h-6 min-w-6">
                             <Button
                                 className="bg-[rgba(65,180,242,1)] hover:bg-[rgba(65,180,242,1)]/95 flex flex-row gap-2.5 max-w-100 w-full max-sm:max-w-35 min-h-7.5 h-full rounded-[6px] px-2 py-1"
                             >

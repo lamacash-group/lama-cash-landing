@@ -71,7 +71,9 @@ const MoreServices = () => {
                             className="object-contain"
                         />
                     </div>
-                    <Link href="https://t.me/lama_cash" className="w-full items-center justify-center flex z-10">
+                    <Link href="https://t.me/lama_cash"
+                          data-event="click_tg_top_up_paypal"
+                          className="w-full items-center justify-center flex z-10">
                         <ContactUs text={t('card1.btn')} imageClass="bg-white max-sm:h-[14px] max-sm:w-[14px]"
                                    iconClass="max-sm:w-[8px] max-sm:h-[8px]"
                                    buttonClass="hover:bg-black/95 text-base text-[rgba(240,240,240,1)] max-sm:max-w-[120px] max-sm:h-[30px] max-sm:text-[9px] max-sm:py-1.5 max-sm:px-3 max-sm:rounded-[6px] uppercase font-getvoip tracking-[3%] bg-[rgba(23,23,23,1)]"
@@ -101,7 +103,9 @@ const MoreServices = () => {
                             className="object-contain"
                         />
                     </div>
-                    <Link href="https://t.me/lama_cash" className="w-full items-center justify-center flex z-10">
+                    <Link href="https://t.me/lama_cash"
+                          data-event="click_tg_withdraw_paypal_usdt_cash"
+                          className="w-full items-center justify-center flex z-10">
                         <ContactUs text={t('card2.btn')} imageClass="bg-white max-sm:h-[14px] max-sm:w-[14px]"
                                    iconClass="max-sm:w-[8px] max-sm:h-[8px]"
                                    buttonClass="hover:bg-black/95 text-base text-[rgba(240,240,240,1)] max-sm:max-w-[120px] max-sm:h-[30px] max-sm:text-[9px] max-sm:py-1.5 max-sm:px-3 max-sm:rounded-[6px] uppercase font-getvoip tracking-[3%] bg-[rgba(23,23,23,1)]"
@@ -147,7 +151,9 @@ const MoreServices = () => {
                             className="object-contain"
                         />
                     </div>
-                    <Link href="https://t.me/lama_cash" className="w-full items-center justify-center flex z-10">
+                    <Link href="https://t.me/lama_cash"
+                          data-event="click_tg_top_up_wise"
+                          className="w-full items-center justify-center flex z-10">
                         <ContactUs text={t('card3.btn')} imageClass="bg-white max-sm:h-[14px] max-sm:w-[14px]"
                                    iconClass="max-sm:w-[8px] max-sm:h-[8px]"
                                    buttonClass="hover:bg-black/95 text-base text-[rgba(240,240,240,1)] max-sm:max-w-[120px] max-sm:h-[30px] max-sm:text-[9px] max-sm:py-1.5 max-sm:px-3 max-sm:rounded-[6px] uppercase font-getvoip tracking-[3%] bg-[rgba(23,23,23,1)]"
@@ -193,7 +199,9 @@ const MoreServices = () => {
                             className="object-contain"
                         />
                     </div>
-                    <Link href="https://t.me/lama_cash" className="w-full items-center justify-center flex z-10">
+                    <Link href="https://t.me/lama_cash"
+                          data-event="click_tg_personal_solution"
+                          className="w-full items-center justify-center flex z-10">
                         <ContactUs text={t('card4.btn')} imageClass="bg-white max-sm:h-[14px] max-sm:w-[14px]"
                                    iconClass="max-sm:w-[8px] max-sm:h-[8px]"
                                    buttonClass="hover:bg-black/95 text-base text-[rgba(240,240,240,1)] max-sm:max-w-[120px] max-sm:h-[30px] max-sm:text-[9px] max-sm:py-1.5 max-sm:px-3 max-sm:rounded-[6px] uppercase font-getvoip tracking-[3%] bg-[rgba(23,23,23,1)]"

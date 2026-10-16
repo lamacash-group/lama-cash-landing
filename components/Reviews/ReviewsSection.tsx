@@ -31,7 +31,9 @@ export default async function ReviewsSection() {
 
 
                 <div className="flex justify-center h-12.5 w-full">
-                    <Link href="https://t.me/lama_cash" className="w-full items-center justify-center flex max-sm:w-75">
+                    <Link href="https://t.me/lama_cash"
+                          data-event="click_tg_trust"
+                          className="w-full items-center justify-center flex max-sm:w-75">
                         <ContactUs text={t('seeAllReviews')} imageClass="bg-white"
                                    buttonClass="hover:bg-black/95 text-base text-[rgba(240,240,240,1)] max-sm:font-bold tracking-[3%] bg-[rgba(23,23,23,1)]"
                                    inverted/>

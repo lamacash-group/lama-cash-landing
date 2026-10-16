@@ -10,7 +10,7 @@ export const Home = () => {
     const t = useTranslations('Header');
 
     return (
-        <div className="w-full flex flex-col gap-10 max-sm:gap-10 justify-center items-center min-h-200 max-sm:h-dvh h-full overflow-hidden relative">
+        <div className="w-full flex flex-col gap-10 max-sm:gap-10 justify-center items-center min-h-200 max-sm:h-dvh h-full overflow-hidden relative" id="main">
             <h1 className="text-4xl max-sm:text-[26px] leading-tight text-white font-getvoip max-[500px]:max-w-87.5 font-bold uppercase pt-10 max-sm:pt-9 text-center px-4">
                 {t('title')}
             </h1>
@@ -56,7 +56,7 @@ export const Home = () => {
                                     background: 'linear-gradient(270deg, #41B4F2 0%, #7134C2 35.58%, #FCFAFF 62.98%, #41B4F2 87.5%, #7134C2 100%)',
                                 }}
                             >
-                                <Link href="https://t.me/lama_cash" target="_blank" rel="noopener">
+                                <Link href="https://t.me/lama_cash" target="_blank" rel="noopener" data-event="click_tg_main">
                                     <ContactUs text= {t('buttonContactUs')} buttonClass="max-w-full rounded-[15px]"/>
                                 </Link>
                             </div>

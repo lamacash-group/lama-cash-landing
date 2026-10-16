@@ -7,6 +7,7 @@
 @theme {
   --font-rubik: var(--font-rubik), sans-serif;
   --font-getvoip: var(--font-getvoip), sans-serif;
+  --font-display: var(--font-getvoip), sans-serif;
   --animate-marquee: marquee 30s linear infinite;
 
   @keyframes marquee {
@@ -166,4 +167,72 @@
 .scrollbar-hide {
   -ms-overflow-style: none;  /* IE и Edge */
   scrollbar-width: none;  /* Firefox */
+}
+
+.prose-lama h2,
+.prose-lama h3 {
+  font-family: var(--font-getvoip), sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: #171717;
+  margin-top: 2rem;
+  margin-bottom: 0.85rem;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .prose-lama h2,
+  .prose-lama h3 {
+    font-size: 1.75rem;
+  }
+}
+
+.prose-lama p {
+  color: rgba(23, 23, 23, 0.7);
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+  font-size: 1rem;
+}
+
+.prose-lama p.lead {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  font-weight: 500;
+  color: #171717;
+  margin-bottom: 1.75rem;
+}
+
+.prose-lama aside {
+  margin: 1.75rem 0;
+  padding: 1.25rem 1.5rem;
+  border-radius: 1.25rem;
+  background-color: #f3ecfb;
+  border-left: 4px solid #7134c2;
+  font-size: 0.925rem;
+  line-height: 1.6;
+  color: #3c157f;
+}
+
+.prose-lama table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.prose-lama th {
+  background-color: #f7f7f7;
+  padding: 1rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #171717;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.prose-lama td {
+  padding: 1rem 1.25rem;
+  font-size: 0.875rem;
+  color: rgba(23, 23, 23, 0.75);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }

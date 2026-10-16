@@ -24,6 +24,7 @@ export default function ManagerCheckBanner() {
 
                     <Link
                         href="/verify-manager"
+                        data-event="click_manager_verification"
                         className="inline-flex items-center max-sm:max-w-70 max-sm:w-full justify-center font-getvoip font-bold text-[13px] max-sm:text-[9px] tracking-[3%] uppercase gap-2.5 px-6 py-3.5 rounded-[10px] bg-[#171717] text-white shadow-md transition-all duration-200 hover:scale-[1.01] active:scale-[0.98]"
                     >
                         <ShieldCheck className="w-6 h-6 text-white" />

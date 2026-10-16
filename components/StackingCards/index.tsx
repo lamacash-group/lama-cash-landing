@@ -23,6 +23,7 @@ interface StackItem {
         mobile: number;
         desktop: number;
     };
+    idGA?:string,
 }
 
 const FirstCard = () => {
@@ -67,7 +68,9 @@ const FirstCard = () => {
             <span className="font-rubik font-light text-base pt-4 pb-3 max-sm:text-[12px] text-[#171717] text-center">
                 {t('euNote')}
             </span>
-            <Link href="https://t.me/lama_cash" className="w-full items-center justify-center flex">
+            <Link href="https://t.me/lama_cash"
+                  data-event="click_tg_usdt-cash"
+                  className="w-full items-center justify-center flex">
                 <ContactUs text={t('btn')} imageClass="bg-white"
                            buttonClass="hover:bg-black/95 text-base text-[rgba(240,240,240,1)] tracking-[3%] bg-[rgba(23,23,23,1)]"
                            inverted/>
@@ -113,7 +116,9 @@ const SecondCard = () => {
 
                 </div>
             </div>
-            <Link href="https://t.me/lama_cash" className="w-full items-center justify-center flex">
+            <Link href="https://t.me/lama_cash"
+                  data-event="click_tg_buy_krypto"
+                  className="w-full items-center justify-center flex">
                 <ContactUs text={t('btn')} imageClass="bg-white"
                            buttonClass="hover:bg-black/95 text-base text-[rgba(240,240,240,1)] tracking-[3%] bg-[rgba(23,23,23,1)]"
                            inverted/>
@@ -209,7 +214,9 @@ const ThirdCard = () => {
                     </div>
                 </UniqTooltip>
             </div>
-            <Link href="https://t.me/lama_cash" className="w-full items-center justify-center flex">
+            <Link href="https://t.me/lama_cash"
+                  data-event="click_tg_p2p"
+                  className="w-full items-center justify-center flex">
                 <ContactUs text={t('btn')} imageClass="bg-white"
                            buttonClass="hover:bg-black/95 text-base text-[rgba(240,240,240,1)] tracking-[3%] bg-[rgba(23,23,23,1)]"
                            inverted/>
@@ -254,6 +261,7 @@ export function ScrollStack() {
             content: <FirstCard/>,
             bgColor: "bg-gradient-to-b from-[#C7A7FF] to-[#E3E3E3] text-slate-50",
             offset: {mobile: 0, desktop: 0},
+            idGA:"usdt-cash"
         },
         {
             id: 2,
@@ -265,6 +273,7 @@ export function ScrollStack() {
             content: <SecondCard/>,
             bgColor: "bg-gradient-to-b from-[#B088F4] to-[#E3E3E3] text-zinc-50",
             offset: {mobile: 60, desktop: 80},
+            idGA:"buy_krypto"
         },
         {
             id: 3,
@@ -276,6 +285,7 @@ export function ScrollStack() {
             content: <ThirdCard/>,
             bgColor: "bg-gradient-to-b from-[#958DFF] to-[#E3E3E3] text-neutral-50",
             offset: {mobile: 120, desktop: 160},
+            idGA:"p2p"
         },
     ];
 
@@ -330,7 +340,7 @@ function StackCard({item, index, lastItemOffset}: StackCardProps) {
             } as React.CSSProperties}
         >
             <motion.div
-                className="w-full h-(--card-height) origin-top"
+                className="w-full h-(--card-height) origin-top" id={item.idGA}
             >
                 <Card
                     className={cn("w-full h-full border-none font-rubik shadow-2xl flex flex-col justify-between p-5", item.bgColor)}>
