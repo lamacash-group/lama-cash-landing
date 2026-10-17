@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         alternates: {
             canonical,
             languages: {
-                'uk': 'https://lama-cash.com/uk/rates.',
+                'uk': 'https://lama-cash.com/uk/rates/',
                 'ru': 'https://lama-cash.com/ru/rates/',
                 'en': 'https://lama-cash.com/en/rates/',
                 'x-default': 'https://lama-cash.com/uk/rates/'

@@ -80,7 +80,7 @@ const organizationSchema = {
         "availableLanguage": ["Ukrainian", "Russian", "English"]
     },
     "sameAs": [
-        "https://t.me/lamacash_manager",
+        "https://t.me/lama_cash_manager",
         "https://www.tiktok.com/@lama.cash",
         "https://www.instagram.com/lama.cash"
     ]
