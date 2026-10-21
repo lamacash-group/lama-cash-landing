@@ -44,7 +44,7 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
 
     const h1 = config.h1[locale] || config.h1.uk;
     const leadText = config.leadText[locale] || config.leadText.uk;
-    const title = `${h1} | LAMA CASH`;
+    const title = `${h1}`;
 
     const canonicalUrl =`https://lama-cash.com/${locale}/city/${slug}`;
 
@@ -246,7 +246,7 @@ export default async function CityPage({params}: Props) {
                                             config.workingHours.weekdays.split(" — ")[1] || "20:00",
                                     })}
                                 </div>
-                                <h1 className="font-display max-w-4xl text-[2.55rem] font-black uppercase leading-[.98] tracking-[-0.045em] sm:text-6xl md:text-7xl">
+                                <h1 className="font-display max-w-4xl text-[clamp(1.75rem,8vw,2.55rem)] font-black uppercase leading-[.98] tracking-[-0.045em] sm:text-6xl md:text-7xl">
                                     {h1}
                                 </h1>
                                 <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/65 md:text-lg">

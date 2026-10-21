@@ -44,7 +44,7 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
 
     const h1 = config.h1[locale] || config.h1.uk;
     const description = config.description[locale] || config.description.uk;
-    const title = `${h1} | LAMA CASH`;
+    const title = `${h1}`;
 
     const canonicalUrl = `https://lama-cash.com/${locale}/exchange/${slug}`
 
