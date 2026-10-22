@@ -9,7 +9,6 @@ import {
     ArrowIcon,
     BuildingIcon,
     CarIcon,
-    CheckIcon,
     ClockIcon,
     PinIcon,
     ShieldIcon,
@@ -113,6 +112,9 @@ export default async function CityPage({params}: Props) {
     const t = await getTranslations({locale, namespace: "CityTemplate"});
 
     const cityName = config.cityName[locale] || config.cityName.uk;
+    const inCity = config.inCity?.[locale] || config.inCity?.uk || cityName;
+    const acrossCity = config.acrossCity?.[locale] || config.acrossCity?.uk || cityName;
+    const cityGenitive = config.cityGenitive?.[locale] || config.cityGenitive?.uk || cityName;
     const h1 = config.h1[locale] || config.h1.uk;
     const leadText = config.leadText[locale] || config.leadText.uk;
     const faqs = config.faqs[locale] || config.faqs.uk || [];
@@ -241,7 +243,7 @@ export default async function CityPage({params}: Props) {
                                     className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-medium backdrop-blur-md">
                                     <span className="size-2 rounded-full bg-[#5ff6ba] shadow-[0_0_16px_#5ff6ba]"/>
                                     {t("heroStatus", {
-                                        city: cityName,
+                                        inCity,
                                         closingTime:
                                             config.workingHours.weekdays.split(" — ")[1] || "20:00",
                                     })}
@@ -295,91 +297,91 @@ export default async function CityPage({params}: Props) {
                     </section>
                 </div>
 
-                {/* Formats Grid */}
-                <section
-                    className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28"
-                    id="formats"
-                >
-                    <SectionHeading
-                        eyebrow={t("formatsEyebrow")}
-                        title={t("formatsTitle", {city: cityName})}
-                    />
-                    <div className="grid gap-4 lg:grid-cols-2">
-                        <article
-                            className="group relative min-h-120 overflow-hidden rounded-[1.75rem] bg-linear-to-b from-[#c7a7ff] to-[#e3e3e3] p-7 md:p-9">
-                            <div className="flex items-start justify-between">
-                                <span
-                                    className="grid size-14 place-items-center rounded-2xl bg-white/55 text-[#3c157f] backdrop-blur-md">
-                                    <BuildingIcon className="size-7"/>
-                                </span>
-                                <span
-                                    className="rounded-full bg-white/50 px-4 py-2 text-[.68rem] font-bold uppercase tracking-wider backdrop-blur">
-                                    {t("format01Badge")}
-                                </span>
-                            </div>
-                            <div className="absolute bottom-8 left-7 right-7 md:bottom-9 md:left-9 md:right-9">
-                                <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-[#7134c2]">
-                                    {t("format01Label")}
-                                </p>
-                                <h3 className="font-display text-3xl font-black uppercase leading-tight">
-                                    {t("format01Title")}
-                                </h3>
-                                <div className="mt-6 grid gap-3 text-sm text-black/65 sm:grid-cols-2">
-                                    {[
-                                        t("format01Feature1"),
-                                        t("format01Feature2"),
-                                        t("format01Feature3"),
-                                        t("format01Feature4"),
-                                    ].map((item) => (
-                                        <span className="flex items-center gap-2" key={item}>
-                      <span className="grid size-5 place-items-center rounded-full bg-white/70 text-[#3c157f]">
-                        <CheckIcon className="size-3"/>
-                      </span>
-                                            {item}
-                    </span>
-                                    ))}
-                                </div>
-                            </div>
-                        </article>
+                {/*/!* Formats Grid *!/*/}
+                {/*<section*/}
+                {/*    className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28"*/}
+                {/*    id="formats"*/}
+                {/*>*/}
+                {/*    <SectionHeading*/}
+                {/*        eyebrow={t("formatsEyebrow")}*/}
+                {/*        title={t("formatsTitle", {city: cityName})}*/}
+                {/*    />*/}
+                {/*    <div className="grid gap-4 lg:grid-cols-2">*/}
+                {/*        <article*/}
+                {/*            className="group relative min-h-120 overflow-hidden rounded-[1.75rem] bg-linear-to-b from-[#c7a7ff] to-[#e3e3e3] p-7 md:p-9">*/}
+                {/*            <div className="flex items-start justify-between">*/}
+                {/*                <span*/}
+                {/*                    className="grid size-14 place-items-center rounded-2xl bg-white/55 text-[#3c157f] backdrop-blur-md">*/}
+                {/*                    <BuildingIcon className="size-7"/>*/}
+                {/*                </span>*/}
+                {/*                <span*/}
+                {/*                    className="rounded-full bg-white/50 px-4 py-2 text-[.68rem] font-bold uppercase tracking-wider backdrop-blur">*/}
+                {/*                    {t("format01Badge")}*/}
+                {/*                </span>*/}
+                {/*            </div>*/}
+                {/*            <div className="absolute bottom-8 left-7 right-7 md:bottom-9 md:left-9 md:right-9">*/}
+                {/*                <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-[#7134c2]">*/}
+                {/*                    {t("format01Label")}*/}
+                {/*                </p>*/}
+                {/*                <h3 className="font-display text-3xl font-black uppercase leading-tight">*/}
+                {/*                    {t("format01Title")}*/}
+                {/*                </h3>*/}
+                {/*                <div className="mt-6 grid gap-3 text-sm text-black/65 sm:grid-cols-2">*/}
+                {/*                    {[*/}
+                {/*                        t("format01Feature1"),*/}
+                {/*                        t("format01Feature2"),*/}
+                {/*                        t("format01Feature3"),*/}
+                {/*                        t("format01Feature4"),*/}
+                {/*                    ].map((item) => (*/}
+                {/*                        <span className="flex items-center gap-2" key={item}>*/}
+                {/*      <span className="grid size-5 place-items-center rounded-full bg-white/70 text-[#3c157f]">*/}
+                {/*        <CheckIcon className="size-3"/>*/}
+                {/*      </span>*/}
+                {/*                            {item}*/}
+                {/*    </span>*/}
+                {/*                    ))}*/}
+                {/*                </div>*/}
+                {/*            </div>*/}
+                {/*        </article>*/}
 
-                        <article
-                            className="group relative min-h-120 overflow-hidden rounded-[1.75rem] bg-linear-to-b from-[#b3e2ff] to-[#e3e3e3] p-7 md:p-9">
-                            <div className="flex items-start justify-between">
-                <span
-                    className="grid size-14 place-items-center rounded-2xl bg-white/55 text-[#176b9a] backdrop-blur-md">
-                  <CarIcon className="size-7"/>
-                </span>
-                                <span
-                                    className="rounded-full bg-[#171717] px-4 py-2 text-[.68rem] font-bold uppercase tracking-wider text-white">
-                  {t("format02Badge")}
-                </span>
-                            </div>
-                            <div className="absolute bottom-8 left-7 right-7 md:bottom-9 md:left-9 md:right-9">
-                                <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-[#176b9a]">
-                                    {t("format02Label")}
-                                </p>
-                                <h3 className="font-display text-3xl font-black uppercase leading-tight">
-                                    {t("format02Title")}
-                                </h3>
-                                <div className="mt-6 grid gap-3 text-sm text-black/65 sm:grid-cols-2">
-                                    {[
-                                        t("format02Feature1", {city: cityName}),
-                                        t("format02Feature2"),
-                                        t("format02Feature3"),
-                                        t("format02Feature4"),
-                                    ].map((item) => (
-                                        <span className="flex items-center gap-2" key={item}>
-                      <span className="grid size-5 place-items-center rounded-full bg-white/70 text-[#176b9a]">
-                        <CheckIcon className="size-3"/>
-                      </span>
-                                            {item}
-                    </span>
-                                    ))}
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                </section>
+                {/*        <article*/}
+                {/*            className="group relative min-h-120 overflow-hidden rounded-[1.75rem] bg-linear-to-b from-[#b3e2ff] to-[#e3e3e3] p-7 md:p-9">*/}
+                {/*            <div className="flex items-start justify-between">*/}
+                {/*<span*/}
+                {/*    className="grid size-14 place-items-center rounded-2xl bg-white/55 text-[#176b9a] backdrop-blur-md">*/}
+                {/*  <CarIcon className="size-7"/>*/}
+                {/*</span>*/}
+                {/*                <span*/}
+                {/*                    className="rounded-full bg-[#171717] px-4 py-2 text-[.68rem] font-bold uppercase tracking-wider text-white">*/}
+                {/*  {t("format02Badge")}*/}
+                {/*</span>*/}
+                {/*            </div>*/}
+                {/*            <div className="absolute bottom-8 left-7 right-7 md:bottom-9 md:left-9 md:right-9">*/}
+                {/*                <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-[#176b9a]">*/}
+                {/*                    {t("format02Label")}*/}
+                {/*                </p>*/}
+                {/*                <h3 className="font-display text-3xl font-black uppercase leading-tight">*/}
+                {/*                    {t("format02Title")}*/}
+                {/*                </h3>*/}
+                {/*                <div className="mt-6 grid gap-3 text-sm text-black/65 sm:grid-cols-2">*/}
+                {/*                    {[*/}
+                {/*                        t("format02Feature1", {city: cityName}),*/}
+                {/*                        t("format02Feature2"),*/}
+                {/*                        t("format02Feature3"),*/}
+                {/*                        t("format02Feature4"),*/}
+                {/*                    ].map((item) => (*/}
+                {/*                        <span className="flex items-center gap-2" key={item}>*/}
+                {/*      <span className="grid size-5 place-items-center rounded-full bg-white/70 text-[#176b9a]">*/}
+                {/*        <CheckIcon className="size-3"/>*/}
+                {/*      </span>*/}
+                {/*                            {item}*/}
+                {/*    </span>*/}
+                {/*                    ))}*/}
+                {/*                </div>*/}
+                {/*            </div>*/}
+                {/*        </article>*/}
+                {/*    </div>*/}
+                {/*</section>*/}
 
                 {/* Safety Standards Cards */}
                 <section
@@ -443,7 +445,7 @@ export default async function CityPage({params}: Props) {
                                     {t("coverageEyebrow")}
                                 </p>
                                 <h2 className="font-display mt-3 text-3xl font-black uppercase leading-[1.08] md:text-5xl">
-                                    {t("coverageTitle", {city: cityName})}
+                                    {t("coverageTitle", {acrossCity})}
                                 </h2>
                                 <p className="mt-5 max-w-md text-sm leading-relaxed text-black/55">
                                     {t("coverageText")}
@@ -488,7 +490,7 @@ export default async function CityPage({params}: Props) {
                                 rel="noreferrer"
                                 target="_blank"
                             >
-                                {t("managerDuty", {city: cityName})}
+                                {t("managerDuty", {inCity})}
                                 <TelegramIcon className="size-5 text-[#41b4f2]"/>
                             </a>
                         </div>
@@ -538,7 +540,7 @@ export default async function CityPage({params}: Props) {
                         <div>
                             <div className="sticky top-8">
                                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#7134c2]">
-                                    {t("guideEyebrow", {city: cityName})}
+                                    {t("guideEyebrow", {cityGenitive, city: cityName})}
                                 </p>
                                 <h2 className="font-display mt-3 text-3xl font-black uppercase leading-[1.1] md:text-5xl">
                                     {t("guideTitle")}
@@ -583,7 +585,7 @@ export default async function CityPage({params}: Props) {
                     <div className="mx-auto grid max-w-7xl gap-12 px-5 md:px-8 lg:grid-cols-[.72fr_1.28fr] lg:gap-20">
                         <SectionHeading
                             eyebrow={t("faqEyebrow")}
-                            title={t("faqTitle", {city: cityName})}
+                            title={t("faqTitle", {inCity})}
                             light
                         />
                         <div className="space-y-3">
@@ -622,7 +624,7 @@ export default async function CityPage({params}: Props) {
                                     {t("ctaEyebrow")}
                                 </p>
                                 <h2 className="font-display mt-3 max-w-3xl text-3xl font-black uppercase leading-[1.08] md:text-5xl">
-                                    {t("ctaTitle", {city: cityName})}
+                                    {t("ctaTitle", {inCity})}
                                 </h2>
                             </div>
                             <a

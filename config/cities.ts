@@ -19,6 +19,9 @@ export interface ExchangePair {
 export interface CityConfig {
   slug: string;
   cityName: Record<string, string>;
+  inCity: Record<string, string>;
+  acrossCity: Record<string, string>;
+  cityGenitive: Record<string, string>;
   workingHours: {
     weekdays: string;
     weekends: string;
@@ -47,6 +50,21 @@ export const citiesConfig: Record<string, CityConfig> = {
     cityName: {
       uk: "Київ",
       ru: "Киев",
+      en: "Kyiv",
+    },
+    inCity: {
+      uk: "у Києві",
+      ru: "в Киеве",
+      en: "in Kyiv",
+    },
+    acrossCity: {
+      uk: "по всьому Києву",
+      ru: "по всему Киеву",
+      en: "across all of Kyiv",
+    },
+    cityGenitive: {
+      uk: "Києву",
+      ru: "Киеву",
       en: "Kyiv",
     },
     workingHours: {
@@ -182,7 +200,7 @@ export const citiesConfig: Record<string, CityConfig> = {
           {
             title: "Інкасація та доставка від $30 000",
             content:
-              "Для великих угод обсягом від $30 000 доступна послуга автомобільної доставки інкасатором у будь-який район Києва (Оболонь, Поділ, Голосіїв, Позняки) або заміські локації (Козин, Конча-Заспа). Доставка погоджується індивідуально та супроводжується озброєною охороною.",
+              "Для великих угод обсягом від $30 000 доступна послуга автомобільної доставки інкасатором по всьому Києву (Оболонь, Поділ, Голосіїв, Позняки) або в заміські локації (Козин, Конча-Заспа). Доставка погоджується індивідуально та супроводжується озброєною охороною.",
           },
         ],
       },
@@ -202,7 +220,7 @@ export const citiesConfig: Record<string, CityConfig> = {
           {
             title: "Инкассаторская доставка от $30 000",
             content:
-              "Для крупных операций от $30 000 доступна безопасная доставка автокурьером в любой район Киева и закрытые коттеджные поселки пригорода.",
+              "Для крупных операций от $30 000 доступна безопасная доставка автокурьером по всему Киеву и в закрытые коттеджные поселки пригорода.",
           },
         ],
       },
@@ -222,7 +240,7 @@ export const citiesConfig: Record<string, CityConfig> = {
           {
             title: "Armored cash transport from $30,000",
             content:
-              "For transactions starting from $30,000, secure dedicated cash delivery is available across all Kyiv districts and private suburban residences.",
+              "For transactions starting from $30,000, secure dedicated cash delivery is available across all of Kyiv and private suburban residences.",
           },
         ],
       },
@@ -307,6 +325,21 @@ export const citiesConfig: Record<string, CityConfig> = {
     cityName: {
       uk: "Львів",
       ru: "Львов",
+      en: "Lviv",
+    },
+    inCity: {
+      uk: "у Львові",
+      ru: "во Львове",
+      en: "in Lviv",
+    },
+    acrossCity: {
+      uk: "по всьому Львову",
+      ru: "по всему Львову",
+      en: "across all of Lviv",
+    },
+    cityGenitive: {
+      uk: "Львову",
+      ru: "Львову",
       en: "Lviv",
     },
     workingHours: {
@@ -434,7 +467,7 @@ export const citiesConfig: Record<string, CityConfig> = {
           {
             title: "Доставка інкасацією по Львівській області від $30 000",
             content:
-              "Для клієнтів із великими обсягами (від $30 000) працює служба доставки готівки у супроводі охорони. Виїзд можливий у будь-який район міста або передмістя (Сокільники, Винники, Брюховичі).",
+              "Для клієнтів із великими обсягами (від $30 000) працює служба доставки готівки у супроводі охорони. Виїзд можливий по всьому Львову або в передмістя (Сокільники, Винники, Брюховичі).",
           },
         ],
       },
@@ -454,7 +487,7 @@ export const citiesConfig: Record<string, CityConfig> = {
           {
             title: "Инкассация от $30 000",
             content:
-              "Адресная доставка с охраной доступна во все районы Львова при сумме сделки от $30 000.",
+              "Адресная доставка с охраной доступна по всему Львову при сумме сделки от $30 000.",
           },
         ],
       },
@@ -474,7 +507,7 @@ export const citiesConfig: Record<string, CityConfig> = {
           {
             title: "Cash courier transport from $30,000",
             content:
-              "Guarded delivery across Lviv and nearby towns is available for deals starting from $30,000.",
+              "Guarded delivery across all of Lviv and nearby towns is available for deals starting from $30,000.",
           },
         ],
       },
@@ -544,6 +577,21 @@ export const citiesConfig: Record<string, CityConfig> = {
     cityName: {
       uk: "Одеса",
       ru: "Одесса",
+      en: "Odesa",
+    },
+    inCity: {
+      uk: "в Одесі",
+      ru: "в Одессе",
+      en: "in Odesa",
+    },
+    acrossCity: {
+      uk: "по всій Одесі",
+      ru: "по всей Одессе",
+      en: "across all of Odesa",
+    },
+    cityGenitive: {
+      uk: "Одесі",
+      ru: "Одессе",
       en: "Odesa",
     },
     workingHours: {
@@ -666,12 +714,12 @@ export const citiesConfig: Record<string, CityConfig> = {
           {
             title: "Доставка готівки в Аркадію, на Фонтан та в готелі",
             content:
-              "Для операцій обсягом від $30 000 доступна адресна доставка кур'єром у супроводі охорони в будь-який район міста: в апартаменти Аркадії, приватні резиденції на Фонтані або в готелі та офіси.",
+              "Для операцій обсягом від $30 000 доступна адресна доставка кур'єром у супроводі охорони по всій Одесі: в апартаменти Аркадії, приватні резиденції на Фонтані або в готелі та офіси.",
           },
           {
             title: "Чисті купюри нового зразка USD та EUR",
             content:
-              "У касі завжди підтримується резерв доларів США нового зразка («синій долар») та євро без потертостей, написів чи штампів. Кожна купюра проходить перевірку на оптичному та ультрафіолетовому обладнанні у вашій присутності.",
+              "В Одесі завжди підтримується резерв доларів США нового зразка («синій долар») та євро без потертостей, написів чи штампів. Кожна купюра проходить перевірку на оптичному та ультрафіолетовому обладнанні у вашій присутності.",
           },
         ],
       },
@@ -686,7 +734,7 @@ export const citiesConfig: Record<string, CityConfig> = {
           {
             title: "Доставка от $30 000 в Аркадию и на Фонтан",
             content:
-              "Для сумм от $30 000 работает служба адресной доставки в жилые комплексы, отели и офисы с охраной.",
+              "Для сумм от $30 000 работает служба адресной доставки в жилые комплексы, отели и офисы по всей Одессе с охраной.",
           },
           {
             title: "Гарантия подлинности банкнот",
@@ -706,7 +754,7 @@ export const citiesConfig: Record<string, CityConfig> = {
           {
             title: "Direct delivery to Arcadia and Fontan residences from $30,000",
             content:
-              "We provide secure cash courier transport directly to your hotel, residence, or office for amounts of $30,000 and above.",
+              "We provide secure cash courier transport directly to your hotel, residence, or office across all of Odesa for amounts of $30,000 and above.",
           },
           {
             title: "Verified new series banknotes",
@@ -760,7 +808,7 @@ export const citiesConfig: Record<string, CityConfig> = {
         {
           question: "Can cash be delivered to hotels or residences in Arcadia or Fontan?",
           answer:
-            "Yes, private courier delivery with armed protection is available for amounts starting from $30,000 across Arcadia, Fontan, and all Odesa districts.",
+            "Yes, private courier delivery with armed protection is available for amounts starting from $30,000 across Arcadia, Fontan, and all of Odesa.",
         },
         {
           question: "Are new series USD notes and EUR always in stock?",
