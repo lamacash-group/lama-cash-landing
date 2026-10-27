@@ -9,6 +9,8 @@ import {routing} from "@/app/i18n/routing";
 import FAQSection from "@/components/FaqSection";
 import ReviewsSection from "@/components/Reviews/ReviewsSection";
 import ManagerCheckBanner from "@/components/ManagerCheckBanner";
+import {CityLocations} from "@/components/City";
+import {ExchangeDirections} from "@/components/Exchange";
 
 const ScrollStack = dynamic(() => import("@/components/StackingCards").then(mod => ({ default: mod.ScrollStack })));
 const MoreServices = dynamic(() => import("@/components/MoreServices"));
@@ -94,6 +96,12 @@ export default async function Main({params}: {params: Promise<{ locale: string }
                 </section>
                 <section>
                     <Questions />
+                </section>
+                <section id="city">
+                    <CityLocations />
+                </section>
+                <section id="exchange">
+                    <ExchangeDirections />
                 </section>
                 <section id="media">
                     <LamaCashMedia />

@@ -285,5 +285,27 @@
     "ctaEyebrow": "We Are Online",
     "ctaTitle": "Have Questions? Contact Manager 24/7",
     "ctaButton": "Chat in Telegram"
+  },
+  "CityLocations": {
+    "eyebrow": "Offline Exchange Network",
+    "title": "Cash Desks in Cities",
+    "subtitle": "Receive cash USD/EUR at private cash desks or order secure armored delivery from $30,000.",
+    "statusActive": "Desk open",
+    "weekdays": "Mon–Fri",
+    "weekends": "Sat–Sun",
+    "courierDelivery": "Armored courier delivery from $30,000",
+    "ctaButton": "Visit Cash Desk",
+    "ctaAria": "Visit crypto exchange cash desk in {city}"
+  },
+  "ExchangeDirections": {
+    "eyebrow": "Exchange Catalog",
+    "title": "Popular Exchange Directions",
+    "subtitle": "Choose currency and payout method with low fees and 100% AML guarantee",
+    "allRatesCta": "View all rates & fees",
+    "allRatesAria": "View all exchange rates and fees at Lama Cash",
+    "exchangeCta": "Exchange",
+    "exchangeAria": "Go to exchange {give} to {receive}",
+    "minAmountLabel": "Min amount:",
+    "speedLabel": "Speed:"
   }
 }
