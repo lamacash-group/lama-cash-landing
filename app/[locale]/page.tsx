@@ -86,7 +86,7 @@ export default async function Main({params}: {params: Promise<{ locale: string }
                 <section id="manager_verification">
                     <ManagerCheckBanner />
                 </section>
-                <section>
+                <section id="services">
                     <ScrollStack />
                 </section>
                 <section id="universal_unit">
