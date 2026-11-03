@@ -35,6 +35,8 @@ export function generateStaticParams() {
 export async function generateMetadata({params}: Props): Promise<Metadata> {
     const {locale} = await params;
 
+    const isVercelPreview = process.env.VERCEL_ENV === 'preview' || process.env.VERCEL_ENV === 'development';
+
     const descriptions: Record<string, string> = {
         uk: 'LAMA CASH - надійний криптообмінник. Миттєвий обмін USDT, BTC, ETH та інших криптовалют. Найкращі курси, гарантія AML.',
         ru: 'LAMA CASH - надежный криптообменник. Мгновенный обмен USDT, BTC, ETH и других криптовалют. Лучшие курсы, гарантия AML.',
@@ -54,6 +56,13 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
             default: 'LAMA CASH - Криптообмінник'
         },
         description: descriptions[locale] || descriptions['uk'],
+        robots: isVercelPreview ? {
+            index: false,
+            follow: false,
+        } : {
+            index: true,
+            follow: true,
+        },
         openGraph: {
             type: 'website',
             siteName: 'LAMA CASH',

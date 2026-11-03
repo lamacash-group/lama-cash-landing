@@ -1,4 +1,4 @@
-import Calculator from "@/components/Rates/Calculator";
+import RatesHero from "@/components/Rates/RatesHero";
 import {routing} from "@/app/i18n/routing";
 import {Metadata} from "next";
 
@@ -51,6 +51,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default function CalculatorPage() {
 
     return (
-        <Calculator />
+        <RatesHero />
     );
 }
