@@ -254,7 +254,7 @@ export function ScrollStack() {
         {
             id: 1,
             title: t1('title'),
-            titleClass: "bg-[rgba(95,246,186,1)] max-sm:h-5 rounded-[15px] text-xl text-black text-center content-center max-sm:font-normal max-sm:text-[12px] px-2 py-2 max-sm:py-0 max-w-45 max-sm:max-w-20 w-full",
+            titleClass: "bg-[rgba(95,246,186,1)] max-sm:h-5 rounded-[15px] text-xl text-black text-center content-center max-sm:font-normal max-sm:text-[12px] px-2 py-2 max-sm:py-0 max-w-45 max-sm:max-w-22 w-full",
             titleContent: <FishCardTitleContent/>,
             description: t1('description'),
             additDescription: t1('additDescription'),
@@ -266,7 +266,7 @@ export function ScrollStack() {
         {
             id: 2,
             title: t2('title'),
-            titleClass: "bg-[rgba(235,223,255,1)] max-sm:h-5 rounded-[15px] text-xl text-black text-center content-center max-sm:font-normal max-sm:text-[12px] px-2 py-2 max-sm:py-0 max-w-45 max-sm:max-w-25 w-full",
+            titleClass: "bg-[rgba(235,223,255,1)] max-sm:h-5 rounded-[15px] text-xl text-black text-center content-center max-sm:font-normal max-sm:text-[12px] px-2 py-2 max-sm:py-0 max-w-45 max-sm:max-w-27 w-full",
             titleContent: <SecondCardTitleContent/>,
             description: t2('description'),
             additDescription: t2('additDescription'),
@@ -278,7 +278,7 @@ export function ScrollStack() {
         {
             id: 3,
             title: t3('title'),
-            titleClass: "bg-[rgba(235,223,255,1)] max-sm:h-5 rounded-[15px] text-xl text-black text-center content-center max-sm:font-normal max-sm:text-[12px] px-2 py-2 max-sm:py-0 max-w-50 max-sm:max-w-30 w-full",
+            titleClass: "bg-[rgba(235,223,255,1)] max-sm:h-5 rounded-[15px] text-xl text-black text-center content-center max-sm:font-normal max-sm:text-[12px] px-2 py-2 max-sm:py-0 max-w-50 max-sm:max-w-35 w-full",
             titleContent: <ThirdCardTitleContent/>,
             description: t3('description'),
             additDescription: t3('additDescription'),

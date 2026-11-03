@@ -104,7 +104,7 @@ export function CurrencySelector({isOpen, onOpenChange, selectedCurrency, onSele
     if (isDesktop) {
         return (
             <Dialog open={isOpen} onOpenChange={onOpenChange}>
-                <DialogContent className="max-w-md h-[80vh] flex flex-col p-0">
+                <DialogContent className="max-w-md h-[80vh] flex flex-col p-0 z-80">
                     <DialogHeader className="p-2">
                         {/*<DialogTitle>Виберіть валюту</DialogTitle>*/}
                     </DialogHeader>
@@ -116,7 +116,7 @@ export function CurrencySelector({isOpen, onOpenChange, selectedCurrency, onSele
 
     return (
         <Drawer open={isOpen} onOpenChange={onOpenChange}>
-            <DrawerContent className="h-[85vh]">
+            <DrawerContent className="h-[85vh] z-80">
                 <DrawerHeader className="hidden">
                     <DrawerTitle>Виберіть валюту</DrawerTitle>
                 </DrawerHeader>
