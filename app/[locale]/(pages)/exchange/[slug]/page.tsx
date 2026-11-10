@@ -16,6 +16,7 @@ import {
     WalletIcon,
 } from "@/components/shared/Icons";
 import {SectionHeading} from "@/components/shared/SectionHeading";
+import {getCanonicalUrl, getAlternateLanguages} from "@/lib/seo";
 
 type Props = {
     params: Promise<{ locale: string; slug: string }>;
@@ -36,6 +37,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({params}: Props): Promise<Metadata> {
     const {locale, slug} = await params;
+    setRequestLocale(locale);
     const config = getExchangeConfig(slug);
 
     if (!config) {
@@ -46,19 +48,14 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
     const description = config.description[locale] || config.description.uk;
     const title = `${h1}`;
 
-    const canonicalUrl = `https://lama-cash.com/${locale}/exchange/${slug}`
+    const canonicalUrl = getCanonicalUrl(locale, `/exchange/${slug}`);
 
     return {
         title,
         description,
         alternates: {
             canonical: canonicalUrl,
-            languages: {
-                uk: `https://lama-cash.com/uk/exchange/${slug}`,
-                ru: `https://lama-cash.com/ru/exchange/${slug}`,
-                en: `https://lama-cash.com/en/exchange/${slug}`,
-                "x-default": `https://lama-cash.com/uk/exchange/${slug}`,
-            },
+            languages: getAlternateLanguages(`/exchange/${slug}`),
         },
         openGraph: {
             title,

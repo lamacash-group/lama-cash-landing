@@ -15,6 +15,7 @@ import {
     TelegramIcon,
 } from "@/components/shared/Icons";
 import {SectionHeading} from "@/components/shared/SectionHeading";
+import {getCanonicalUrl, getAlternateLanguages} from "@/lib/seo";
 
 type Props = {
     params: Promise<{ locale: string; slug: string }>;
@@ -35,6 +36,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({params}: Props): Promise<Metadata> {
     const {locale, slug} = await params;
+    setRequestLocale(locale);
     const config = getCityConfig(slug);
 
     if (!config) {
@@ -45,19 +47,14 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
     const leadText = config.leadText[locale] || config.leadText.uk;
     const title = `${h1}`;
 
-    const canonicalUrl =`https://lama-cash.com/${locale}/city/${slug}`;
+    const canonicalUrl = getCanonicalUrl(locale, `/city/${slug}`);
 
     return {
         title,
         description: leadText,
         alternates: {
             canonical: canonicalUrl,
-            languages: {
-                uk: `https://lama-cash.com/uk/city/${slug}`,
-                ru: `https://lama-cash.com/ru/city/${slug}`,
-                en: `https://lama-cash.com/en/city/${slug}`,
-                "x-default": `https://lama-cash.com/uk/city/${slug}`,
-            },
+            languages: getAlternateLanguages(`/city/${slug}`),
         },
         openGraph: {
             title,

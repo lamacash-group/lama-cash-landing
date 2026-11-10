@@ -1,6 +1,8 @@
 import Calculator from "@/components/Rates/Calculator";
 import {routing} from "@/app/i18n/routing";
 import {Metadata} from "next";
+import {setRequestLocale} from "next-intl/server";
+import {getCanonicalUrl, getAlternateLanguages} from "@/lib/seo";
 
 type Props = {
     params: Promise<{ locale: string }>;
@@ -13,6 +15,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const resolvedParams = await params;
     const locale = resolvedParams.locale;
+    setRequestLocale(locale);
 
     const titles: Record<string, string> = {
         uk: 'Калькулятор обміну валют LAMA CASH - актуальні курси',
@@ -26,19 +29,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         en: 'Calculate the benefit of exchanging USDT, BTC, ETH for cash or services like Wise, Revolut, PayPal. Fast and convenient LAMA CASH calculator.'
     };
 
-    const canonical = `https://lama-cash.com/${locale}/rates`;
+    const canonical = getCanonicalUrl(locale, '/rates');
 
     return {
         title: titles[locale] || titles['uk'],
         description: descriptions[locale] || descriptions['uk'],
         alternates: {
             canonical,
-            languages: {
-                'uk': 'https://lama-cash.com/uk/rates/',
-                'ru': 'https://lama-cash.com/ru/rates/',
-                'en': 'https://lama-cash.com/en/rates/',
-                'x-default': 'https://lama-cash.com/uk/rates/'
-            }
+            languages: getAlternateLanguages('/rates'),
         },
         openGraph: {
             title: titles[locale] || titles['uk'],

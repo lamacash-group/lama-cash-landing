@@ -3,6 +3,7 @@ import {Metadata} from "next";
 import {setRequestLocale} from "next-intl/server";
 import {routing} from "@/app/i18n/routing";
 import VerifyManager from "@/components/VerifyManager";
+import {getCanonicalUrl, getAlternateLanguages} from "@/lib/seo";
 
 type Props = {
     params: Promise<{ locale: string }>;
@@ -15,6 +16,7 @@ export function generateStaticParams() {
 export async function generateMetadata({params}: Props): Promise<Metadata> {
     const resolvedParams = await params;
     const locale = resolvedParams.locale;
+    setRequestLocale(locale);
 
     const titles: Record<string, string> = {
         uk: "Перевірка менеджера Telegram",
@@ -28,19 +30,14 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
         en: "Verify the authenticity of the LAMA CASH Telegram manager. Protect yourself from scammers and fake accounts.",
     };
 
-    const canonical = `https://lama-cash.com/${locale}/verify-manager`;
+    const canonical = getCanonicalUrl(locale, '/verify-manager');
 
     return {
         title: titles[locale] || titles["uk"],
         description: descriptions[locale] || descriptions["uk"],
         alternates: {
             canonical,
-            languages: {
-                uk: "https://lama-cash.com/uk/verify-manager",
-                ru: "https://lama-cash.com/ru/verify-manager",
-                en: "https://lama-cash.com/en/verify-manager",
-                "x-default": "https://lama-cash.com/uk/verify-manager",
-            },
+            languages: getAlternateLanguages('/verify-manager'),
         },
         openGraph: {
             title: titles[locale] || titles["uk"],

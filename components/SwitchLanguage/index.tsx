@@ -4,12 +4,14 @@ import {Select, SelectTrigger, SelectValue, SelectContent, SelectItem} from "@/c
 import Image from "next/image";
 import {useLocale, useTranslations} from "next-intl";
 import {usePathname, useRouter} from "@/app/i18n/navigation";
+import {useRouter as useNextRouter} from "next/navigation";
 import {useState, useTransition} from "react";
 
 export const SwitchLanguage = () => {
 
     const locale = useLocale();
     const router = useRouter();
+    const nextRouter = useNextRouter();
     const pathname = usePathname();
     const t = useTranslations('aria');
 
@@ -18,9 +20,15 @@ export const SwitchLanguage = () => {
 
     const handleLanguageChange = (newLocale: string) => {
         setIsOpen(false);
+        if (newLocale === locale) return;
+
         setTimeout(() => {
             startTransition(() => {
-                router.replace(pathname, { locale: newLocale });
+                if (newLocale === 'uk') {
+                    nextRouter.replace(pathname || '/');
+                } else {
+                    router.replace(pathname, { locale: newLocale });
+                }
             });
         }, 150);
     }

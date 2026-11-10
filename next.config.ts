@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 import createNextIntlPlugin from 'next-intl/plugin';
 
 const nextConfig: NextConfig = {
-    allowedDevOrigins: ['d6bd-195-191-73-117.ngrok-free.app'],
+    allowedDevOrigins: ['d6bd-195-191-73-117.ngrok-free.app', '192.168.0.249'],
     images: {
         formats: ['image/avif', 'image/webp'],
         remotePatterns: [
@@ -16,7 +16,20 @@ const nextConfig: NextConfig = {
         deviceSizes: [640, 768, 1024, 1280, 1920],
         imageSizes: [16, 32, 48, 64, 96, 128, 256],
     },
-
+    async redirects() {
+        return [
+            {
+                source: '/uk',
+                destination: '/',
+                permanent: true,
+            },
+            {
+                source: '/uk/:path*',
+                destination: '/:path*',
+                permanent: true,
+            },
+        ];
+    },
     async headers() {
         return [
             {

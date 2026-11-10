@@ -32,13 +32,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Static pages across all locales
     for (const page of staticPages) {
         for (const locale of locales) {
-            const url = `${baseUrl}/${locale}${page.path === '/' ? '' : page.path}`;
+            const localePrefix = locale === defaultLocale ? '' : `/${locale}`;
+            const pagePath = page.path === '/' ? '' : page.path;
+            const url = `${baseUrl}${localePrefix}${pagePath}`;
 
             sitemapEntries.push({
                 url,
                 lastModified: new Date(),
                 changeFrequency: page.changeFrequency,
                 priority: page.priority,
+                alternates: {
+                    languages: {
+                        uk: `${baseUrl}${pagePath}`,
+                        ru: `${baseUrl}/ru${pagePath}`,
+                        en: `${baseUrl}/en${pagePath}`,
+                        'x-default': `${baseUrl}${pagePath}`,
+                    },
+                },
             });
         }
     }
@@ -47,7 +57,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const exchangeSlugs = getAllExchangeSlugs();
     for (const slug of exchangeSlugs) {
         for (const locale of locales) {
-            const url = `${baseUrl}/${locale}/exchange/${slug}`;
+            const localePrefix = locale === defaultLocale ? '' : `/${locale}`;
+            const url = `${baseUrl}${localePrefix}/exchange/${slug}`;
 
             sitemapEntries.push({
                 url,
@@ -56,9 +67,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
                 priority: 0.8,
                 alternates: {
                     languages: {
-                        uk: `${baseUrl}/uk/exchange/${slug}`,
+                        uk: `${baseUrl}/exchange/${slug}`,
                         ru: `${baseUrl}/ru/exchange/${slug}`,
                         en: `${baseUrl}/en/exchange/${slug}`,
+                        'x-default': `${baseUrl}/exchange/${slug}`,
                     }
                 }
             });
@@ -69,13 +81,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const citySlugs = getAllCitySlugs();
     for (const slug of citySlugs) {
         for (const locale of locales) {
-            const url = `${baseUrl}/${locale}/city/${slug}`;
+            const localePrefix = locale === defaultLocale ? '' : `/${locale}`;
+            const url = `${baseUrl}${localePrefix}/city/${slug}`;
 
             sitemapEntries.push({
                 url,
                 lastModified: new Date(),
                 changeFrequency: 'weekly',
                 priority: 0.8,
+                alternates: {
+                    languages: {
+                        uk: `${baseUrl}/city/${slug}`,
+                        ru: `${baseUrl}/ru/city/${slug}`,
+                        en: `${baseUrl}/en/city/${slug}`,
+                        'x-default': `${baseUrl}/city/${slug}`,
+                    },
+                },
             });
         }
     }
