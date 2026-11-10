@@ -131,7 +131,7 @@ export default async function ContactsPage({params}: {params: Promise<{ locale: 
                         {/*    </div>*/}
                         {/*</a>*/}
 
-                        <a href="https://t.me/@lama_cash_manager" target="_blank"  rel="noopener"
+                        <a href="https://t.me/lama_cash_manager" target="_blank"  rel="noopener"
                            className="group flex items-center gap-5 p-6 bg-black/20 backdrop-blur-md border border-purple-500/20 rounded-2xl hover:bg-purple-900/10 hover:border-purple-400/50 transition-all">
                             <div
                                 className="w-12 h-12 shrink-0 flex items-center justify-center bg-purple-900/30 text-purple-400 rounded-xl group-hover:bg-purple-500 group-hover:text-white transition-colors border border-purple-500/20">

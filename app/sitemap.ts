@@ -41,14 +41,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
                 lastModified: new Date(),
                 changeFrequency: page.changeFrequency,
                 priority: page.priority,
-                alternates: {
-                    languages: {
-                        uk: `${baseUrl}${pagePath}`,
-                        ru: `${baseUrl}/ru${pagePath}`,
-                        en: `${baseUrl}/en${pagePath}`,
-                        'x-default': `${baseUrl}${pagePath}`,
-                    },
-                },
+                // alternates: {
+                //     languages: {
+                //         uk: `${baseUrl}${pagePath}`,
+                //         ru: `${baseUrl}/ru${pagePath}`,
+                //         en: `${baseUrl}/en${pagePath}`,
+                //         'x-default': `${baseUrl}${pagePath}`,
+                //     },
+                // },
             });
         }
     }
@@ -65,14 +65,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
                 lastModified: new Date(),
                 changeFrequency: 'weekly',
                 priority: 0.8,
-                alternates: {
-                    languages: {
-                        uk: `${baseUrl}/exchange/${slug}`,
-                        ru: `${baseUrl}/ru/exchange/${slug}`,
-                        en: `${baseUrl}/en/exchange/${slug}`,
-                        'x-default': `${baseUrl}/exchange/${slug}`,
-                    }
-                }
+                // alternates: {
+                //     languages: {
+                //         uk: `${baseUrl}/exchange/${slug}`,
+                //         ru: `${baseUrl}/ru/exchange/${slug}`,
+                //         en: `${baseUrl}/en/exchange/${slug}`,
+                //         'x-default': `${baseUrl}/exchange/${slug}`,
+                //     }
+                // }
             });
         }
     }
@@ -89,14 +89,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
                 lastModified: new Date(),
                 changeFrequency: 'weekly',
                 priority: 0.8,
-                alternates: {
-                    languages: {
-                        uk: `${baseUrl}/city/${slug}`,
-                        ru: `${baseUrl}/ru/city/${slug}`,
-                        en: `${baseUrl}/en/city/${slug}`,
-                        'x-default': `${baseUrl}/city/${slug}`,
-                    },
-                },
+                // alternates: {
+                //     languages: {
+                //         uk: `${baseUrl}/city/${slug}`,
+                //         ru: `${baseUrl}/ru/city/${slug}`,
+                //         en: `${baseUrl}/en/city/${slug}`,
+                //         'x-default': `${baseUrl}/city/${slug}`,
+                //     },
+                // },
             });
         }
     }
