@@ -32,9 +32,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Static pages across all locales
     for (const page of staticPages) {
         for (const locale of locales) {
-            const localePrefix = locale === defaultLocale ? '' : `/${locale}`;
-            const pagePath = page.path === '/' ? '' : page.path;
-            const url = `${baseUrl}${localePrefix}${pagePath}`;
+            const isDefault = locale === defaultLocale;
+            const url = page.path === '/'
+                ? (isDefault ? `${baseUrl}/` : `${baseUrl}/${locale}`)
+                : (isDefault ? `${baseUrl}${page.path}` : `${baseUrl}/${locale}${page.path}`);
 
             sitemapEntries.push({
                 url,

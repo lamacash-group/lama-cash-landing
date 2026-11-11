@@ -63,26 +63,6 @@ export default async function ContactsPage({params}: {params: Promise<{ locale: 
         <main
             className="min-h-screen bg-gray-950 bg-linear-to-b from-gray-950 to-purple-950/40 py-12 px-4 md:px-8 flex flex-col justify-center text-white">
 
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "Organization",
-                        "name": "Lama Cash",
-                        "url": "https://lama-cash.com",
-                        "contactPoint": {
-                            "@type": "ContactPoint",
-                            "telephone": "+38-093-599-63-85",
-                            "contactType": "customer service",
-                            "email": "support@lama-cash.com",
-                            "areaServed": "UA",
-                            "availableLanguage": ["Ukrainian", "English"]
-                        }
-                    })
-                }}
-            />
-
             <div className="w-full max-w-6xl mx-auto space-y-8 mt-8">
 
                 <div className="text-center mb-12">

@@ -2,7 +2,7 @@ import {Header} from "@/components/Header";
 import {Home} from "@/components/Home";
 import dynamic from "next/dynamic";
 import {Metadata} from "next";
-import {setRequestLocale} from "next-intl/server";
+import {getTranslations, setRequestLocale} from "next-intl/server";
 import {BinanceLine} from "@/components/BinanceLine";
 import * as React from "react";
 import {routing} from "@/app/i18n/routing";
@@ -72,9 +72,28 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Main({params}: {params: Promise<{ locale: string }>}) {
     const {locale} = await params;
     setRequestLocale(locale);
+    const tFaq = await getTranslations("FaqSection");
+
+    const faqItems = ["item1", "item2", "item3", "item4", "item5", "item6", "item7", "item8"];
+    const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqItems.map((item) => ({
+            "@type": "Question",
+            "name": tFaq(`items.${item}.question`),
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": tFaq(`items.${item}.answer`),
+            },
+        })),
+    };
 
     return (
         <div className="flex flex-col flex-1 items-center justify-center font-sans w-full mx-auto min-h-screen">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
             <div className="flex flex-col w-full bg-[linear-gradient(10.25deg,#3C157F_-9.46%,#7134C2_40.87%,#171717_93.06%)] overflow-hidden">
                 <div className="w-full h-full flex flex-col gap-4">
                     <Header/>

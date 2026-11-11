@@ -80,9 +80,12 @@ const organizationSchema = {
         "availableLanguage": ["Ukrainian", "Russian", "English"]
     },
     "sameAs": [
+        "https://t.me/lama_cash",
         "https://t.me/lama_cash_manager",
+        "https://www.instagram.com/lama_cash",
         "https://www.tiktok.com/@lama.cash",
-        "https://www.instagram.com/lama.cash"
+        "https://www.tiktok.com/@lama.change",
+        "https://www.youtube.com/@lama_cash"
     ]
 };
 
@@ -91,10 +94,13 @@ const websiteSchema = {
     "@type": "WebSite",
     "name": "LAMA CASH",
     "url": "https://lama-cash.com",
-    "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://lama-cash.com/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+38-093-599-63-85",
+        "contactType": "customer service",
+        "email": "support@lama-cash.com",
+        "areaServed": "UA",
+        "availableLanguage": ["Ukrainian", "English", "Russian"]
     }
 };
 
