@@ -9,6 +9,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({params}: {params: Promise<{ locale: string }>}): Promise<Metadata> {
     const {locale} = await params;
+    setRequestLocale(locale);
 
     const titles: Record<string, string> = {
         uk: 'Юридична інформація',
@@ -49,31 +50,63 @@ export async function generateMetadata({params}: {params: Promise<{ locale: stri
     };
 }
 
+interface LegalContent {
+    title: string;
+    addressLabel: string;
+    addressValue: string;
+    emailLabel: string;
+    phoneLabel: string;
+}
+
+const legalData: Record<string, LegalContent> = {
+    uk: {
+        title: 'Юридична інформація',
+        addressLabel: 'Адреса',
+        addressValue: 'Грецька площа, 3/4, Одеса, Одеська область, Україна, 65000',
+        emailLabel: 'Email',
+        phoneLabel: 'Телефон',
+    },
+    ru: {
+        title: 'Юридическая информация',
+        addressLabel: 'Адрес',
+        addressValue: 'Греческая площадь, 3/4, Одесса, Одесская область, Украина, 65000',
+        emailLabel: 'Email',
+        phoneLabel: 'Телефон',
+    },
+    en: {
+        title: 'Legal Information',
+        addressLabel: 'Address',
+        addressValue: 'Gretska Square, 3/4, Odesa, Odesa Oblast, Ukraine, 65000',
+        emailLabel: 'Email',
+        phoneLabel: 'Phone',
+    },
+};
+
 export default async function LegalPage({params}: {params: Promise<{ locale: string }>}) {
     const {locale} = await params;
     setRequestLocale(locale);
 
-    return (
-        <div className="flex flex-col w-ful overflow-hidden">
+    const content = legalData[locale] || legalData.uk;
 
+    return (
+        <div className="flex flex-col w-full overflow-hidden">
             <div className="min-h-screen w-full bg-[linear-gradient(10.25deg,#3C157F_-9.46%,#7134C2_40.87%,#171717_93.06%)] py-10 px-4 md:px-8 font-sans">
                 <div
                     className="max-w-3xl mx-auto bg-black/20 backdrop-blur-md border border-white/10 rounded-3xl p-6 md:p-10 shadow-2xl text-white/80">
 
-                    <h1 className="text-2xl md:text-4xl font-bold text-white mb-8">Юридична інформація</h1>
+                    <h1 className="text-2xl md:text-4xl font-bold text-white mb-8">{content.title}</h1>
 
                     <div className="space-y-4 text-sm md:text-base leading-relaxed">
                         <p>
-                            <strong className="text-white">Адреса:</strong> Грецька площа, 3/4, Одеса, Одеська область,
-                            Україна, 65000
+                            <strong className="text-white">{content.addressLabel}:</strong> {content.addressValue}
                         </p>
                         <p>
-                            <strong className="text-white">Email:</strong> <a href="mailto:supportlamacash@gmail.com"
-                                                                              className="text-[#5ce1e6] hover:underline">supportlamacash@gmail.com</a>
+                            <strong className="text-white">{content.emailLabel}:</strong> <a href="mailto:supportlamacash@gmail.com"
+                                                                                             className="text-[#5ce1e6] hover:underline">supportlamacash@gmail.com</a>
                         </p>
                         <p>
-                            <strong className="text-white">Телефон:</strong> <a href="tel:+380935996385"
-                                                                                className="text-[#5ce1e6] hover:underline">+38
+                            <strong className="text-white">{content.phoneLabel}:</strong> <a href="tel:+380935996385"
+                                                                                             className="text-[#5ce1e6] hover:underline">+38
                             (093) 599 63 85</a>
                         </p>
                     </div>

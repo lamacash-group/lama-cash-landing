@@ -55,10 +55,9 @@ export const Footer = () => {
                         <div
                             className="w-full flex flex-col justify-center items-center gap-2 text-base max-sm:text-[9px] text-white">
                             <nav className="flex flex-col gap-2 items-center">
-                                <Link href="/about" className="hover:text-white transition-colors duration-300">Про
-                                    нас</Link>
+                                <Link href="/about" className="hover:text-white transition-colors duration-300">{t('about')}</Link>
                                 <Link href="/contacts"
-                                      className="hover:text-white transition-colors duration-300">Контакти</Link>
+                                      className="hover:text-white transition-colors duration-300">{t('contacts')}</Link>
                                 <Link href="/privacy"
                                       className="hover:text-white transition-colors duration-300">{t('policy')}</Link>
                                 <Link href="/legal"

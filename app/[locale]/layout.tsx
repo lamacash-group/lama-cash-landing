@@ -77,7 +77,8 @@ const organizationSchema = {
         "telephone": "+38-093-599-63-85",
         "contactType": "customer service",
         "email": "support@lama-cash.com",
-        "availableLanguage": ["Ukrainian", "Russian", "English"]
+        "areaServed": "UA",
+        "availableLanguage": ["Ukrainian", "English", "Russian"]
     },
     "sameAs": [
         "https://t.me/lama_cash",
@@ -94,14 +95,6 @@ const websiteSchema = {
     "@type": "WebSite",
     "name": "LAMA CASH",
     "url": "https://lama-cash.com",
-    "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+38-093-599-63-85",
-        "contactType": "customer service",
-        "email": "support@lama-cash.com",
-        "areaServed": "UA",
-        "availableLanguage": ["Ukrainian", "English", "Russian"]
-    }
 };
 
 export default async function LocaleLayout({

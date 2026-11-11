@@ -95,6 +95,8 @@
   "Footer": {
     "supportTitle": "Human Support 24/7",
     "supportDesc": "We are available 24/7, but we might not always respond quickly at night",
+    "about": "About us",
+    "contacts": "Contacts",
     "telegramBtnTitle": "We are on Telegram",
     "telegramBtnDesc": "We will reply within 1 min",
     "policy": "Privacy Policy",
