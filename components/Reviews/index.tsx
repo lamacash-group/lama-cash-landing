@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import {Avatar, AvatarFallback, AvatarGroup, AvatarImage} from "@/components/ui/avatar";
+import {Avatar, AvatarGroup, AvatarImage} from "@/components/ui/avatar";
 import Image from "next/image";
 
 type TypeReviews = {
@@ -12,22 +12,22 @@ type TypeReviews = {
 const reviewsData:TypeReviews[] = [
     {
         src:"/reviews/reviews-1.webp",
-        alt:"avatar reviews 1",
+        alt:"",
         objectPosition: "object-[20%_20%]",
     },
     {
         src:"/reviews/reviews-2.webp",
-        alt:"avatar reviews 2",
+        alt:"",
         objectPosition: "object-[20%]",
     },
     {
         src:"/reviews/reviews-3.webp",
-        alt:"avatar reviews 3",
+        alt:"",
         objectPosition: "object-top-right",
     },
     {
         src:"/reviews/reviews-4.webp",
-        alt:"avatar reviews 4",
+        alt:"",
         objectPosition: "object-top-right",
     },
 
@@ -43,7 +43,8 @@ export function Reviews() {
                             <AvatarImage asChild src={item.src}>
                                 <Image
                                     src={item.src}
-                                    alt={item.alt}
+                                    alt=""
+                                    aria-hidden="true"
                                     width={48}
                                     height={48}
                                     className={`w-full h-full object-cover ${item.objectPosition}`}

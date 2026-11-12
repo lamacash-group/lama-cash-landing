@@ -26,7 +26,8 @@ export const Home = () => {
                             width={800}
                             height={800}
                             sizes="(max-width: 640px) 100vw, (max-width: 1280px) 90vw, 800px"
-                            alt="earth on main page background"
+                            alt=""
+                            aria-hidden="true"
                             priority
                             className="overflow-hidden w-full h-auto relative z-10"
                         />
@@ -43,7 +44,7 @@ export const Home = () => {
                             width={350}
                             height={400}
                             sizes="(max-width: 640px) 280px, 350px"
-                            alt="lama main page"
+                            alt={t('mascotAlt')}
                             fetchPriority="high"
                             priority
                             className="object-contain object-bottom h-full z-30 w-full max-w-87.5 max-[500px]:max-w-70! max-sm:max-w-75 max-h-full mx-2.5"

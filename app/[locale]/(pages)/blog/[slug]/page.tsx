@@ -26,7 +26,7 @@ interface StatsColumnsValue {
 }
 
 interface ImageWithQuoteValue {
-    image?: { asset?: { _ref: string } };
+    image?: { asset?: { _ref: string }, alt?: string };
     quote?: string;
     imagePosition?: string;
 }
@@ -90,7 +90,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
 }
 
-const portableTextComponents = {
+const getPortableTextComponents = (postTitle?: string) => ({
     types: {
         customImage: ({ value }: { value: CustomImageValue }) => {
             if (!value?.asset?._ref) return null;
@@ -125,7 +125,7 @@ const portableTextComponents = {
                         width={600}
                         height={600}
                         src={urlFor(value).url()}
-                        alt={value.alt || "Blog image"}
+                        alt={value.alt || postTitle || "LAMA CASH Blog"}
                         className={imgClasses}
                     />
                 </div>
@@ -162,7 +162,7 @@ const portableTextComponents = {
                                 width={500}
                                 height={500}
                                 src={urlFor(value.image).url()}
-                                alt="Quote image"
+                                alt={value.image?.alt || postTitle || "LAMA CASH Blog"}
                                 className="w-full h-auto rounded-[14px] object-cover"
                             />
                         </div>
@@ -180,7 +180,7 @@ const portableTextComponents = {
                                 width={500}
                                 height={500}
                                 src={urlFor(value.image).url()}
-                                alt="Quote image"
+                                alt={value.image?.alt || postTitle || "LAMA CASH Blog"}
                                 className="w-full h-auto rounded-[14px] object-cover"
                             />
                         </div>
@@ -200,7 +200,7 @@ const portableTextComponents = {
         uppercase: ({ children }: PortableTextChildProps) => <span className="uppercase">{children}</span>,
         lowercase: ({ children }: PortableTextChildProps) => <span className="lowercase">{children}</span>,
     }
-};
+});
 
 export default async function BlogPostPage({params}:Props) {
     const {locale, slug} = await params;
@@ -257,7 +257,7 @@ export default async function BlogPostPage({params}:Props) {
                     <div className="max-w-none">
                         <PortableText
                             value={blog.content}
-                            components={portableTextComponents}
+                            components={getPortableTextComponents(blog.title)}
                         />
                     </div>
                 </div>

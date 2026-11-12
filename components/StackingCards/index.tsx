@@ -37,7 +37,8 @@ const FirstCard = () => {
 
                     <Image
                         src={'/ukraine-map.svg'}
-                        alt={"Ukraine map logo"}
+                        alt=""
+                        aria-hidden="true"
                         fill
                         sizes="(max-width: 640px) 300px, (max-width: 1024px) 450px, 600px"
                         className="object-contain"
@@ -46,7 +47,7 @@ const FirstCard = () => {
                     <div className="absolute w-full h-full left-[-20%] rotate-[-28.29deg] z-20">
                         <Image
                             src={'/pack-dollars.png'}
-                            alt={"pack dollars"}
+                            alt={t('dollarsAlt')}
                             fill
                             sizes="(max-width: 640px) 220px, (max-width: 1024px) 350px, 450px"
                             className="object-contain"
@@ -56,7 +57,7 @@ const FirstCard = () => {
                     <div className="absolute w-full h-full left-[17%] rotate-[-160deg] scale-y-[-1] z-10">
                         <Image
                             src={'/coin-trc.png'}
-                            alt={"coin trc"}
+                            alt={t('coinAlt')}
                             fill
                             sizes="(max-width: 640px) 220px, (max-width: 1024px) 350px, 450px"
                             className="object-contain"
@@ -85,13 +86,13 @@ const FishCardTitleContent = () => {
         <>
             <div
                 className="flex justify-center items-center max-sm:w-5 max-sm:h-5 w-10 h-10 bg-transparent max-sm:border border-2 border-black rounded-full">
-                <Image src={'/trc.svg'} alt="trc logo" unoptimized width={9} height={9}
+                <Image src={'/trc.svg'} alt="" aria-hidden="true" unoptimized width={9} height={9}
                        className="max-sm:w-2.5 max-sm:h-2.5 h-4 w-4"/>
             </div>
             <ChevronRight className="text-black max-sm:w-3"/>
             <div
                 className="flex justify-center items-center max-sm:w-5 max-sm:h-5 w-10 h-10 bg-transparent max-sm:border border-2 border-black rounded-full">
-                <Image src={'/dollar.svg'} alt="trc logo" unoptimized width={9} height={9}
+                <Image src={'/dollar.svg'} alt="" aria-hidden="true" unoptimized width={9} height={9}
                        className="max-sm:w-2 max-sm:h-2.75 h-4 w-4"/>
             </div>
         </>
@@ -108,7 +109,7 @@ const SecondCard = () => {
                 <div className="relative w-full max-w-150 aspect-3/2">
                     <Image
                         src={'/tokens.png'}
-                        alt={"crypto tokens"}
+                        alt={t('tokensAlt')}
                         fill
                         sizes="(max-width: 640px) 240px, (max-width: 1024px) 450px, 600px"
                         className="object-contain"
@@ -135,19 +136,19 @@ const SecondCardTitleContent = () => {
 
                 <div
                     className="flex justify-center items-center max-sm:w-5 max-sm:h-5 w-10 h-10 max-sm:border border-2 border-black rounded-full relative z-10 bg-[rgba(179,142,243,1)]">
-                    <Image src={'/trc.svg'} alt="trc logo" unoptimized width={9} height={9}
+                    <Image src={'/trc.svg'} alt="" aria-hidden="true" unoptimized width={9} height={9}
                            className="max-sm:w-2.5 max-sm:h-2.5 h-4 w-4"/>
                 </div>
 
                 <div
                     className="flex justify-center items-center max-sm:w-5 max-sm:h-5 w-10 h-10 max-sm:border border-2 border-black rounded-full relative z-20 bg-[rgba(179,142,243,1)]">
-                    <Image src={'/ethereum.svg'} alt="ethereum logo" unoptimized width={7} height={12}
+                    <Image src={'/ethereum.svg'} alt="" aria-hidden="true" unoptimized width={7} height={12}
                            className="max-sm:w-2.5 max-sm:h-3 h-6 w-6"/>
                 </div>
 
                 <div
                     className="flex justify-center items-center max-sm:w-5 max-sm:h-5 w-10 h-10 max-sm:border border-2 border-black rounded-full relative z-30 bg-[rgba(179,142,243,1)]">
-                    <Image src={'/btc.svg'} alt="btc logo" unoptimized width={9} height={9}
+                    <Image src={'/btc.svg'} alt="" aria-hidden="true" unoptimized width={9} height={9}
                            className="max-sm:w-2 max-sm:h-3 h-6 w-6"/>
                 </div>
 
@@ -166,7 +167,7 @@ const ThirdCard = () => {
                 <div className="relative w-full max-w-150 aspect-3/2">
                     <Image
                         src={'/cards.png'}
-                        alt={"all available cards privat, mono, lama cash pay"}
+                        alt={t('cardsAlt')}
                         fill
                         sizes="(max-width: 640px) 280px, (max-width: 1024px) 450px, 600px"
                         className="object-contain"
@@ -231,13 +232,13 @@ const ThirdCardTitleContent = () => {
         <>
             <div
                 className="flex justify-center items-center max-sm:w-5 max-sm:h-5 w-10 h-10 bg-transparent max-sm:border border-2 border-black rounded-full">
-                <Image src={'/dollar.svg'} alt="trc logo" width={9} height={9} unoptimized
+                <Image src={'/dollar.svg'} alt="" aria-hidden="true" width={9} height={9} unoptimized
                        className="max-sm:w-2.5 max-sm:h-2.5 h-4 w-4"/>
             </div>
             <ChevronRight className="text-black max-sm:w-3"/>
             <div
                 className="flex justify-center items-center max-sm:w-5 max-sm:h-5 w-10 h-10 bg-transparent max-sm:border border-2 border-black rounded-full">
-                <Image src={'/wallet.svg'} alt="trc logo" width={9} height={9}
+                <Image src={'/wallet.svg'} alt="" aria-hidden="true" width={9} height={9}
                        className="max-sm:w-3 max-sm:h-2.5 h-5 w-5"/>
             </div>
         </>

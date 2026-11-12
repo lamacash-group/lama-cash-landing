@@ -65,7 +65,7 @@ const MoreServices = () => {
                         className="absolute -rotate-12 z-0 w-full h-full max-sm:w-[90%] max-[400px]:w-full max-w-70 max-h-75 pointer-events-none aspect-square">
                         <Image
                             src={'/paypal.png'}
-                            alt={"PayPal icon"}
+                            alt={t('card1.imageAlt')}
                             fill
                             sizes="(max-width: 640px) 140px, (max-width: 1024px) 240px, 280px"
                             className="object-contain"
@@ -97,7 +97,7 @@ const MoreServices = () => {
                         className="absolute rotate-[-9deg] z-0 w-full h-full max-sm:w-[90%] max-[400px]:w-full max-w-70 max-h-75 pointer-events-none aspect-square">
                         <Image
                             src={'/paypalwallet.png'}
-                            alt={"PayPal wallet"}
+                            alt={t('card2.imageAlt')}
                             fill
                             sizes="(max-width: 640px) 140px, (max-width: 1024px) 240px, 280px"
                             className="object-contain"
@@ -145,7 +145,7 @@ const MoreServices = () => {
                         className="absolute rotate-[-9deg] z-0 w-full h-full max-sm:w-[90%] max-[400px]:w-full max-w-70 max-h-75 pointer-events-none aspect-square">
                         <Image
                             src={'/wise.png'}
-                            alt={"Wise logo"}
+                            alt={t('card3.imageAlt')}
                             fill
                             sizes="(max-width: 640px) 140px, (max-width: 1024px) 240px, 280px"
                             className="object-contain"
@@ -193,7 +193,7 @@ const MoreServices = () => {
                         className="absolute rotate-[-9deg] z-0 w-full h-full max-sm:w-[90%] max-[400px]:w-full max-w-70 max-h-75 pointer-events-none aspect-square">
                         <Image
                             src={'/puzzle.png'}
-                            alt={"Puzzle icon"}
+                            alt={t('card4.imageAlt')}
                             fill
                             sizes="(max-width: 640px) 140px, (max-width: 1024px) 240px, 280px"
                             className="object-contain"

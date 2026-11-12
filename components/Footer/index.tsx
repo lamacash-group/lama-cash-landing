@@ -69,7 +69,8 @@ export const Footer = () => {
                         className="relative w-full max-w-87.5 h-full flex flex-col justify-center items-center -mt-25 max-md:-mt-18 z-20">
                         <Image
                             src={'/lama-footer.png'}
-                            alt={"lama cash footer telegram link"}
+                            alt=""
+                            aria-hidden="true"
                             width={1200}
                             height={1250}
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"

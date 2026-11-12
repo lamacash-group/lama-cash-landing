@@ -89,7 +89,7 @@ export default async function BlogPage({params}: {params: Promise<{locale: strin
                                 width={600}
                                 height={400}
                                 src={urlFor(blog.mainImage).url()}
-                                alt={blog.mainImage.alt || blog.title || "Blog cover"}
+                                alt={blog.mainImage.alt || blog.title || "LAMA CASH Blog"}
                                 className="w-full h-70 object-cover rounded-md mb-4 shrink-0"
                             />
                         )}

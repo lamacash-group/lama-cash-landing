@@ -22,7 +22,8 @@ export const ContactUs = ({text = 'contact us', buttonClass, imageClass, inverte
                     src="/telegram.svg"
                     width={13}
                     height={11}
-                    alt="telegram icon"
+                    alt=""
+                    aria-hidden="true"
                 />
             </div>
         </Button>

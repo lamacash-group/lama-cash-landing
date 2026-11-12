@@ -55,7 +55,8 @@ export const Questions = () => {
                         className="relative w-full max-w-87.5 h-full flex flex-col justify-center items-center -mt-25 max-md:-mt-16 z-20">
                         <Image
                             src={'/lama-service.png'}
-                            alt={"lama cash footer telegram link"}
+                            alt=""
+                            aria-hidden="true"
                             width={350}
                             height={365}
                             sizes="(max-width: 640px) 160px, 350px"

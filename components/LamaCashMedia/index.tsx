@@ -132,7 +132,7 @@ export const LamaCashMedia = async () => {
                             className="absolute -inset-4 bg-[linear-gradient(180deg,#17171700_50%,#171717_87.13%)] z-30"></div>
                         <SkeletonImage
                             src={'/lama-media1.png'}
-                            alt={"lama cash social media - tik tok"}
+                            alt={t('tiktokAlt')}
                             width={900}
                             height={1200}
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
@@ -197,7 +197,7 @@ export const LamaCashMedia = async () => {
                             className="absolute -inset-4 bg-[linear-gradient(180deg,#17171700_50%,#171717_87.13%)] z-30"></div>
                         <SkeletonImage
                             src={'/lama-media2.png'}
-                            alt={"lama cash social media - tik tok number two"}
+                            alt={t('tiktokAlt')}
                             width={900}
                             height={1200}
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
@@ -263,7 +263,8 @@ export const LamaCashMedia = async () => {
                             className="absolute z-30 items-center justify-center w-15 h-15 sm:w-40 sm:h-40 ">
                             <Image
                                 src={'/blocked-lama.png'}
-                                alt={"blocked instagram"}
+                                alt=""
+                                aria-hidden="true"
                                 width={1000}
                                 height={1000}
                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
@@ -272,7 +273,7 @@ export const LamaCashMedia = async () => {
                         </div>
                         <SkeletonImage
                             src={'/lama-media3.png'}
-                            alt={"lama cash social media - instagram"}
+                            alt={t('instagramAlt')}
                             width={900}
                             height={1200}
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
@@ -344,7 +345,7 @@ export const LamaCashMedia = async () => {
                             className="absolute -inset-4 bg-[linear-gradient(180deg,#17171700_50%,#171717_87.13%)] z-30"></div>
                         <SkeletonImage
                             src={'/lama-media5.png'}
-                            alt={"lama cash social media - new instagram"}
+                            alt={t('instagramAlt')}
                             width={900}
                             height={1200}
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
@@ -416,7 +417,7 @@ export const LamaCashMedia = async () => {
                             className="absolute -inset-4 bg-[linear-gradient(180deg,#17171700_50%,#171717_87.13%)] z-30"></div>
                         <SkeletonImage
                             src={'/lama-media6.png'}
-                            alt={"lama cash social media - telegram"}
+                            alt={t('telegramAlt')}
                             width={900}
                             height={1200}
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
@@ -473,7 +474,7 @@ export const LamaCashMedia = async () => {
                             className="absolute -inset-4 bg-[linear-gradient(180deg,#17171700_50%,#171717_87.13%)] z-30"></div>
                         <SkeletonImage
                             src={'/lama-media4.png'}
-                            alt={"lama cash social media - YouTube"}
+                            alt={t('youtubeAlt')}
                             width={900}
                             height={1200}
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"

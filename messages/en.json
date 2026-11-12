@@ -13,7 +13,8 @@
     "reviewsTitle": "people trust us",
     "yearsAchieve": "best crypto exchange service",
     "socialCount": "social followers",
-    "reviewsClient": "reviews from happy customers"
+    "reviewsClient": "reviews from happy customers",
+    "mascotAlt": "LAMA CASH crypto exchange mascot"
   },
   "ScrollStack": {
     "card1": {
@@ -21,13 +22,16 @@
       "description": "Withdraw USDT to cash",
       "additDescription": "Get new blue dollars in any of the 23 cities in Ukraine.",
       "euNote": "Also issued in EU countries. Message the manager.",
-      "btn": "withdraw crypto"
+      "btn": "withdraw crypto",
+      "dollarsAlt": "Cash USD payout — LAMA CASH",
+      "coinAlt": "Buying and selling Tether USDT cryptocurrency"
     },
     "card2": {
       "title": "AML Guarantee",
       "description": "Buy USDT, BTC, ETH and other crypto",
       "additDescription": "Buy cryptocurrency. \n Purity guaranteed.",
-      "btn": "buy crypto"
+      "btn": "buy crypto",
+      "tokensAlt": "Buying and selling Tether USDT cryptocurrency"
     },
     "card3": {
       "title": "Often exchanged",
@@ -42,7 +46,8 @@
       "instantDesc": "credited today — forget waiting 2+ days.",
       "safeTitle": "Safe:",
       "safeDesc": "transfers without the risk of blocking.",
-      "btn": "Top up card"
+      "btn": "Top up card",
+      "cardsAlt": "Monobank and PrivatBank card top-up"
     }
   },
   "MoreServices": {
@@ -52,12 +57,14 @@
       "tooltipTrigger": "without risks and blocking",
       "tooltipDesc": "We top up PayPal so that the money definitely stays with you - without the chance to cancel the payment.",
       "tooltipBold": "Write to us – we will top up safely",
-      "btn": "top up"
+      "btn": "top up",
+      "imageAlt": "PayPal exchange and withdrawal"
     },
     "card2": {
       "badge": "Best rate",
       "title": "Withdraw from PayPal to USDT or cash",
-      "btn": "withdraw"
+      "btn": "withdraw",
+      "imageAlt": "PayPal exchange and withdrawal"
     },
     "card3": {
       "badge": "Recommended",
@@ -65,7 +72,8 @@
       "tooltipTrigger": "for USDT/USD",
       "tooltipDesc": "We top up Wise for USDT/USD quickly, at a favorable rate and without unnecessary questions. Everything is fast and high-quality.",
       "tooltipBold": "Write to us, we will find a solution",
-      "btn": "top up"
+      "btn": "top up",
+      "imageAlt": "Wise international transfers and top-up"
     },
     "card4": {
       "badge": "Recommended",
@@ -73,7 +81,8 @@
       "tooltipTrigger": "without risks and blocking",
       "tooltipDesc": "Do you have a non-standard financial task that no standard service solves? We will figure it out and offer a personal solution specifically for your situation.",
       "tooltipBold": "Write to us, we will find a solution",
-      "btn": "contact us"
+      "btn": "contact us",
+      "imageAlt": "Custom financial solutions LAMA CASH"
     }
   },
   "Questions": {
@@ -90,7 +99,11 @@
     "trustCount": "400 000+"
   },
   "LamaMedia": {
-    "title": "LAMA CASH IN THE MEDIA"
+    "title": "LAMA CASH IN THE MEDIA",
+    "tiktokAlt": "Official LAMA CASH TikTok account",
+    "instagramAlt": "Official LAMA CASH Instagram",
+    "youtubeAlt": "Official LAMA CASH YouTube channel",
+    "telegramAlt": "Official LAMA CASH Telegram channel"
   },
   "Footer": {
     "supportTitle": "Human Support 24/7",
