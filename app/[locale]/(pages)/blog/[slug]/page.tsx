@@ -71,7 +71,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             title: blog.title,
             description: blog.description,
             url: canonical,
-            images: blog.mainImage ? [{ url: urlFor(blog.mainImage).url(), width: 1200, height: 630 }] : [{ url: '/og-image.jpg', width: 1200, height: 630 }],
+            siteName: "LAMA CASH",
+            locale: locale === "ru" ? "ru_RU" : locale === "en" ? "en_US" : "uk_UA",
+            images: blog.mainImage ? [{ url: urlFor(blog.mainImage).url(), width: 1200, height: 630 }] : [{ url: '/og/og-image.png', width: 1200, height: 630 }],
         },
         twitter: {
             card: 'summary_large_image',

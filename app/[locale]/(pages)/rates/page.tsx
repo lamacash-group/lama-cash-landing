@@ -29,19 +29,38 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         en: 'Calculate the benefit of exchanging USDT, BTC, ETH for cash or services like Wise, Revolut, PayPal. Fast and convenient LAMA CASH calculator.'
     };
 
+    const title = titles[locale] || titles['uk'];
+    const description = descriptions[locale] || descriptions['uk'];
     const canonical = getCanonicalUrl(locale, '/rates');
 
     return {
-        title: titles[locale] || titles['uk'],
-        description: descriptions[locale] || descriptions['uk'],
+        title,
+        description,
         alternates: {
             canonical,
             languages: getAlternateLanguages('/rates'),
         },
         openGraph: {
-            title: titles[locale] || titles['uk'],
-            description: descriptions[locale] || descriptions['uk'],
+            title,
+            description,
             url: canonical,
+            siteName: "LAMA CASH",
+            type: "website",
+            locale: locale === "ru" ? "ru_RU" : locale === "en" ? "en_US" : "uk_UA",
+            images: [
+                {
+                    url: "/og/og-image.png",
+                    width: 1200,
+                    height: 630,
+                    alt: title,
+                },
+            ],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title,
+            description,
+            images: ["/og/og-image.png"],
         },
     };
 }

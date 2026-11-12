@@ -30,24 +30,38 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
         en: "Verify the authenticity of the LAMA CASH Telegram manager. Protect yourself from scammers and fake accounts.",
     };
 
+    const title = titles[locale] || titles["uk"];
+    const description = descriptions[locale] || descriptions["uk"];
     const canonical = getCanonicalUrl(locale, '/verify-manager');
 
     return {
-        title: titles[locale] || titles["uk"],
-        description: descriptions[locale] || descriptions["uk"],
+        title,
+        description,
         alternates: {
             canonical,
             languages: getAlternateLanguages('/verify-manager'),
         },
         openGraph: {
-            title: titles[locale] || titles["uk"],
-            description: descriptions[locale] || descriptions["uk"],
+            title,
+            description,
             url: canonical,
+            siteName: "LAMA CASH",
+            type: "website",
+            locale: locale === "ru" ? "ru_RU" : locale === "en" ? "en_US" : "uk_UA",
+            images: [
+                {
+                    url: "/og/og-image.png",
+                    width: 1200,
+                    height: 630,
+                    alt: title,
+                },
+            ],
         },
         twitter: {
             card: "summary_large_image",
-            title: titles[locale] || titles["uk"],
-            description: descriptions[locale] || descriptions["uk"],
+            title,
+            description,
+            images: ["/og/og-image.png"],
         },
     };
 }

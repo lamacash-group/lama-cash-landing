@@ -63,6 +63,7 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
             url: canonicalUrl,
             siteName: "LAMA CASH",
             type: "website",
+            locale: locale === "ru" ? "ru_RU" : locale === "en" ? "en_US" : "uk_UA",
             images: [
                 {
                     url: "/og/og-image.png",

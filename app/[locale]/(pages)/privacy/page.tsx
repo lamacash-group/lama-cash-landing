@@ -23,11 +23,13 @@ export async function generateMetadata({params}: {params: Promise<{ locale: stri
         en: 'Read the LAMA CASH privacy policy and learn how we protect your personal data.'
     };
 
+    const title = titles[locale] || titles['uk'];
+    const description = descriptions[locale] || descriptions['uk'];
     const canonical = locale === 'uk' ? 'https://lama-cash.com/privacy' : `https://lama-cash.com/${locale}/privacy`;
 
     return {
-        title: titles[locale] || titles['uk'],
-        description: descriptions[locale] || descriptions['uk'],
+        title,
+        description,
         alternates: {
             canonical,
             languages: {
@@ -38,14 +40,26 @@ export async function generateMetadata({params}: {params: Promise<{ locale: stri
             }
         },
         openGraph: {
-            title: titles[locale] || titles['uk'],
-            description: descriptions[locale] || descriptions['uk'],
+            title,
+            description,
             url: canonical,
+            siteName: "LAMA CASH",
+            type: "website",
+            locale: locale === "ru" ? "ru_RU" : locale === "en" ? "en_US" : "uk_UA",
+            images: [
+                {
+                    url: "/og/og-image.png",
+                    width: 1200,
+                    height: 630,
+                    alt: title,
+                },
+            ],
         },
         twitter: {
-            card: 'summary_large_image',
-            title: titles[locale] || titles['uk'],
-            description: descriptions[locale] || descriptions['uk'],
+            card: "summary_large_image",
+            title,
+            description,
+            images: ["/og/og-image.png"],
         },
     };
 }

@@ -25,11 +25,13 @@ export async function generateMetadata({params}: {params: Promise<{ locale: stri
         en: 'LAMA CASH contacts: 24/7 support, our social networks, and ways to get in touch for quick resolution of your questions.'
     };
 
+    const title = titles[locale] || titles['uk'];
+    const description = descriptions[locale] || descriptions['uk'];
     const canonical = locale === 'uk' ? 'https://lama-cash.com/contacts' : `https://lama-cash.com/${locale}/contacts`;
 
     return {
-        title: titles[locale] || titles['uk'],
-        description: descriptions[locale] || descriptions['uk'],
+        title,
+        description,
         alternates: {
             canonical,
             languages: {
@@ -40,14 +42,26 @@ export async function generateMetadata({params}: {params: Promise<{ locale: stri
             }
         },
         openGraph: {
-            title: titles[locale] || titles['uk'],
-            description: descriptions[locale] || descriptions['uk'],
+            title,
+            description,
             url: canonical,
+            siteName: "LAMA CASH",
+            type: "website",
+            locale: locale === "ru" ? "ru_RU" : locale === "en" ? "en_US" : "uk_UA",
+            images: [
+                {
+                    url: "/og/og-image.png",
+                    width: 1200,
+                    height: 630,
+                    alt: title,
+                },
+            ],
         },
         twitter: {
-            card: 'summary_large_image',
-            title: titles[locale] || titles['uk'],
-            description: descriptions[locale] || descriptions['uk'],
+            card: "summary_large_image",
+            title,
+            description,
+            images: ["/og/og-image.png"],
         },
     };
 }
