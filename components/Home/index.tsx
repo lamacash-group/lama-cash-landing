@@ -2,8 +2,9 @@ import * as React from 'react';
 import {useTranslations} from "next-intl";
 import {ContactUs} from "@/components/ContactUs";
 import {Reviews} from "@/components/Reviews";
-import Link from "next/link";
 import Image from "next/image";
+import Calculator from "@/components/Rates/Calculator";
+import {TrackedLink} from "@/components/TrackedLink";
 
 export const Home = () => {
 
@@ -57,9 +58,12 @@ export const Home = () => {
                                     background: 'linear-gradient(270deg, #41B4F2 0%, #7134C2 35.58%, #FCFAFF 62.98%, #41B4F2 87.5%, #7134C2 100%)',
                                 }}
                             >
-                                <Link href="https://t.me/lama_cash" target="_blank" rel="noopener" data-event="click_tg_main">
+                                <TrackedLink href="https://t.me/lama_cash"
+                                             target="_blank"
+                                             rel="noopener"
+                                             data-event="click_tg_main">
                                     <ContactUs text= {t('buttonContactUs')} buttonClass="max-w-full rounded-[15px]"/>
-                                </Link>
+                                </TrackedLink>
                             </div>
                         </div>
                     </div>

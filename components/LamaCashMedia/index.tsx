@@ -3,7 +3,7 @@ import Image from "next/image";
 import {Button} from "@/components/ui/button";
 import {getTranslations} from "next-intl/server";
 import {SkeletonImage} from "@/components/SkeletonImage";
-import {Link} from "@/app/i18n/navigation";
+import {TrackedLink} from "@/components/TrackedLink";
 
 const formatNumber = (num: number) => {
     return new Intl.NumberFormat('ru-RU').format(num);
@@ -160,7 +160,7 @@ export const LamaCashMedia = async () => {
                     <div
                         className="p-px rounded-[6px] bg-[linear-gradient(270deg,#41B4F2_0%,#7134C2_35.58%,#FCFAFF_62.98%,#41B4F2_87.5%,#7134C2_100%)]">
 
-                        <Link href="https://www.tiktok.com/@lama.cash"
+                        <TrackedLink href="https://www.tiktok.com/@lama.cash"
                               data-event="click_tt_media_1"
                               target="_blank" rel="noopener" className="w-full items-center justify-center flex">
                             <Button
@@ -186,7 +186,7 @@ export const LamaCashMedia = async () => {
                             </span>
                                 </div>
                             </Button>
-                        </Link>
+                        </TrackedLink>
                     </div>
                 </div>
                 <div className="flex flex-col gap-4 max-w-sm">
@@ -224,7 +224,7 @@ export const LamaCashMedia = async () => {
                     </div>
                     <div
                         className="p-px rounded-[6px] bg-[linear-gradient(270deg,#FF2E56_0%,#23F1E7_35.58%,#FCFAFF_62.98%,#23F1E7_87.5%,#FD3058_100%)]">
-                        <Link href="https://www.tiktok.com/@lama.change"
+                        <TrackedLink href="https://www.tiktok.com/@lama.change"
                               data-event="click_tt_media_2"
                               target="_blank" rel="noopener" className="w-full items-center justify-center flex">
                         <Button
@@ -250,7 +250,7 @@ export const LamaCashMedia = async () => {
                             </span>
                             </div>
                         </Button>
-                        </Link>
+                        </TrackedLink>
                     </div>
                 </div>
                 <div className="flex flex-col gap-4 max-w-sm">
@@ -300,7 +300,7 @@ export const LamaCashMedia = async () => {
                     </div>
                     <div
                         className="p-px rounded-[6px] bg-[linear-gradient(90deg,#188AFC_0%,#BF3CD5_39.9%,#D240B4_68.75%,#FCCC0A_100%)]">
-                        <Link href="https://www.instagram.com/lama_cash"
+                        <TrackedLink href="https://www.instagram.com/lama_cash"
                               data-event="click_inst_media_1"
                               target="_blank" rel="noopener" className="w-full items-center justify-center flex">
                         <Button
@@ -334,7 +334,7 @@ export const LamaCashMedia = async () => {
                             </span>
                             </div>
                         </Button>
-                        </Link>
+                        </TrackedLink>
                     </div>
                 </div>
                 <div className="flex flex-col gap-4 max-w-sm">
@@ -372,7 +372,7 @@ export const LamaCashMedia = async () => {
                     </div>
                     <div
                         className="p-px rounded-[6px] bg-[linear-gradient(90deg,#188AFC_0%,#BF3CD5_39.9%,#D240B4_68.75%,#FCCC0A_100%)]">
-                        <Link href="https://www.instagram.com/lama_cash_rezerv/"
+                        <TrackedLink href="https://www.instagram.com/lama_cash_rezerv/"
                               data-event="click_inst_media_2"
                               target="_blank" rel="noopener" className="w-full items-center justify-center flex">
                             <Button
@@ -406,7 +406,7 @@ export const LamaCashMedia = async () => {
                             </span>
                                 </div>
                             </Button>
-                        </Link>
+                        </TrackedLink>
                     </div>
                 </div>
                 <div className="flex flex-col gap-4 max-w-sm">
@@ -444,7 +444,7 @@ export const LamaCashMedia = async () => {
                     </div>
                     <div
                         className="p-px rounded-[6px] bg-[linear-gradient(90deg,#188AFC_0%,#BF3CD5_39.9%,#D240B4_68.75%,#FCCC0A_100%)]">
-                        <Link href="https://t.me/lama_cash"
+                        <TrackedLink href="https://t.me/lama_cash"
                               data-event="click_tg_media_2"
                               target="_blank" rel="noopener" className="w-full items-center justify-center flex">
                             <Button
@@ -463,7 +463,7 @@ export const LamaCashMedia = async () => {
                                     </span>
                                 </div>
                             </Button>
-                        </Link>
+                        </TrackedLink>
                     </div>
                 </div>
                 <div className="flex flex-col gap-4 max-w-sm">
@@ -501,7 +501,7 @@ export const LamaCashMedia = async () => {
                     </div>
                     <div
                         className="p-px rounded-[6px] bg-[linear-gradient(90deg,#FE0000_0%,#610000_47.6%,#FE0000_100%)]">
-                        <Link href="https://youtube.com/@lama_cash?si=COXy_OKci7oiECin"
+                        <TrackedLink href="https://youtube.com/@lama_cash?si=COXy_OKci7oiECin"
                               data-event="click_youtybe_media"
                               className="w-full items-center justify-center flex">
                         <Button
@@ -527,7 +527,7 @@ export const LamaCashMedia = async () => {
                             </span>
                             </div>
                         </Button>
-                        </Link>
+                        </TrackedLink>
                     </div>
                 </div>
             </div>

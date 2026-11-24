@@ -8,6 +8,7 @@ import {hasLocale} from "next-intl";
 import {notFound} from "next/navigation";
 import {MicrosoftClarity} from "@/components/Clarity";
 import {GoogleTagManager} from "@next/third-parties/google";
+import Script from "next/script";
 import "../globals.css";
 import {Rubik} from "next/font/google";
 import localFont from "next/font/local";
@@ -143,13 +144,19 @@ export default async function LocaleLayout({
         {/*{process.env.NEXT_PUBLIC_GA_ID && (*/}
         {/*    <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />*/}
         {/*)}*/}
-        {/*<Script id="google-ads-config" strategy="afterInteractive">*/}
-        {/*    {`*/}
-        {/*      window.dataLayer = window.dataLayer || [];*/}
-        {/*      function gtag(){dataLayer.push(arguments);}*/}
-        {/*      gtag('config', 'AW-18403181154');*/}
-        {/*    `}*/}
-        {/*</Script>*/}
+        {/* Google Tag (gtag.js) */}
+        <Script
+            strategy="afterInteractive"
+            src="https://www.googletagmanager.com/gtag/js?id=AW-18403181154"
+        />
+        <Script id="google-ads-init" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-18403181154');
+            `}
+        </Script>
         </body>
         </html>
     )

@@ -6,7 +6,7 @@ import {cn} from "@/lib/utils";
 import Image from "next/image";
 import {ChevronRight, Info} from "lucide-react";
 import {ContactUs} from "@/components/ContactUs";
-import Link from "next/link";
+import {TrackedLink} from "@/components/TrackedLink";
 import {UniqTooltip} from "@/components/Tooltip";
 import {useTranslations} from "next-intl";
 
@@ -69,13 +69,13 @@ const FirstCard = () => {
             <span className="font-rubik font-light text-base pt-4 pb-3 max-sm:text-[12px] text-[#171717] text-center">
                 {t('euNote')}
             </span>
-            <Link href="https://t.me/lama_cash"
-                  data-event="click_tg_usdt-cash"
-                  className="w-full items-center justify-center flex">
+            <TrackedLink href="https://t.me/lama_cash"
+                   data-event="click_tg_usdt-cash"
+                   className="w-full items-center justify-center flex">
                 <ContactUs text={t('btn')} imageClass="bg-white"
                            buttonClass="hover:bg-black/95 text-base text-[rgba(240,240,240,1)] tracking-[3%] bg-[rgba(23,23,23,1)]"
                            inverted/>
-            </Link>
+            </TrackedLink>
         </div>
     )
 }
@@ -117,13 +117,13 @@ const SecondCard = () => {
 
                 </div>
             </div>
-            <Link href="https://t.me/lama_cash"
-                  data-event="click_tg_buy_krypto"
-                  className="w-full items-center justify-center flex">
+            <TrackedLink href="https://t.me/lama_cash"
+                   data-event="click_tg_buy_krypto"
+                   className="w-full items-center justify-center flex">
                 <ContactUs text={t('btn')} imageClass="bg-white"
                            buttonClass="hover:bg-black/95 text-base text-[rgba(240,240,240,1)] tracking-[3%] bg-[rgba(23,23,23,1)]"
                            inverted/>
-            </Link>
+            </TrackedLink>
         </div>
     )
 }
@@ -215,13 +215,13 @@ const ThirdCard = () => {
                     </div>
                 </UniqTooltip>
             </div>
-            <Link href="https://t.me/lama_cash"
-                  data-event="click_tg_p2p"
-                  className="w-full items-center justify-center flex">
+            <TrackedLink href="https://t.me/lama_cash"
+                   data-event="click_tg_p2p"
+                   className="w-full items-center justify-center flex">
                 <ContactUs text={t('btn')} imageClass="bg-white"
                            buttonClass="hover:bg-black/95 text-base text-[rgba(240,240,240,1)] tracking-[3%] bg-[rgba(23,23,23,1)]"
                            inverted/>
-            </Link>
+            </TrackedLink>
         </div>
     )
 }
